@@ -1,0 +1,102 @@
+body {
+    background-color: #305930;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    contain: 
+}
+
+.master-container {
+    display: inline-flex;
+    contain: content;
+}
+
+.court-row {
+    display: inline-flex;
+    contain: content;
+}
+
+.left-scorer, .right-scorer {
+    position: relative;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 3px solid white;
+    width: 50px;
+    height: 400px;
+    border-radius: 20px;
+}
+
+.left-court-area, .right-court-area {
+    border: 3px solid white;
+    height: 400px;
+    contain: content;
+}
+
+.left-court-area, 
+.right-court-area, 
+.left-court-left-service-area, 
+.left-court-right-service-area, 
+.right-court-left-service-area, 
+.right-court-right-service-area {
+    width: 310px;
+}
+
+.left-net-area, .right-net-area {
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    width: 130px;
+}
+
+.left-net-area {
+    border-right: 3px dashed white;
+}
+
+.left-court-left-service-area,
+.left-court-right-service-area,
+.right-court-left-service-area,
+.right-court-right-service-area {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    left: -3px;
+    border: 3px solid white;
+    height: 200px;
+    top: -3px;
+} 
+
+.left-court-long-service-line, 
+.right-court-long-service-line {
+    padding: 0;
+    position: absolute;
+    height: 410px;
+    top: -2px;
+    margin: 0;
+    width: 60px;
+}
+
+.left-court-long-service-line {
+    left: 0;
+    border-right: 3px solid white;
+}
+
+.right-court-long-service-line {
+    border-left: 3px solid white;
+    right: 0;
+}
+
+.top-sideline, .bottom-sideline {
+    width: 900px;
+    height: 36px;
+    position: absolute;
+    border-bottom: 3px solid white;
+}
+
+.top-sideline {
+    top: 0;
+    border-bottom: 3px solid white;
+}
+
+.bottom-sideline {
+    bottom: 0;
+    border-top: 3px solid white;
+}
