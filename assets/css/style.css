@@ -160,7 +160,7 @@ li a {
     left: auto;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-height: 540px) and (min-width: 600px) {
     .left-scorer, .right-scorer {
         width: 30px;
         height: 240px;
@@ -201,3 +201,43 @@ li a {
     }
 }
 
+@media only screen and (max-height: 320px) and (min-width: 500px) {
+    .left-scorer, .right-scorer {
+        width: 30px;
+        height: 220px;
+    } 
+    
+    .left-court-area, .right-court-area {
+        height: 220px;
+    }
+    .left-court-area, 
+    .right-court-area, 
+    .left-court-left-service-area,
+    .left-court-right-service-area,
+    .right-court-left-service-area,
+    .right-court-right-service-area {
+        width: 146px;
+    } 
+    
+    .left-net-area, .right-net-area {
+        width: 72px;
+    }
+
+    .left-court-left-service-area,
+    .left-court-right-service-area,
+    .right-court-left-service-area,
+    .right-court-right-service-area {
+        height: 110px;
+    }
+    .left-court-long-service-line, 
+    .right-court-long-service-line {
+        height: 226px;
+        width: 32px;
+    }
+    
+    .bottom-sideline, 
+    .bottom-sideline {
+        width: 500px;
+        height: 22px;
+    }
+}
