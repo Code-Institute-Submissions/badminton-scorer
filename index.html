@@ -28,10 +28,10 @@
                     </nav>
                 </section>
                 <section class = "container-fluid player-score-board-container">
-                <div>
-                    PLAYER X SCORE = HERE <br>
-                    PLAYER Y SCORE = HERE
-                </div>
+                    <div>
+                        PLAYER X SCORE = HERE <br>
+                        PLAYER Y SCORE = HERE
+                    </div>
                 </section>
                 <section class="container-fluid right-player-container">
                     <nav class="navbar navbar-dark navbar-expand-sm header-navbar">
@@ -75,6 +75,7 @@
             <div class="container-fluid master-container">
                 <div class="row container-row">
                     <div class="col left-scorer">
+                        <div class="score-style"><p>+1</p></div>
                     </div>
                     <div class="row court-row">
                         <div class="col top-sideline">
@@ -83,12 +84,13 @@
                             <div class="col left-court-long-service-line">
                             </div>
                             <div class="row left-court-left-service-area">
-                                <img src="assets/images/green-player.png" alt="Right Court Side Left Service Player">
-                                <img src="assets/images/left-shuttle.png" alt="Right Court Side Left Service Shuttle">
+                                <img class="green-player" src="assets/images/green-player.png" >
+                                <img class="left-shuttle" src="assets/images/left-shuttle.png" >
+                                <input type="text" class="form-control control-border" name="left-court-left-service" data-form-field="left-court-left-service" required="" id="left-court-left-service-player" />
                             </div>
                             <div class="row left-court-right-service-area">
-                                <img src="assets/images/green-player.png" alt="Left Court Side Right Service Player">
-                                <img src="assets/images/left-shuttle.png" alt="Left Court Side Right Service Shuttle">
+                                <img src="assets/images/pink-player.png" >
+                                <img class="left-shuttle" src="assets/images/left-shuttle.png" >
                             </div>
                         </div>
                         <div class="col left-net-area">
@@ -97,12 +99,12 @@
                         </div>
                         <div class="col right-court-area">
                             <div class="row right-court-left-service-area">
-                                <img src="assets/images/blue-player.png" alt="Right Court Side Left Service Player">
-                                <img src="assets/images/right-shuttle.png" alt="Right Court Side Left Service Shuttle">
+                                <img src="assets/images/red-player.png" >
+                                <img class="right-shuttle" src="assets/images/right-shuttle.png">
                             </div>
                             <div class="row right-court-right-service-area">
-                                <img src="assets/images/blue-player.png" alt="Right Court Side Right Service Player">
-                                <img src="assets/images/right-shuttle.png" alt="Right Court Side Right Service Shuttle">
+                                <img src="assets/images/yellow-player.png" >
+                                <img class="right-shuttle" src="assets/images/right-shuttle.png" >
                             </div>
                             <div class="col right-court-long-service-line">
                             </div>
@@ -111,6 +113,7 @@
                         </div>
                     </div>
                     <div class="col right-scorer">
+                        <div class="score-style"><p>+1</p></div>
                     </div>
                 </div>
             </div>
