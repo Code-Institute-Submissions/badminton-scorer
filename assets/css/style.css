@@ -180,7 +180,7 @@ li a {
     left: auto;
 }
 
-@media only screen and (max-height: 540px) and (min-width: 600px) {
+@media only screen and (max-height: 541px) and (min-width: 600px) {
     .left-scorer, .right-scorer {
         width: 30px;
         height: 240px;
@@ -224,7 +224,7 @@ li a {
         width: 36px;
     }
     
-    .bottom-sideline, 
+    .top-sideline, 
     .bottom-sideline {
         width: 540px;
         height: 22px;
@@ -250,6 +250,7 @@ li a {
     .left-court-area, .right-court-area {
         height: 220px;
     }
+
     .left-court-area, 
     .right-court-area, 
     .left-court-left-service-area,
@@ -269,13 +270,14 @@ li a {
     .right-court-right-service-area {
         height: 110px;
     }
+
     .left-court-long-service-line, 
     .right-court-long-service-line {
         height: 226px;
         width: 32px;
     }
     
-    .bottom-sideline, 
+    .top-sideline, 
     .bottom-sideline {
         width: 500px;
         height: 22px;

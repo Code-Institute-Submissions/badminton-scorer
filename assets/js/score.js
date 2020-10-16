@@ -24,7 +24,7 @@ function incrementScore(scoreSide) {
             showHideShuttle(`${scoreSide}`, 'left');
         };
         if (scoreSide == 'left' && serviceOver == 'left') {
-            speakThisMsg = "Service Over";
+            speakThisMsg = "Service  Over";
             window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
         }
         speakThisMsg = "Score";
@@ -46,7 +46,7 @@ function incrementScore(scoreSide) {
             showHideShuttle(`${scoreSide}`, 'left');
         };
         if (scoreSide == 'right' && serviceOver == 'right') {
-            speakThisMsg = "Service Over";
+            speakThisMsg = "Service  Over";
             window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
         }
         speakThisMsg = "Score";
