@@ -5,6 +5,10 @@
     /*display: inline;*/
 }
 
+.img-responsive {
+    left: 50%;
+}
+
 .player-font-dropdown > ul > li {
     font-size: 0.8rem;
 }
@@ -14,6 +18,10 @@
     border-color: #305930;
 }
 
+.player-drop-down-toggle:disabled {
+    background-color: #305930;
+    border-color: #305930;
+}
 .green-player {
     height: 11vh;   
 }
