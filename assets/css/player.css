@@ -2,11 +2,20 @@
     width: auto;
     padding: 0;
     margin-top: 40px;
+    /*display: inline;*/
+}
+
+.player-font-dropdown > ul > li {
+    font-size: 0.8rem;
 }
 
 .player-drop-down-toggle {
     background-color: #305930;
     border-color: #305930;
+}
+
+.green-player {
+    height: 11vh;   
 }
 
 .blue-player-font {

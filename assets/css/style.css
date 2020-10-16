@@ -6,35 +6,6 @@ img {
     opacity: 0.7;
 }
 
-#left-court-left-side-shuttle {
-    display: none;
-}
-
-#left-court-right-side-shuttle {
-    display: none;
-}
-
-#right-court-left-side-shuttle {
-    display: none;
-}
-
-#right-court-right-side-shuttle {
-    display: none;
-}
-
-
-.left-court-shuttles {
-    height: 9.5vh;   
-}
-
-.right-court-shuttles {
-    height: 11vh;   
-}
-
-.green-player {
-    height: 11vh;   
-}
-
 header {
     margin: 0;
     border: 0;

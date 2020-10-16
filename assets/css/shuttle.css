@@ -1,0 +1,25 @@
+#left-court-left-side-shuttle {
+    display: none;
+}
+
+#left-court-right-side-shuttle {
+    display: none;
+}
+
+#right-court-left-side-shuttle {
+    display: none;
+}
+
+#right-court-right-side-shuttle {
+    display: none;
+}
+
+
+.left-court-shuttles {
+    height: 9.5vh;   
+    left: 60%;
+}
+
+.right-court-shuttles {
+    height: 11vh;   
+}
