@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
         <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+        <script style="text/javascript" src="assets/js/shuttle.js"></script>
     </head>
     <body>
         <header>
@@ -74,7 +75,7 @@
         <section>
             <div class="container-fluid master-container">
                 <div class="row container-row">
-                    <div class="col left-scorer">
+                    <div class="col left-scorer" onclick="showHideShuttle('#left-court-left-side-shuttle')">
                         <div class="score-style"><p>+1</p></div>
                     </div>
                     <div class="row court-row">
@@ -85,12 +86,12 @@
                             </div>
                             <div class="row left-court-left-service-area">
                                 <img class="green-player" src="assets/images/green-player.png" >
-                                <img class="left-shuttle" src="assets/images/left-shuttle.png" >
+                                <img id="left-court-left-side-shuttle" class="left-court-shuttles" src="assets/images/left-shuttle.png" >
                                 <input type="text" class="form-control control-border" name="left-court-left-service" data-form-field="left-court-left-service" required="" id="left-court-left-service-player" />
                             </div>
                             <div class="row left-court-right-service-area">
                                 <img src="assets/images/pink-player.png" >
-                                <img class="left-shuttle" src="assets/images/left-shuttle.png" >
+                                <img id="left-court-right-side-shuttle" class="left-court-shuttles" src="assets/images/left-shuttle.png" >
                             </div>
                         </div>
                         <div class="col left-net-area">
@@ -100,11 +101,11 @@
                         <div class="col right-court-area">
                             <div class="row right-court-left-service-area">
                                 <img src="assets/images/red-player.png" >
-                                <img class="right-shuttle" src="assets/images/right-shuttle.png">
+                                <img id="right-court-left-side-shuttle" class="right-court-shuttles" src="assets/images/right-shuttle.png">
                             </div>
                             <div class="row right-court-right-service-area">
                                 <img src="assets/images/yellow-player.png" >
-                                <img class="right-shuttle" src="assets/images/right-shuttle.png" >
+                                <img id="right-court-right-side-shuttle" class="right-court-shuttles" src="assets/images/right-shuttle.png" >
                             </div>
                             <div class="col right-court-long-service-line">
                             </div>

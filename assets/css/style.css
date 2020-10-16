@@ -6,11 +6,28 @@ img {
     opacity: 0.7;
 }
 
-.left-shuttle {
+#left-court-left-side-shuttle {
+    display: none;
+}
+
+#left-court-right-side-shuttle {
+    display: none;
+}
+
+#right-court-left-side-shuttle {
+    display: none;
+}
+
+#right-court-right-side-shuttle {
+    display: none;
+}
+
+
+.left-court-shuttles {
     height: 9.5vh;   
 }
 
-.right-shuttle {
+.right-court-shuttles {
     height: 11vh;   
 }
 
@@ -107,6 +124,9 @@ body {
     align-items: center;
 }
 
+.left-scorer:hover, .right-scorer:hover {
+    background-color: green
+}
 .left-court-area, .right-court-area {
     padding: 0;
     margin: 0;
