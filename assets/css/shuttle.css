@@ -28,4 +28,19 @@
     height: 11vh;   
     left: 40%;
 }
+@media only screen and (min-height: 780px) and (min-width: 1024px) {
+}
+@media only screen and (max-height: 768px) and (max-width: 1024px) {
+}
+@media only screen and (max-height: 540px) and (min-width: 600px) {
+}
+@media only screen and (max-height: 320px) and (min-width: 500px) {
+}
+@media only screen and (max-height: 412px) {
+}
+@media only screen and (max-height: 540px) and (max-width: 720px) {
+    #left-court-right-side-shuttle {
+        bottom: 40px;
+    }
+}
 

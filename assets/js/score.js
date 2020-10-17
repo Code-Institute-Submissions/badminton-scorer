@@ -2,7 +2,22 @@
     var teamAScore = 0;
     var teamBScore = 0;
     var serviceOver = 2;
+    var pending = false;
     function incrementScore(scoreSide) {
+        $(`.left-scorer`).prop("disabled", true);
+        $('.left-scorer').off('mouseenter mouseleave'); 
+        if (!pending) {
+            pending = true;     
+            setTimeout(() => { 
+                incrementScorewithDelay(`${scoreSide}`);
+                pending = false;
+            }, 3000);
+        };
+        $(`.left-scorer`).prop("disabled", false);
+        $('.left-scorer').on('mouseenter mouseleave'); 
+    }
+    function incrementScore(scoreSide) {
+        //From this block of codes need to move when user press Start Match button
         if (teamAScore == 0 && teamBScore == 0) {
             /*let speakThisMsg = new SpeechSynthesisUtterance();
             speakThisMsg = "Player B to server Player C";
@@ -13,8 +28,8 @@
             window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));*/
         };
 
-        //this block of codes need to move when user press Start Match button
         $(".player-drop-down-toggle").prop("disabled", true);
+        //To this block of codes need to move when user press Start Match button
 
         if (scoreSide == 'left') {
             teamAScore++;
@@ -61,6 +76,9 @@
             };
             serviceOver = 'left';
         };
+        //This will enable to +1 Div until all the following code has been executed.
+        $(`.left-scorer`).prop("disabled", false);
+        console.log('enable')
     };
 
 //});
