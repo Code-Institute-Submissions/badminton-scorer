@@ -4,7 +4,7 @@
     var serviceOver = 2;
     var pending = false;
     var startGame = false;
-    function incrementScore(scoreSide) {
+    function incrementScoreDelay(scoreSide) {
         $(`.left-scorer`).prop("disabled", true);
         $('.left-scorer').off('mouseenter mouseleave'); 
         if (!pending) {
@@ -15,34 +15,35 @@
             }, 3000);
         };
         $(`.left-scorer`).prop("disabled", false);
-        $('.left-scorer').on('mouseenter mouseleave'); 
-    }
-    function startGame() {
+        $('.left-scorer').on('mouseenter mouseleave');
+        return;
+    };
+    function gameStart() {
         $(`.left-scorer`).attr("disabled", "enabled");
         $(`.right-scorer`).attr("disabled", "enabled");
+        $(".player-drop-down-toggle").prop("disabled", true);
+        $(`.setup-menu-option`).hide();
         startGame = true;
-        console.log("Game Started!");
-    };
-    function incrementScore(scoreSide) {
-        if(!startGame) {
-            alert("Game not started yet!");
-            console.log("Game not started yet!")
-            break;
-        };
         //From this block of codes need to move when user press Start Match button
         if (teamAScore == 0 && teamBScore == 0) {
-            /*let speakThisMsg = new SpeechSynthesisUtterance();
+            let speakThisMsg = new SpeechSynthesisUtterance();
             speakThisMsg = "Player B to server Player C";
             window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
             speakThisMsg = "love all";
             window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
             speakThisMsg = "play";
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));*/
+            window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
         };
 
-        $(".player-drop-down-toggle").prop("disabled", true);
         //To this block of codes need to move when user press Start Match button
-
+        return;
+    };
+    function incrementScore(scoreSide) {
+        if(!startGame) {
+            alert("Game not started yet!");
+            console.log("Game not started yet!")
+            return;
+        };
         if (scoreSide == 'left') {
             teamAScore++;
             if (teamAScore % 2 == 0) {
@@ -91,6 +92,7 @@
         //This will enable to +1 Div until all the following code has been executed.
         $(`.left-scorer`).prop("disabled", false);
         console.log('enable')
+        return;
     };
 
 //});
