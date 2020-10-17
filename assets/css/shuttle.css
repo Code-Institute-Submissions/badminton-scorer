@@ -1,16 +1,20 @@
 #left-court-left-side-shuttle {
+    top: 40px;
     display: none;
 }
 
 #left-court-right-side-shuttle {
+    bottom: 80px;
     display: none;
 }
 
 #right-court-left-side-shuttle {
+    bottom: 80px;
     display: none;
 }
 
 #right-court-right-side-shuttle {
+    top: 40px;
     display: none;
 }
 
@@ -24,3 +28,4 @@
     height: 11vh;   
     left: 40%;
 }
+

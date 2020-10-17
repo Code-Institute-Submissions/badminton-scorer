@@ -1,4 +1,11 @@
-.player-container {
+.right-court-right-player-container, .left-court-left-player-container  {
+    width: auto;
+    padding: 0;
+    margin-top: 60px;
+    /*display: inline;*/
+}
+
+.right-court-left-player-container, .left-court-right-player-container  {
     width: auto;
     padding: 0;
     margin-top: 40px;
@@ -44,4 +51,14 @@
 
 .yellow-player-font {
     color: yellow
+}
+
+.team-a-player-1 {
+    background-color: #305930;
+    width: 200px;
+    left: 80px;
+    top: 60px;
+    margin-top: 80px;
+    position: fixed;
+    text-align: center;
 }
