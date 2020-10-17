@@ -3,6 +3,7 @@
     var teamBScore = 0;
     var serviceOver = 2;
     var pending = false;
+    var startGame = false;
     function incrementScore(scoreSide) {
         $(`.left-scorer`).prop("disabled", true);
         $('.left-scorer').off('mouseenter mouseleave'); 
@@ -16,7 +17,18 @@
         $(`.left-scorer`).prop("disabled", false);
         $('.left-scorer').on('mouseenter mouseleave'); 
     }
+    function startGame() {
+        $(`.left-scorer`).attr("disabled", "enabled");
+        $(`.right-scorer`).attr("disabled", "enabled");
+        startGame = true;
+        console.log("Game Started!");
+    };
     function incrementScore(scoreSide) {
+        if(!startGame) {
+            alert("Game not started yet!");
+            console.log("Game not started yet!")
+            break;
+        };
         //From this block of codes need to move when user press Start Match button
         if (teamAScore == 0 && teamBScore == 0) {
             /*let speakThisMsg = new SpeechSynthesisUtterance();
