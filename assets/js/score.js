@@ -1,4 +1,4 @@
-$("document").ready(function () {
+//$("document").ready(function () {
     var teamAScore = 0;
     var teamBScore = 0;
     var serviceOver = 2;
@@ -63,4 +63,4 @@ $("document").ready(function () {
         };
     };
 
-});
+//});
