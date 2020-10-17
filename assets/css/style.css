@@ -250,19 +250,24 @@ li a {
     cursor: pointer;
 }
 
-.match-type-ontainer {
-    text-align: center;
+.match-type-container, .server-side-container {
     padding: 10px;
     border: 2px solid lightblue;
     box-shadow: 1px 2px #888888;
+    
 }
-
+.match-type-container, .server-side-container {
+    width: 126px;
+    padding: 0px;
+}
 
 
 /* The container */
 .radio-container {
+    display: block;
     position: relative;
-    padding-left: 35px;
+    padding: 0px;
+    padding-left: 25px;
     /*margin-bottom: 12px;*/
     cursor: pointer;
     /*font-size: 22px;*/
@@ -281,10 +286,20 @@ li a {
 }
 
 /* Create a custom radio button */
-.checkmark {
+.player-checkmark {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 2px;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.shuttle-checkmark {
+    position: absolute;
+    top: 0;
+    left: 2px;
     height: 20px;
     width: 20px;
     background-color: #eee;
@@ -292,29 +307,39 @@ li a {
 }
 
 /* On mouse-over, add a grey background color */
-.radio-container:hover input ~ .checkmark {
+.radio-container:hover input ~ .player-checkmark {
+    background-color: #ccc;
+}
+.radio-container:hover input ~ .shuttle-checkmark {
     background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.radio-container input:checked ~ .checkmark {
+.radio-container input:checked ~ .player-checkmark {
+    background-color: #2196F3;
+}
+.radio-container input:checked ~ .shuttle-checkmark {
     background-color: #2196F3;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
+.player-checkmark:after, .shuttle-checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-.radio-container input:checked ~ .checkmark:after {
+.radio-container input:checked ~ .player-checkmark:after {
+    display: block;
+}
+.radio-container input:checked ~ .shuttle-checkmark:after {
     display: block;
 }
 
 /* Style the indicator (dot/circle) */
-.radio-container .checkmark:after {
+.radio-container .player-checkmark:after,
+.radio-container .shuttle-checkmark:after {
  	top: 6px;
 	left: 6px;
 	width: 8px;

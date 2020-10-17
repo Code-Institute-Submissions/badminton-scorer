@@ -119,14 +119,24 @@
                         <div class="col left-net-area">
                         </div>
                         <div class="setup-menu-option">
-                            <div class="match-type-ontainer">
-                                <label class="radio-container">Singles
-                                    <input type="radio" checked="checked" name="radio">
-                                    <span class="checkmark"></span>
+                            <div class="match-type-container">
+                                <label class="radio-container" onclick="showHidePlayers('hide')">Singles
+                                    <input type="radio" checked="checked" name="match-type">
+                                    <span class="player-checkmark"></span>
                                 </label>
-                                <label class="radio-container">Doubles
-                                    <input type="radio" name="radio">
-                                    <span class="checkmark"></span>
+                                <label class="radio-container" onclick="showHidePlayers('show')">Doubles
+                                    <input type="radio" name="match-type">
+                                    <span class="player-checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="server-side-container">
+                                <label class="radio-container" onclick="showHideShuttle('left', 'right')">Left Server
+                                    <input type="radio" checked="checked" name="service-side">
+                                    <span class="shuttle-checkmark"></span>
+                                </label>
+                                <label class="radio-container" onclick="showHideShuttle('right', 'right')">Right Server
+                                    <input type="radio" name="service-side">
+                                    <span class="shuttle-checkmark"></span>
                                 </label>
                             </div>
                             <button class="start-match-btn" >START MATCH</button>
