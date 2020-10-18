@@ -53,7 +53,7 @@
                 </section>
             </section>
             <section class="container-fluid setup-menu-container">
-                <nav class="navbar navbar-dark navbar-expand-sm header-navbar">
+                <nav class="navbar navbar-light navbar-expand-sm header-navbar">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link navbar-toggler-icon" href="#" id="navSetupMenuDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
@@ -67,29 +67,6 @@
             </section>
         </header>
         <section>
-                        <div class="setup-menu-option">
-                            <div class="match-type-container">
-                                <label class="radio-container" onclick="showHidePlayers('hide')">Singles
-                                    <input type="radio" checked="checked" name="match-type">
-                                    <span class="player-checkmark"></span>
-                                </label>
-                                <label class="radio-container" onclick="showHidePlayers('show')">Doubles
-                                    <input type="radio" name="match-type">
-                                    <span class="player-checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="server-side-container">
-                                <label class="radio-container" onclick="showHideShuttle('left', 'right')">Left Server
-                                    <input type="radio" checked="checked" name="service-side">
-                                    <span class="shuttle-checkmark"></span>
-                                </label>
-                                <label class="radio-container" onclick="showHideShuttle('right', 'right')">Right Server
-                                    <input type="radio" name="service-side">
-                                    <span class="shuttle-checkmark"></span>
-                                </label>
-                            </div>
-                            <button class="start-match-btn" onclick="gameStart()">START MATCH</button>
-                        </div>
             <div class="container-fluid master-container">
                 <div class="row container-row">
                     <div class="col left-scorer" onclick="incrementScore('left')">
@@ -193,6 +170,41 @@
                         <div class="score-style"><p>+1</p></div>
                     </div>
                 </div>
+            </div>
+            <div class="setup-menu-option">
+                <div class="match-type-container">
+                    <label class="radio-container" onclick="showHidePlayers('hide')">Singles
+                        <input type="radio" checked="checked" name="match-type">
+                        <span class="player-checkmark"></span>
+                    </label>
+                    <label class="radio-container" onclick="showHidePlayers('show')">Doubles
+                        <input type="radio" name="match-type">
+                        <span class="player-checkmark"></span>
+                    </label>
+                </div>
+                <div class="server-side-container">
+                    <label class="radio-container" onclick="showHideShuttle('left', 'right')">Left Server
+                        <input type="radio" checked="checked" name="service-side">
+                        <span class="shuttle-checkmark"></span>
+                    </label>
+                    <label class="radio-container" onclick="showHideShuttle('right', 'right')">Right Server
+                        <input type="radio" name="service-side">
+                        <span class="shuttle-checkmark"></span>
+                    </label>
+                </div>
+                <div class="game-interval-container">
+                    <input type="checkbox" name="mid-interval-break" id="mid-interval-break">
+                    <label for="mid-interval-seconds" class="checkbox-container">Mid-Interval:
+                        <input type="number" min="0" max="360" onkeypress="validate(event)" name="mid-interval-seconds" id="mid-interval-seconds">
+                    </label>
+                        <p class="label-second">(seconds)</p>
+                    <input type="checkbox" name="full-interval-break" id="full-interval-break">
+                    <label for="full-interval-seconds" class="checkbox-container">Full-Interval:
+                        <input type="number" min="0" max="360" onkeypress="validate(event)" name="full-interval-seconds" id="full-interval-seconds">
+                    </label>
+                        <p class="label-second">(seconds)</p>
+                </div>
+                <button class="start-match-btn" onclick="gameStart()">START MATCH</button>
             </div>
         </section>
         <footer>

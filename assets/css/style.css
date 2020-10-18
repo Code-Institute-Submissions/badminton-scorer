@@ -41,6 +41,22 @@ header {
     display: flex;
 }
 
+.header-navbar {
+    padding: 0;
+    padding-top: .2rem;
+    font-size: xx-large;
+}
+
+.setup-menu-container {
+    position: absolute;
+    right: 0px;
+    font-size: 2rem;
+}
+
+.score-board-container{
+    position: relative;
+}
+
 .player-font-dropdown > ul > li {
     font-weight: 900;
     font-size: 1.5rem;
@@ -70,8 +86,7 @@ header {
 }
 
 .left-player-container,
-.right-player-container,
-.setup-menu-container {
+.right-player-container {
     width: 30px;
 }
 
@@ -84,11 +99,7 @@ header {
 .player-score-board-container {
     justify-content: center;
 }
-.header-navbar {
-    padding: 0;
-    padding-top: .2rem;
-}
-  
+
 body {
     font-family: "Roboto", sans-serif;
     background-color: #305930;
@@ -136,21 +147,32 @@ li a {
 /* ----- Setup Settings ----- */
 .setup-menu-option,
 .match-type-container,
-.server-side-container {
+.server-side-container,
+.game-interval-container {
     position: absolute;
     z-index: 999;
 }
 .server-side-container {
     top: 68px;
 }
+.game-interval-container {
+    left: 125px;
+    width: 168px;
+    height: 138px;
+    color: black;
+}
+#mid-interval-seconds,
+#full-interval-seconds {
+    width: 45px;
+    padding: 0;
+}
+
 .setup-menu-option {
-    /*position: fixed;*/
-    width: 40vh;
+    width: 300px;
     height: 200px;
     border: 3px solid black;
     margin-left: auto;
     margin-right: auto;
-    left: 81vh;
     top: 31vh;
     background-color: rgb(197, 95, 95);
 }
@@ -170,15 +192,23 @@ li a {
     cursor: pointer;
 }
 
-.match-type-container, .server-side-container {
-    padding: 10px;
+.match-type-container, .server-side-container,
+.game-interval-container {
     border: 2px solid lightblue;
     box-shadow: 1px 2px #888888;
     
 }
+.game-interval-container {
+    padding: 5px 0 5px 5px;
+}
+.label-second {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 .match-type-container, .server-side-container {
     width: 126px;
-    padding: 0px;
+    padding: 2px 2px 0 0;
 }
 
 
@@ -267,8 +297,16 @@ li a {
 	border-radius: 50%;
 	background: white;
 }
+@media only screen and (max-height: 768px) and (min-width: 600px) {
+    .setup-menu-option {
+        left: 360px;
+    }
+}
 
 @media only screen and (max-height: 540px) and (min-width: 600px) {
+    .setup-menu-option {
+        left: 200px;
+    }
     .score-style {
         padding: 0;
         margin: 0;
@@ -279,8 +317,15 @@ li a {
         font-weight: 800;    
     }
 }
-
+@media only screen and (max-height: 360px) and (min-width: 500px) {
+    .setup-menu-option {
+        left: 160px;
+    }
+}
 @media only screen and (max-height: 320px) and (min-width: 500px) {
+    .setup-menu-option {
+        left: 180px;
+    }
     .score-style {
         padding: 0;
         margin: 0;
