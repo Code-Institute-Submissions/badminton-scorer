@@ -50,6 +50,7 @@ header {
 .setup-menu-container {
     position: absolute;
     right: 0px;
+    width: 50px;
     font-size: 2rem;
 }
 
@@ -300,9 +301,6 @@ li a {
 }
 
 @media only screen and (max-height: 320px) and (min-width: 500px) {
-    /*.setup-menu-option {
-        left: 180px;
-    }*/
     .score-style {
         padding: 0;
         margin: 0;
@@ -312,11 +310,6 @@ li a {
         font-size: 20px;
         font-weight: 800;    
     }
-}
-@media only screen and (max-height: 360px) and (min-width: 500px) {
-    /*.setup-menu-option {
-        left: 160px;
-    }*/
 }
 
 @media only screen and (max-height: 540px) and (min-width: 600px) {
@@ -331,12 +324,6 @@ li a {
     }
 }
 
-
-@media only screen and (min-height: 768px) and (min-width: 600px) {
-    /*.setup-menu-option {
-        left: 600px;
-    }*/
-}
 
 /*
 @media only screen and (max-height: 380px) {

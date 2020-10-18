@@ -7,7 +7,7 @@ $("document").ready(function () {
     $(`.team-b-player-1`).hide();
     $(`#left-court-right-side-shuttle`).show();
 });
-// Source https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
+// Start Source https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
 function validate(interval, evt) {
   var theEvent = evt || window.event;
 
@@ -25,6 +25,7 @@ function validate(interval, evt) {
     if(theEvent.preventDefault) theEvent.preventDefault();
   }
 };
+// End Source https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
 
 $("#mid-interval-seconds").keyup(function() {
   if($('#mid-interval-seconds').val()>360 ){
@@ -36,3 +37,8 @@ $("#full-interval-seconds").keyup(function() {
       $("#full-interval-seconds" ).val("");
   }
 });
+
+// This will automatically position the Setup Menu element to the center if the window is resize.
+function centerMenuSetting() {
+    $(`.setup-menu-option`).css("left", ($(`.master-container`).width()) / 2 - ($(`.setup-menu-option`).width() / 2));
+}
