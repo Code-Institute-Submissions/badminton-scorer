@@ -88,14 +88,16 @@ header {
     padding: 0;
     padding-top: .2rem;
 }
-
+  
 body {
+    font-family: "Roboto", sans-serif;
     background-color: #305930;
     color: #fff;
     margin: 0;
     padding: 0;
     border: 0;
     contain: content;
+    object-fit: contain;
 }
 
 .footer-navbar {
@@ -103,11 +105,13 @@ body {
 }
 
 .master-container {
+    position: relative;
+    z-index: 1;
     margin: 0;
     padding: 0;
     display: inline-flex;
     contain: content;
-    margin-top: 50px;
+    margin-top: 8vh;
 }
 
 .container-row {
@@ -124,114 +128,30 @@ body {
     margin: 0;
 }
 
-.left-scorer, .right-scorer {
-    padding: 0;
-    flex-basis: auto;
-    flex-grow: 0;
-    position: relative;
-    margin-left: 10px;
-    margin-right: 10px;
-    background-color: gray;
-    width: 50px;
-    height: 400px;
-    border-radius: 20px;
-    align-items: center;
-}
-
-.left-scorer:hover, .right-scorer:hover {
-    background-color: green
-}
-.left-court-area, .right-court-area {
-    padding: 0;
-    margin: 0;
-    border: 3px solid white;
-    height: 400px;
-    contain: content;
-}
-
-.left-court-area, 
-.right-court-area, 
-.left-court-left-service-area, 
-.left-court-right-service-area, 
-.right-court-left-service-area, 
-.right-court-right-service-area {
-    width: 310px;
-}
-
-.left-net-area, .right-net-area {
-    border-top: 3px solid white;
-    border-bottom: 3px solid white;
-    width: 130px;
-}
-
-.left-net-area {
-    border-right: 3px dashed white;
-}
-
-.left-court-left-service-area,
-.left-court-right-service-area,
-.right-court-left-service-area,
-.right-court-right-service-area {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    left: -3px;
-    border: 3px solid white;
-    height: 200px;
-    top: -3px;
-} 
-
-.left-court-long-service-line, 
-.right-court-long-service-line {
-    padding: 0;
-    position: absolute;
-    height: 410px;
-    top: -2px;
-    margin: 0;
-    width: 60px;
-}
-
-.left-court-long-service-line {
-    left: 0;
-    border-right: 3px solid white;
-}
-
-.right-court-long-service-line {
-    border-left: 3px solid white;
-    right: 0;
-}
-
-.top-sideline, .bottom-sideline {
-    width: 900px;
-    height: 36px;
-    position: absolute;
-    border-bottom: 3px solid white;
-}
-
-.top-sideline {
-    top: 0;
-    border-bottom: 3px solid white;
-}
-
-.bottom-sideline {
-    bottom: 0;
-    border-top: 3px solid white;
-}
-
 li a {
     right: 4px;
     left: auto;
 }
 
+/* ----- Setup Settings ----- */
+.setup-menu-option,
+.match-type-container,
+.server-side-container {
+    position: absolute;
+    z-index: 999;
+}
+.server-side-container {
+    top: 68px;
+}
 .setup-menu-option {
-    position: fixed;
-    width: 260px;
+    /*position: fixed;*/
+    width: 40vh;
     height: 200px;
     border: 3px solid black;
     margin-left: auto;
     margin-right: auto;
-    left: 310px;
-    top: 100px;
+    left: 81vh;
+    top: 31vh;
     background-color: rgb(197, 95, 95);
 }
 
@@ -348,15 +268,7 @@ li a {
 	background: white;
 }
 
-
-
-
 @media only screen and (max-height: 540px) and (min-width: 600px) {
-    .left-scorer, .right-scorer {
-        width: 30px;
-        height: 240px;
-    } 
-
     .score-style {
         padding: 0;
         margin: 0;
@@ -366,9 +278,35 @@ li a {
         font-size: 20px;
         font-weight: 800;    
     }
+}
+
+@media only screen and (max-height: 320px) and (min-width: 500px) {
+    .score-style {
+        padding: 0;
+        margin: 0;
+        border: 0;
+        padding-top: 95px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 800;    
+    }
+}
+
+/*
+@media only screen and (max-height: 380px) {
+    .master-container {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-height: 540px) and (min-width: 600px) {
+    .left-scorer, .right-scorer {
+        width: 30vw;
+        height: 240vh;
+    } 
 
     .left-court-area, .right-court-area {
-        height: 240px;
+        height: 240vh;
     }
     .left-court-area, 
     .right-court-area, 
@@ -376,29 +314,29 @@ li a {
     .left-court-right-service-area,
     .right-court-left-service-area,
     .right-court-right-service-area {
-        width: 186px;
+        width: 186vw;
     } 
     
     .left-net-area, .right-net-area {
-        width: 78px;
+        width: 78vw;
     }
 
     .left-court-left-service-area,
     .left-court-right-service-area,
     .right-court-left-service-area,
     .right-court-right-service-area {
-        height: 120px;
+        height: 120vh;
     }
     .left-court-long-service-line, 
     .right-court-long-service-line {
-        height: 246px;
-        width: 36px;
+        height: 246vh;
+        width: 36vw;
     }
     
     .top-sideline, 
     .bottom-sideline {
-        width: 540px;
-        height: 22px;
+        width: 540vw;
+        height: 22vh;
     }
 }
 
@@ -454,9 +392,4 @@ li a {
         height: 22px;
     }
 }
-
-@media only screen and (max-height: 380px) {
-    .master-container {
-        margin-top: 20px;
-    }
-}
+*/

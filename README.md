@@ -63,7 +63,9 @@ The main objective of this 2nd Milestone project was to create a web application
 
 #### <ins>TOOLS TECHNOLOGY and FRAMEWORK USED</ins> ####
 
-- [Balsamic Wireframes](https://balsamiq.com/wireframes) - is used to create the initial mockup of the web-app. A bmpr (balsamic) version of the web-app design can be found [here](assets/misc/ms-project-2.bmpr) while a pdf version of the wireframe can be found [here](assets/misc/ms-project-2.pdf). The web page initial design changed during the course of development process.
+<img src="./assets/images/initial-web-app-design.png" style="margin: 0;">
+
+- [Balsamic Wireframes](https://balsamiq.com/wireframes) - is used to create the initial mockup of the web-app. THe full bmpr (balsamic) version of the web-app design can be found [here](assets/misc/ms-project-2.bmpr) while a pdf version of the wireframe can be found [here](assets/misc/ms-project-2.pdf). The web app initial design changed during the course of development process.
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) 
@@ -151,7 +153,7 @@ Code Institute Challenges and Projects throughout 2nd Milestone - My very first 
 
 Thank you to the following people:
 
-- Akshat Garg, my mentor, for his time in providing guidance, and online resources to help make it through this 1st milestone project...
+- Akshat Garg, my mentor, for his time in providing guidance, and online resources to help make it through this 2nd milestone project...
 - Class of August-CI-2020 on Slack,
 - #peer-code-review / #interactive-frontend folks on slack (you know who you are :P )who gave some of their time reviewing and giving feedback and suggestions.
 

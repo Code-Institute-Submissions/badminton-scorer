@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
 
+        <link rel="stylesheet" href="assets/css/court.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/shuttle.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/player.css" type="text/css" />
@@ -66,58 +67,6 @@
             </section>
         </header>
         <section>
-            <div class="container-fluid master-container">
-                <div class="row container-row">
-                    <div class="col left-scorer" onclick="incrementScore('left')">
-                        <div class="score-style"><p>+1</p></div>
-                    </div>
-                    <div class="row court-row">
-                        <div class="col top-sideline">
-                        </div>
-                        <div class="col left-court-area">
-                            <div class="col left-court-long-service-line">
-                            </div>
-                            <div class="row left-court-left-service-area">
-                                <div class="container left-court-left-player-container">
-                                    <div class="player-font-dropdown">
-                                        <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
-                                            <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive team-a-player-1-img">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="blue-player-font" href="#">Blue</a></li>
-                                            <li><a class="green-player-font" href="#">Green</a></li>
-                                            <li><a class="pink-player-font" href="#">Pink</a></li>
-                                            <li><a class="red-player-font" href="#">Red</a></li>
-                                            <li><a class="yellow-player-font" href="#">Yellow</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <img id="left-court-left-side-shuttle" class="left-court-shuttles" alt="left-court-shuttles" src="assets/images/left-shuttle.png" >
-                                <input type="text" class="form-control control-border team-a-player-1" name="team-a-player-1" data-form-field="team-a-player-1" required="" id="team-a-player-1" />
-                            </div>
-                            <div class="row left-court-right-service-area">
-                                <div class="container left-court-right-player-container">
-                                    <div class="player-font-dropdown">
-                                        <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
-                                            <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive team-a-player-2-img">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="blue-player-font" href="#">Blue</a></li>
-                                            <li><a class="green-player-font" href="#">Green</a></li>
-                                            <li><a class="pink-player-font" href="#">Pink</a></li>
-                                            <li><a class="red-player-font" href="#">Red</a></li>
-                                            <li><a class="yellow-player-font" href="#">Yellow</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <img id="left-court-right-side-shuttle" class="left-court-shuttles" alt="left-court-shuttles" src="assets/images/left-shuttle.png" >
-                                <input type="text" class="form-control control-border team-a-player-2" name="team-a-player-2" data-form-field="team-a-player-2" required="" id="team-a-player-2" />
-                            </div>
-                        </div>
-                        <div class="col left-net-area">
-                        </div>
                         <div class="setup-menu-option">
                             <div class="match-type-container">
                                 <label class="radio-container" onclick="showHidePlayers('hide')">Singles
@@ -141,11 +90,63 @@
                             </div>
                             <button class="start-match-btn" onclick="gameStart()">START MATCH</button>
                         </div>
+            <div class="container-fluid master-container">
+                <div class="row container-row">
+                    <div class="col left-scorer" onclick="incrementScore('left')">
+                        <div class="score-style"><p>+1</p></div>
+                    </div>
+                    <div class="row court-row">
+                        <div class="col top-sideline">
+                        </div>
+                        <div class="col left-court-area">
+                            <div class="col left-court-long-service-line">
+                            </div>
+                            <div class="row left-court-left-service-area">
+                                <div class="container-fluid left-court-left-player-container">
+                                    <div class="player-font-dropdown">
+                                        <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
+                                            <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive team-a-player-1-img">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="blue-player-font" href="#">Blue</a></li>
+                                            <li><a class="green-player-font" href="#">Green</a></li>
+                                            <li><a class="pink-player-font" href="#">Pink</a></li>
+                                            <li><a class="red-player-font" href="#">Red</a></li>
+                                            <li><a class="yellow-player-font" href="#">Yellow</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img id="left-court-left-side-shuttle" class="left-court-shuttles" alt="left-court-shuttles" src="assets/images/left-shuttle.png" >
+                                <input type="text" class="form-control control-border team-a-player-1" name="team-a-player-1" data-form-field="team-a-player-1" required="" id="team-a-player-1" />
+                            </div>
+                            <div class="row left-court-right-service-area">
+                                <div class="container-fluid left-court-right-player-container">
+                                    <div class="player-font-dropdown">
+                                        <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
+                                            <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive team-a-player-2-img">
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="blue-player-font" href="#">Blue</a></li>
+                                            <li><a class="green-player-font" href="#">Green</a></li>
+                                            <li><a class="pink-player-font" href="#">Pink</a></li>
+                                            <li><a class="red-player-font" href="#">Red</a></li>
+                                            <li><a class="yellow-player-font" href="#">Yellow</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img id="left-court-right-side-shuttle" class="left-court-shuttles" alt="left-court-shuttles" src="assets/images/left-shuttle.png" >
+                                <input type="text" class="form-control control-border team-a-player-2" name="team-a-player-2" data-form-field="team-a-player-2" required="" id="team-a-player-2" />
+                            </div>
+                        </div>
+                        <div class="col left-net-area">
+                        </div>
                         <div class="col right-net-area">
                         </div>
                         <div class="col right-court-area">
                             <div class="row right-court-right-service-area">
-                                <div class="container right-court-right-player-container">
+                                <div class="container-fluid right-court-right-player-container">
                                     <div class="player-font-dropdown">
                                         <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
                                             <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive team-b-player-2-img">
@@ -164,7 +165,7 @@
                                 <input type="text" class="form-control control-border team-b-player-2" name="team-b-player-2" data-form-field="team-b-player-2" required="" id="team-b-player-2" />
                             </div>
                             <div class="row right-court-left-service-area">
-                                <div class="container right-court-left-player-container">
+                                <div class="container-fluid right-court-left-player-container">
                                     <div class="player-font-dropdown">
                                         <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
                                             <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive team-b-player-1-img">
