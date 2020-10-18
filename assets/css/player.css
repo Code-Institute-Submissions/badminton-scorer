@@ -3,27 +3,41 @@
     width: auto;
     padding: 0;
 }
-
+/*
 .right-court-right-player-container, .left-court-left-player-container {
     margin-top: 40px;
 }
 .right-court-left-player-container, .left-court-right-player-container  {
     margin-top: 20px;
 }
-
-.team-a-player-1-img, .team-b-player-2-img {
-    bottom: 50px;
-}
-.team-a-player-2-img, .team-b-player-1-img {
-    bottom: 95px;
-}
-
+*/
 .img-responsive {
     left: 50%;
 }
 
+.player-font-dropdown {
+    position: relative;
+}
+.team-a-player-1-img, .team-b-player-2-img,
+.team-a-player-2-img, .team-b-player-1-img {
+    position: absolute;
+    top: 0;
+}
+
+.player-font-dropdown > .dropdown-menu {
+    background-color: #9fb19f;
+    opacity: 0.8;
+    transform: translate3d(80px, 10px, 10px)!important;
+}
+
 .player-font-dropdown > ul > li {
-    font-size: 1rem;
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding: 2px;
+}
+
+.player-font-dropdown > ul > li > a {
+    padding: 15px;
 }
 
 .player-drop-down-toggle {
@@ -66,75 +80,36 @@
     position: fixed;
     text-align: center;
 }
-.team-a-player-1 {
-    left: 80px;
-    margin-top: 130px;
-}
-.team-a-player-2 {
-    left: 80px;
-    margin-top: 110px;
-}
-.team-b-player-1 {
-    left: 20px;
-    margin-top: 110px;
-}
-.team-b-player-2 {
-    left: 20px;
-    margin-top: 130px;
-}
-@media only screen and (min-height: 780px) and (min-width: 1024px) {
-    .team-a-player-2-img, .team-b-player-1-img {
-        bottom: 60px;
-    }
-    .right-court-right-player-container, .left-court-left-player-container {
-        margin-top: 60px;
-    }
-}
-@media only screen and (max-height: 768px) and (max-width: 1024px) {
-    .team-a-player-2-img, .team-b-player-1-img {
-        bottom: 50px;
-    }
-    .right-court-right-player-container, .left-court-left-player-container {
-        margin-top: 60px;
-    }
+
+.top-court-players {
+    top: 50px;
 }
 
-@media only screen and (max-height: 540px) and (min-width: 600px) {
-    .team-a-player-2-img, .team-b-player-1-img {
-        bottom: 50px;
-    }
-    .right-court-right-player-container, .left-court-left-player-container {
-        margin-top: 40px;
-    }
-    .right-court-left-player-container, .left-court-right-player-container {
-        margin-top: 20px;
+.bottom-court-players {
+    top: 10px;
+}
+@media only screen and (min-height: 280px) {
+    .top-court-players {
+        top: 20px;
     }
 }
-@media only screen and (max-height: 320px) and (min-width: 500px) {
-    .team-a-player-2-img, .team-b-player-1-img {
-        bottom: 50px;
-    }
-    .right-court-right-player-container, .left-court-left-player-container {
-        margin-top: 35px;
-    }
-    .right-court-left-player-container, .left-court-right-player-container {
-        margin-top: 10px;
+@media only screen and (min-height: 360px) {
+    .top-court-players {
+        top: 30px;
     }
 }
-@media only screen and (max-height: 412px) {
-    .team-a-player-2-img, .team-b-player-1-img {
-        bottom: 50px;
-    }
-    .right-court-left-player-container, .left-court-right-player-container {
-        margin-top: 15px;
+@media only screen and (min-height: 540px) {
+    .top-court-players {
+        top: 40px;
     }
 }
-
-@media only screen and (max-height: 540px) and (max-width: 720px) {
-    .team-a-player-2-img, .team-b-player-1-img {
-        bottom: 30px;
+@media only screen and (min-height: 600px) {
+    .top-court-players {
+        top: 50px;
     }
-    .right-court-right-player-container, .left-court-left-player-container {
-        margin-top: 60px;
+}
+@media only screen and (min-height: 720px) {
+    .top-court-players {
+        top: 70px;
     }
 }

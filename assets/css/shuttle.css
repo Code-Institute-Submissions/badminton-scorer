@@ -21,12 +21,10 @@
 
 .left-court-shuttles {
     height: 9.5vh;   
-    left: 60%;
 }
 
 .right-court-shuttles {
     height: 11vh;   
-    left: 40%;
 }
 @media only screen and (min-height: 780px) and (min-width: 1024px) {
 }

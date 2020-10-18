@@ -41,4 +41,11 @@ $("#full-interval-seconds").keyup(function() {
 // This will automatically position the Setup Menu element to the center if the window is resize.
 function centerMenuSetting() {
     $(`.setup-menu-option`).css("left", ($(`.master-container`).width()) / 2 - ($(`.setup-menu-option`).width() / 2));
+    $(`.left-court-shuttles`).css("left", ($(".left-court-left-service-area").width() / 2) + $(`.left-court-shuttles`).width() / 2);
+    $(`.right-court-shuttles`).css("left", ($(".right-court-left-service-area").width() / 2) - $(`.right-court-shuttles`).width() / 2);
 }
+
+// Check for orientation changes
+window.addEventListener("orientationchange", function() {
+        centerMenuSetting();
+}, false);

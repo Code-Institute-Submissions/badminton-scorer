@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="assets/css/shuttle.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/player.css" type="text/css" />
     </head>
-    <body onresize="centerMenuSetting()">
+    <body onresize="centerMenuSetting()" onload="centerMenuSetting()">
         <header>
             <section class="container-fluid score-board-container">
                 <section class="container-fluid left-player-container">
@@ -80,7 +80,7 @@
                             </div>
                             <div class="row left-court-left-service-area">
                                 <div class="container-fluid left-court-left-player-container">
-                                    <div class="player-font-dropdown">
+                                    <div class="player-font-dropdown top-court-players">
                                         <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
                                             <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive team-a-player-1-img">
                                             <span class="caret"></span>
@@ -95,11 +95,11 @@
                                     </div>
                                 </div>
                                 <img id="left-court-left-side-shuttle" class="left-court-shuttles" alt="left-court-shuttles" src="assets/images/left-shuttle.png" >
-                                <input type="text" class="form-control control-border team-a-player-1" name="team-a-player-1" data-form-field="team-a-player-1" required="" id="team-a-player-1" />
+                                <!--input type="text" class="form-control control-border team-a-player-1" name="team-a-player-1" data-form-field="team-a-player-1" required="" id="team-a-player-1" /-->
                             </div>
                             <div class="row left-court-right-service-area">
                                 <div class="container-fluid left-court-right-player-container">
-                                    <div class="player-font-dropdown">
+                                    <div class="player-font-dropdown bottom-court-players">
                                         <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
                                             <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive team-a-player-2-img">
                                             <span class="caret"></span>
@@ -114,7 +114,7 @@
                                     </div>
                                 </div>
                                 <img id="left-court-right-side-shuttle" class="left-court-shuttles" alt="left-court-shuttles" src="assets/images/left-shuttle.png" >
-                                <input type="text" class="form-control control-border team-a-player-2" name="team-a-player-2" data-form-field="team-a-player-2" required="" id="team-a-player-2" />
+                                <!--input type="text" class="form-control control-border team-a-player-2" name="team-a-player-2" data-form-field="team-a-player-2" required="" id="team-a-player-2" /-->
                             </div>
                         </div>
                         <div class="col left-net-area">
@@ -124,7 +124,7 @@
                         <div class="col right-court-area">
                             <div class="row right-court-right-service-area">
                                 <div class="container-fluid right-court-right-player-container">
-                                    <div class="player-font-dropdown">
+                                    <div class="player-font-dropdown top-court-players">
                                         <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
                                             <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive team-b-player-2-img">
                                             <span class="caret"></span>
@@ -139,11 +139,11 @@
                                     </div>
                                 </div>
                                 <img id="right-court-right-side-shuttle" class="right-court-shuttles" alt="right-court-shuttles" src="assets/images/right-shuttle.png">
-                                <input type="text" class="form-control control-border team-b-player-2" name="team-b-player-2" data-form-field="team-b-player-2" required="" id="team-b-player-2" />
+                                <!--input type="text" class="form-control control-border team-b-player-2" name="team-b-player-2" data-form-field="team-b-player-2" required="" id="team-b-player-2" /-->
                             </div>
                             <div class="row right-court-left-service-area">
                                 <div class="container-fluid right-court-left-player-container">
-                                    <div class="player-font-dropdown">
+                                    <div class="player-font-dropdown bottom-court-players">
                                         <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
                                             <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive team-b-player-1-img">
                                             <span class="caret"></span>
@@ -158,7 +158,7 @@
                                     </div>
                                 </div>
                                 <img id="right-court-left-side-shuttle" class="right-court-shuttles" alt="right-court-shuttles" src="assets/images/right-shuttle.png" >
-                                <input type="text" class="form-control control-border team-b-player-1" name="team-b-player-1" data-form-field="team-b-player-1" required="" id="team-b-player-1" />
+                                <!--input type="text" class="form-control control-border team-b-player-1" name="team-b-player-1" data-form-field="team-b-player-1" required="" id="team-b-player-1" /-->
                             </div>
                             <div class="col right-court-long-service-line">
                             </div>
