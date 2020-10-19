@@ -3,7 +3,7 @@ var playerA = new Player("Player A", "blue");
 var playerB = new Player("Player B", "blue");
 var playerC = new Player("Player C", "blue");
 var playerD = new Player("Player D", "blue");
-var matchType = 1;
+var gameMatchType = 1;
 
 $('a').click(function() {
     console.log($(this).text().toLowerCase());
@@ -25,10 +25,7 @@ $('a').click(function() {
 });
 
 // Variable to hold the macth type Singles/Doubles
-function showHidePlayers(option, type) {
-    console.log(option, type);
-    matchType = type;
-    console.log(matchType);
+function showHidePlayers(option, matchType) {
     if(option == 'hide') {
         $(`.left-court-left-player-container`).hide();
         $(`.team-a-player-1`).hide();
@@ -44,7 +41,8 @@ function showHidePlayers(option, type) {
         $(`.team-b-player-1`).show();
         $(`#team-b-player-1`).show();
     }
-}
+    gameMatchType = matchType;
+};
 
 function Player (name, color) {
     this.name = name;

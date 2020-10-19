@@ -9,6 +9,7 @@ $("document").ready(function () {
     $(`#team-b-player-1`).hide();
     $(`#left-court-right-side-shuttle`).show();
 });
+
 // Start Source https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
 function validate(interval, evt) {
   var theEvent = evt || window.event;
@@ -72,7 +73,6 @@ function gameStart() {
     $(`#team-a-player-2`).attr("disabled", "disabled");
     $(`#team-b-player-1`).attr("disabled", "disabled");
     $(`#team-b-player-2`).attr("disabled", "disabled");
-
     startGame = true;
 
     //From this block of codes need to move when user press Start Match button

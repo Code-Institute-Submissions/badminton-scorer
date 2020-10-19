@@ -27,8 +27,7 @@ function incrementScore(scoreSide) {
         console.log("Game not started yet!")
         return;
     };
-    console.log(matchType);
-    if (matchType = 1) {
+    if (gameMatchType == 1) {
         $(`#team-a-player-1`).val($(`#team-a-player-2`).val());
         $(`.team-a-player-1-img`).attr("src", $(`.team-a-player-2-img`).attr("src"));
         $(`#team-b-player-1`).val($(`#team-b-player-2`).val());
@@ -38,7 +37,7 @@ function incrementScore(scoreSide) {
         teamAScore++;
         if (teamAScore % 2 == 0) {
             showHideShuttle(`${scoreSide}`, 'right');
-            if (matchType = 1) {
+            if (gameMatchType == 1) {
                 $(`.left-court-right-player-container`).show();
                 $(`.team-a-player-2`).show();
                 $(`#team-a-player-2`).show();
@@ -54,7 +53,7 @@ function incrementScore(scoreSide) {
             }
         } else {
             showHideShuttle(`${scoreSide}`, 'left');
-            if (matchType = 1) {
+            if (gameMatchType == 1) {
                 $(`.left-court-right-player-container`).hide();
                 $(`.team-a-player-2`).hide();
                 $(`#team-a-player-2`).hide();
@@ -90,7 +89,7 @@ function incrementScore(scoreSide) {
         teamBScore++;
         if (teamBScore % 2 == 0) {
             showHideShuttle(`${scoreSide}`, 'right');
-            if (matchType = 1) {
+            if (gameMatchType == 1) {
                 $(`.left-court-right-player-container`).show();
                 $(`.team-a-player-2`).show();
                 $(`#team-a-player-2`).show();
@@ -106,7 +105,7 @@ function incrementScore(scoreSide) {
             }
         } else {
             showHideShuttle(`${scoreSide}`, 'left');
-            if (matchType = 1) {
+            if (gameMatchType == 1) {
                 $(`.left-court-right-player-container`).hide();
                 $(`.team-a-player-2`).hide();
                 $(`#team-a-player-2`).hide();
