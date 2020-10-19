@@ -84,6 +84,7 @@
 
 .right-team-player {
     left: 10px;
+    text-align: end;
 }
 
 .form-control {

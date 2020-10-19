@@ -1,8 +1,8 @@
 //Instantiate each player with default names and icon color
 var playerA = new Player("Player A", "blue");
-var playerB = new Player("Player A", "blue");
-var playerC = new Player("Player A", "blue");
-var playerD = new Player("Player A", "blue");
+var playerB = new Player("Player B", "blue");
+var playerC = new Player("Player C", "blue");
+var playerD = new Player("Player D", "blue");
 
 $('a').click(function(player) {
     console.log($(this).text().toLowerCase());
@@ -48,4 +48,20 @@ function Player (name, color) {
 
 $('#team-a-player-1').on("change", function() { 
     playerA.name = this.value;
+    $(`#team-a-player-1`).attr("Value", this.value);
+});
+
+$('#team-a-player-2').on("change", function() { 
+    playerB.name = this.value;
+    $(`#team-a-player-2`).attr("Value", this.value);
+});
+
+$('#team-b-player-1').on("change", function() { 
+    playerB.name = this.value;
+    $(`#team-b-player-1`).attr("Value", this.value);
+});
+
+$('#team-b-player-2').on("change", function() { 
+    playerB.name = this.value;
+    $(`#team-b-player-2`).attr("Value", this.value);
 });

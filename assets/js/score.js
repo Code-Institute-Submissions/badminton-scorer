@@ -4,7 +4,7 @@ var serviceOver = 2;
 var pending = false;
 var startGame = false;
 var player = {};
-
+var numberOfGames = 0;
 
 function incrementScoreDelay(scoreSide) {
     $(`.left-scorer`).prop("disabled", true);
@@ -37,7 +37,9 @@ function incrementScore(scoreSide) {
         if (scoreSide == 'left' && serviceOver == 'left') {
             speakThisMsg = "Service  Over";
             window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
-        }
+        } else {
+            switchPlayer(`${scoreSide}`);
+        };
         speakThisMsg = "Score";
         window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
         if (teamAScore == teamBScore) {
@@ -59,7 +61,9 @@ function incrementScore(scoreSide) {
         if (scoreSide == 'right' && serviceOver == 'right') {
             speakThisMsg = "Service  Over";
             window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
-        }
+        } else {
+            switchPlayer(`${scoreSide}`);
+        };
         speakThisMsg = "Score";
         window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
         if (teamBScore == teamAScore) {
@@ -78,3 +82,27 @@ function incrementScore(scoreSide) {
     return;
 };
 
+function switchPlayer(scoreSide) {
+    var tempName = "";
+    var tempColor = "";
+    if (scoreSide == 'left') {
+        tempName = $(`#team-a-player-1`).val();
+        tempColor = $(`.team-a-player-1-img`).attr("src");
+        
+        $(`#team-a-player-1`).val($(`#team-a-player-2`).val());
+        $(`.team-a-player-1-img`).attr("src", $(`.team-a-player-2-img`).attr("src"));
+        
+        $(`#team-a-player-2`).val(tempName);
+        $(`.team-a-player-2-img`).attr("src", tempColor);
+    } else if (scoreSide == 'right') {
+        tempName = $(`#team-b-player-1`).val();
+        tempColor = $(`.team-b-player-1-img`).attr("src");
+        
+        $(`#team-b-player-1`).val($(`#team-b-player-2`).val());
+        $(`.team-b-player-1-img`).attr("src", $(`.team-b-player-2-img`).attr("src"));
+        
+        $(`#team-b-player-2`).val(tempName);
+        $(`.team-b-player-2-img`).attr("src", tempColor);
+    };
+
+};
