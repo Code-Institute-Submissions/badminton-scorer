@@ -41,7 +41,7 @@ $("#full-interval-seconds").keyup(function() {
 // This will automatically position the Setup Menu element to the center if the window is resize.
 function centerMenuSetting() {
     $(`.setup-menu-option`).css("left", ($(`.master-container`).width() / 2) - ($(`.setup-menu-option`).width() / 2));
-    $(`.setup-menu-option`).css("top", ($(`.master-container`).height() / 2) - $(`.setup-menu-option`).css.height());
+    $(`.setup-menu-option`).css("top", ($(`.master-container`).height() / 2) );
     $(`.left-court-shuttles`).css("left", ($(".left-court-left-service-area").width() / 2) + $(`.left-court-shuttles`).width() / 2);
     $(`.right-court-shuttles`).css("left", ($(".right-court-left-service-area").width() / 2) - $(`.right-court-shuttles`).width() / 2);
     $(`.team-player`).width($(`.left-court-left-service-area`).width() * 0.5);
@@ -64,10 +64,10 @@ function gameStart() {
     startGame = true;
 
     //Instantiate each player with names and icon color
-    let playerA = new Player();
-    let playerB = new Player();
-    let playerC = new Player();
-    let playerD = new Player();
+    let playerA = new Player("Player A", "blue");
+    let playerB = new Player("Player A", "blue");
+    let playerC = new Player("Player A", "blue");
+    let playerD = new Player("Player A", "blue");
 
     //From this block of codes need to move when user press Start Match button
     if (teamAScore == 0 && teamBScore == 0) {

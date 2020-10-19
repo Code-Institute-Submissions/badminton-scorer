@@ -1,23 +1,9 @@
-#left-court-left-side-shuttle {
-    top: 40px;
-    display: none;
-}
-
-#left-court-right-side-shuttle {
-    bottom: 110px;
-    display: none;
-}
-
-#right-court-left-side-shuttle {
-    bottom: 110px;
-    display: none;
-}
-
+#left-court-left-side-shuttle,
+#left-court-right-side-shuttle,
+#right-court-left-side-shuttle,
 #right-court-right-side-shuttle {
-    top: 40px;
     display: none;
 }
-
 
 .left-court-shuttles {
     height: 9.5vh;   
@@ -25,16 +11,6 @@
 
 .right-court-shuttles {
     height: 11vh;   
-}
-@media only screen and (min-height: 780px) and (min-width: 1024px) {
-}
-@media only screen and (max-height: 768px) and (max-width: 1024px) {
-}
-@media only screen and (max-height: 540px) and (min-width: 600px) {
-}
-@media only screen and (max-height: 320px) and (min-width: 500px) {
-}
-@media only screen and (max-height: 412px) {
 }
 @media only screen and (max-height: 540px) and (max-width: 720px) {
     #left-court-right-side-shuttle {
