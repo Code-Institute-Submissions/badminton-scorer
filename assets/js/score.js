@@ -38,6 +38,12 @@ function incrementScore(scoreSide) {
                 $(`.left-court-left-player-container`).hide();
                 $(`.team-a-player-1`).hide();
                 $(`#team-a-player-1`).hide();
+                $(`.right-court-right-player-container`).show();
+                $(`.team-b-player-2`).show();
+                $(`#team-b-player-2`).show();
+                $(`.right-court-left-player-container`).hide();
+                $(`.team-b-player-1`).hide();
+                $(`#team-b-player-1`).hide();
             }
         } else {
             showHideShuttle(`${scoreSide}`, 'left');
@@ -48,6 +54,12 @@ function incrementScore(scoreSide) {
                 $(`.left-court-left-player-container`).show();
                 $(`.team-a-player-1`).show();
                 $(`#team-a-player-1`).show();
+                $(`.right-court-right-player-container`).hide();
+                $(`.team-b-player-2`).hide();
+                $(`#team-b-player-2`).hide();
+                $(`.right-court-left-player-container`).show();
+                $(`.team-b-player-1`).show();
+                $(`#team-b-player-1`).show();
             }
         };
         if (scoreSide == 'left' && serviceOver == 'left') {
@@ -72,6 +84,12 @@ function incrementScore(scoreSide) {
         if (teamBScore % 2 == 0) {
             showHideShuttle(`${scoreSide}`, 'right');
             if (matchType = 1) {
+                $(`.left-court-right-player-container`).show();
+                $(`.team-a-player-2`).show();
+                $(`#team-a-player-2`).show();
+                $(`.left-court-left-player-container`).hide();
+                $(`.team-a-player-1`).hide();
+                $(`#team-a-player-1`).hide();
                 $(`.right-court-right-player-container`).show();
                 $(`.team-b-player-2`).show();
                 $(`#team-b-player-2`).show();
@@ -82,6 +100,12 @@ function incrementScore(scoreSide) {
         } else {
             showHideShuttle(`${scoreSide}`, 'left');
             if (matchType = 1) {
+                $(`.left-court-right-player-container`).hide();
+                $(`.team-a-player-2`).hide();
+                $(`#team-a-player-2`).hide();
+                $(`.left-court-left-player-container`).show();
+                $(`.team-a-player-1`).show();
+                $(`#team-a-player-1`).show();
                 $(`.right-court-right-player-container`).hide();
                 $(`.team-b-player-2`).hide();
                 $(`#team-b-player-2`).hide();
