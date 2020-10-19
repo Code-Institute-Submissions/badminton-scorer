@@ -173,12 +173,12 @@
             </div>
             <div class="setup-menu-option">
                 <div class="match-type-container">
-                    <label class="radio-container" onclick="showHidePlayers('hide')">Singles
-                        <input type="radio" checked="checked" name="match-type">
+                    <label class="radio-container" onclick="showHidePlayers('hide', '1')">Singles
+                        <input type="radio" checked="checked" name="match-type" id="single-match">
                         <span class="player-checkmark"></span>
                     </label>
-                    <label class="radio-container" onclick="showHidePlayers('show')">Doubles
-                        <input type="radio" name="match-type">
+                    <label class="radio-container" onclick="showHidePlayers('show', '2')">Doubles
+                        <input type="radio" name="match-type" id="double-match">
                         <span class="player-checkmark"></span>
                     </label>
                 </div>

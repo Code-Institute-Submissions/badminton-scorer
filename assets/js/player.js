@@ -3,8 +3,9 @@ var playerA = new Player("Player A", "blue");
 var playerB = new Player("Player B", "blue");
 var playerC = new Player("Player C", "blue");
 var playerD = new Player("Player D", "blue");
+var matchType = 1;
 
-$('a').click(function(player) {
+$('a').click(function() {
     console.log($(this).text().toLowerCase());
     $(this).parent().parent().prev().children('img').attr("src", `assets/images/${$(this).text().toLowerCase()}-player.png`);
     var classNames = $(this).parent().parent().parent().parent().attr("class").split(" ");
@@ -23,11 +24,12 @@ $('a').click(function(player) {
     };
 });
 
-// Varriable to hold the macth type Singles/Doubles
-var matchType = 0;
-function showHidePlayers(option) {
+// Variable to hold the macth type Singles/Doubles
+function showHidePlayers(option, type) {
+    console.log(option, type);
+    matchType = type;
+    console.log(matchType);
     if(option == 'hide') {
-        matchType = 1;
         $(`.left-court-left-player-container`).hide();
         $(`.team-a-player-1`).hide();
         $(`#team-a-player-1`).hide();
@@ -35,7 +37,6 @@ function showHidePlayers(option) {
         $(`.team-b-player-1`).hide();
         $(`#team-b-player-1`).hide();
     } else {
-        matchType = 2;
         $(`.left-court-left-player-container`).show();
         $(`.team-a-player-1`).show();
         $(`#team-a-player-1`).show();

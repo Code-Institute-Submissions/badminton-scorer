@@ -73,12 +73,6 @@ function gameStart() {
     $(`#team-b-player-1`).attr("disabled", "disabled");
     $(`#team-b-player-2`).attr("disabled", "disabled");
 
-    if (matchType = 1) {
-        $(`#team-a-player-1`).val($(`#team-a-player-2`).val());
-        $(`.team-a-player-1-img`).attr("src", $(`.team-a-player-2-img`).attr("src"));
-        $(`#team-b-player-1`).val($(`#team-b-player-2`).val());
-        $(`.team-b-player-1-img`).attr("src", $(`.team-b-player-2-img`).attr("src"));
-    };
     startGame = true;
 
     //From this block of codes need to move when user press Start Match button

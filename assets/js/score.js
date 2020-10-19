@@ -27,6 +27,7 @@ function incrementScore(scoreSide) {
         console.log("Game not started yet!")
         return;
     };
+    console.log(matchType);
     if (matchType = 1) {
         $(`#team-a-player-1`).val($(`#team-a-player-2`).val());
         $(`.team-a-player-1-img`).attr("src", $(`.team-a-player-2-img`).attr("src"));
