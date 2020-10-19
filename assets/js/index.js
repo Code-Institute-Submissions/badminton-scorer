@@ -3,8 +3,10 @@ $("document").ready(function () {
     $(`.right-scorer`).attr("disabled", "disabled");
     $(`.left-court-left-player-container`).hide();
     $(`.team-a-player-1`).hide();
+    $(`#team-a-player-1`).hide();
     $(`.right-court-left-player-container`).hide();
     $(`.team-b-player-1`).hide();
+    $(`#team-b-player-1`).hide();
     $(`#left-court-right-side-shuttle`).show();
 });
 // Start Source https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
@@ -44,6 +46,10 @@ function centerMenuSetting() {
     $(`.setup-menu-option`).css("top", ($(`.master-container`).height() / 2) );
     $(`.left-court-shuttles`).css("left", ($(".left-court-left-service-area").width() / 2) + $(`.left-court-shuttles`).width() / 2);
     $(`.right-court-shuttles`).css("left", ($(".right-court-left-service-area").width() / 2) - $(`.right-court-shuttles`).width() / 2);
+    $(`#left-court-left-side-shuttle`).css("top", ($(`.left-court-left-service-area`).height() / 6));
+    $(`#left-court-right-side-shuttle`).css("top", $(`.left-court-right-service-area`).height());
+    $(`#right-court-right-side-shuttle`).css("top", ($(`.left-court-left-service-area`).height() / 6));
+    $(`#right-court-left-side-shuttle`).css("top", $(`.left-court-right-service-area`).height());
     $(`.team-player`).width($(`.left-court-left-service-area`).width() * 0.5);
     $(`#team-a-player-1`).css("top", ($(`.master-container`).height() / 2) - $(`#team-a-player-1`).height() * 4);
     $(`#team-b-player-2`).css("top", ($(`.master-container`).height() / 2) - $(`#team-a-player-2`).height() * 4);
@@ -61,13 +67,12 @@ function gameStart() {
     $(`.right-scorer`).attr("disabled", "enabled");
     $(".player-drop-down-toggle").prop("disabled", true);
     $(`.setup-menu-option`).hide();
-    startGame = true;
 
-    //Instantiate each player with names and icon color
-    let playerA = new Player("Player A", "blue");
-    let playerB = new Player("Player A", "blue");
-    let playerC = new Player("Player A", "blue");
-    let playerD = new Player("Player A", "blue");
+    $(`#team-a-player-1`).attr("disabled", "disabled");
+    $(`#team-a-player-2`).attr("disabled", "disabled");
+    $(`#team-b-player-1`).attr("disabled", "disabled");
+    $(`#team-b-player-2`).attr("disabled", "disabled");
+    startGame = true;
 
     //From this block of codes need to move when user press Start Match button
     if (teamAScore == 0 && teamBScore == 0) {
@@ -82,9 +87,4 @@ function gameStart() {
 
     //To this block of codes need to move when user press Start Match button
     return;
-};
-
-function Player (name, color) {
-    this.name = name;
-    this.color = color;
 };

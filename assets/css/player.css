@@ -3,14 +3,6 @@
     width: auto;
     padding: 0;
 }
-/*
-.right-court-right-player-container, .left-court-left-player-container {
-    margin-top: 40px;
-}
-.right-court-left-player-container, .left-court-right-player-container  {
-    margin-top: 20px;
-}
-*/
 .img-responsive {
     left: 50%;
 }
@@ -94,30 +86,27 @@
     left: 10px;
 }
 
+.form-control {
+    color: white;
+    font-weight: bolder;
+}
+.form-control:disabled, .form-control[readonly] {
+    background-color: #305930;
+    opacity: 1;
+    border: 0;
+}
+
 @media only screen and (min-height: 280px) {
     .top-court-players {
         top: 20px;
     }
 }
-/*
-@media only screen and (min-height: 360px) {
-    .top-court-players {
-        top: 30px;
-    }
-}
-*/
-.form-control {
-    color: white;
-    font-weight: bolder;
-}
-
 @media only screen and (max-height: 414px) {
     .team-player {
         height: 1.5rem;
         font-size: 0.7rem;
     }
 }
-
 @media only screen and (min-height: 540px) {
     .top-court-players {
         top: 40px;
