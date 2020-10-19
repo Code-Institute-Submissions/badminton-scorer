@@ -23,8 +23,11 @@ $('a').click(function(player) {
     };
 });
 
+// Varriable to hold the macth type Singles/Doubles
+var matchType = 0;
 function showHidePlayers(option) {
     if(option == 'hide') {
+        matchType = 1;
         $(`.left-court-left-player-container`).hide();
         $(`.team-a-player-1`).hide();
         $(`#team-a-player-1`).hide();
@@ -32,6 +35,7 @@ function showHidePlayers(option) {
         $(`.team-b-player-1`).hide();
         $(`#team-b-player-1`).hide();
     } else {
+        matchType = 2;
         $(`.left-court-left-player-container`).show();
         $(`.team-a-player-1`).show();
         $(`#team-a-player-1`).show();
