@@ -33,12 +33,14 @@
     background-color: #9fb19f;
     opacity: 0.8;
     transform: translate3d(80px, 10px, 10px)!important;
+    min-width: auto;
+    left: -4vh!important;
 }
 
 .player-font-dropdown > ul > li {
     font-weight: 900;
-    font-size: 1.5rem;
-    padding: 2px;
+    font-size: 2vh;
+    padding: 1vh;
 }
 
 .player-font-dropdown > ul > li > a {
@@ -54,6 +56,11 @@
     background-color: #305930;
     border-color: #305930;
 }
+
+.player-font-dropdown > .dropdown-menu >li:hover {
+    background-color: #f76606;
+}
+
 .green-player {
     height: 11vh;   
 }
@@ -91,8 +98,14 @@
     top: 10px;
 }
 
-.left-team-player {
+.left-team-player,
+.mini-left-team-player {
     right: 10px;
+    color: solid black!important;
+    font-size: 2vh;
+    padding: 0.5vh;
+    height: 4vh;
+    margin-top: 3vh;
 }
 
 .right-team-player {
@@ -119,6 +132,10 @@
 @media only screen and (min-height: 280px) {
     .top-court-players {
         top: 20px;
+    }
+    .left-team-player,
+    .mini-left-team-player {
+        margin-top: 1vh;
     }
 }
 @media only screen and (max-height: 414px) {

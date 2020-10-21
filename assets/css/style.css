@@ -107,7 +107,7 @@ li a {
 
 /* ----- Setup Settings ----- */
 #game-settings {
-    top: auto;
+    top: 20vh;
 }
 
 .modal-content {
@@ -115,6 +115,7 @@ li a {
     /*height: 50vh;*/
     padding-right: 0px;
     padding-left: 0px;
+    margin: 0l
     margin-right: 0;
     margin-left: 0;    
 }
@@ -123,7 +124,23 @@ li a {
     padding: 0.5rem;
 }
 
+.modal-header {
+    padding: 1vh;
+}
 
+.modal-header h4 {
+    font-size: 4vh;
+}
+
+.dropdown-item:hover {
+    cursor: pointer;
+    background-color: #f76606;
+}
+
+.dropdown-item:hover {
+    cursor: pointer;
+    background-color: #f76606;
+}
 /*
 @media only screen and (max-height: 380px) {
     .master-container {

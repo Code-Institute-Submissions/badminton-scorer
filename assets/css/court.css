@@ -248,7 +248,7 @@
     box-shadow: 1px 2px #888888;
     padding: 0;
     left: 0;
-    font-size: xx-large;
+    font-size: 4vh;
 }
 
 .start-match-btn:hover {
@@ -260,6 +260,7 @@
 .game-interval-container {
     border: 2px solid lightblue;
     box-shadow: 1px 2px #888888;
+    font-size: 4vh;
     
 }
 .game-interval-container {
@@ -272,7 +273,7 @@
 }
 .match-type-container, .server-side-container {
     width: 11vw;
-    padding: 2px 2px 0 0;
+    padding: 0.5vh 0.5vh 0 0;
 }
 
 
@@ -362,9 +363,24 @@
 	background: white;
 }
 
+@media only screen and (min-width: 576px) {
+    .modal-dialog {
+        width: auto;
+    }
+}
+
 @media only screen and (min-height: 200px) {
     .master-container {
         margin-top: 0;
+    }
+    .game-settings {
+        top: 10vh
+    }
+}
+
+@media only screen and (max-height: 360px) {
+    .game-settings {
+        top: 15vh
     }
 }
 
