@@ -43,6 +43,7 @@ $("#full-interval-seconds").keyup(function() {
 
 // This will automatically position the Setup Menu element to the center if the window is resize.
 function centerMenuSetting() {
+    /*
     $(`.setup-menu-option`).css("left", ($(`.master-container`).width() / 2) - ($(`.setup-menu-option`).width() / 2));
     $(`.setup-menu-option`).css("top", ($(`.master-container`).height() / 2) );
     $(`.left-court-shuttles`).css("left", ($(".left-court-left-service-area").width() / 2) + $(`.left-court-shuttles`).width() / 2);
@@ -56,6 +57,7 @@ function centerMenuSetting() {
     $(`#team-b-player-2`).css("top", ($(`.master-container`).height() / 2) - $(`#team-a-player-2`).height() * 4);
     $(`#team-a-player-2`).css("top", ($(`.master-container`).height()) - $(`#team-a-player-1`).height() * 6);
     $(`#team-b-player-1`).css("top", ($(`.master-container`).height()) - $(`#team-a-player-2`).height() * 6);
+    */
 };
 
 // Check for orientation changes

@@ -14,7 +14,8 @@
         <link rel="stylesheet" href="assets/css/shuttle.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/player.css" type="text/css" />
     </head>
-    <body onresize="centerMenuSetting()" onload="centerMenuSetting()">
+    <!--body onresize="centerMenuSetting()" onload="centerMenuSetting()"-->
+    <body>
         <header>
             <section class="container-fluid score-board-container">
                 <section class="container-fluid left-player-container">
@@ -245,6 +246,23 @@
                                     <div class="row mini-court-service-line">
                                     </div>
                                     <div class="row mini-court-service-area">
+                                        <div class="container-fluid mini-left-court-left-player-container">
+                                            <div class="player-font-dropdown mini-bottom-court-players">
+                                                <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
+                                                    <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive mini-team-a-player-1-img">
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="blue-player-font" href="#">Blue</a></li>
+                                                    <li><a class="green-player-font" href="#">Green</a></li>
+                                                    <li><a class="pink-player-font" href="#">Pink</a></li>
+                                                    <li><a class="red-player-font" href="#">Red</a></li>
+                                                    <li><a class="yellow-player-font" href="#">Yellow</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <img id="mini-left-court-left-side-shuttle" class="img-responsive mini-left-court-shuttles" alt="left-court-shuttles" src="assets/images/left-shuttle.png" >
+                                        <input type="text" class="form-control control-border mini-team-player mini-left-team-player" name="mini-team-a-player-1" data-form-field="mini-team-a-player-1" id="mini-team-a-player-1" value="" />
                                     </div>
                                     <div class="row mini-court-service-area">
                                     </div>
@@ -297,15 +315,13 @@
                         </div>
                         <div class="container-fluid game-interval-container">
                             <input type="checkbox" name="mid-interval-break" id="mid-interval-break">
-                            <label for="mid-interval-seconds" class="checkbox-container">Mid-Interval:
+                            <label for="mid-interval-seconds" class="checkbox-container">Mid-Interval (seconds):
                                 <input type="number" min="0" max="360" onkeypress="validate(event)" name="mid-interval-seconds" id="mid-interval-seconds">
                             </label>
-                                <p class="label-second">(seconds)</p>
                             <input type="checkbox" name="full-interval-break" id="full-interval-break">
-                            <label for="full-interval-seconds" class="checkbox-container">Full-Interval:
+                            <label for="full-interval-seconds" class="checkbox-container">Full-Interval (seconds):
                                 <input type="number" min="0" max="360" onkeypress="validate(event)" name="full-interval-seconds" id="full-interval-seconds">
                             </label>
-                                <p class="label-second">(seconds)</p>
                         </div>
                         <button class="start-match-btn" onclick="gameStart()">START MATCH</button>
                     </div>

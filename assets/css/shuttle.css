@@ -12,6 +12,19 @@
 .right-court-shuttles {
     height: 11vh;   
 }
+
+img#mini-left-court-left-side-shuttle,
+img#mini-left-court-right-side-shuttle {
+    left: 11vw;
+    height: 6.5vh;
+}
+
+img#mini-right-court-left-side-shuttle,
+img#mini-right-court-right-side-shuttle {
+    right: 11vw;
+    height: 8vh;   
+}
+
 @media only screen and (max-height: 540px) and (max-width: 720px) {
     #left-court-right-side-shuttle {
         bottom: 40px;

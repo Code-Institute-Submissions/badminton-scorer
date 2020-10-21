@@ -10,9 +10,22 @@
 .player-font-dropdown {
     position: relative;
 }
+
+.mini-team-a-player-1-img, .mini-team-b-player-2-img,
+.mini-team-a-player-2-img, .mini-team-b-player-1-img {
+    left: 0;
+    height: 8vh;   
+    position: fixed;
+    transform: translate(-50%, 0%);
+    opacity: 0.7;  
+}
+
 .team-a-player-1-img, .team-b-player-2-img,
-.team-a-player-2-img, .team-b-player-1-img {
+.team-a-player-2-img, .team-b-player-1-img,
+.mini-team-a-player-1-img, .mini-team-b-player-2-img,
+.mini-team-a-player-2-img, .mini-team-b-player-1-img {
     position: absolute;
+    left: 20px;
     top: 0;
 }
 
@@ -91,10 +104,16 @@
     color: white;
     font-weight: bolder;
 }
+
 .form-control:disabled, .form-control[readonly] {
     background-color: #305930;
     opacity: 1;
     border: 0;
+}
+
+/* ----- for the mini-court players ----- */
+.mini-left-team-player {
+
 }
 
 @media only screen and (min-height: 280px) {
