@@ -106,12 +106,93 @@ li a {
 }
 
 /* ----- Setup Settings ----- */
+#game-settings {
+    top: auto;
+}
+
+.modal-content {
+    background-color: #305930;
+    height: 50vh;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0;
+    margin-left: 0;    
+}
+
+.modal-body {
+    padding: 0.5rem;
+}
+
+.mini-court-settings {
+    width: 50vw;
+    height: 30vh;
+    object-fit: contain;
+    margin-right: 0;
+    margin-left: 0;    
+}
+
+.mini-court {
+    padding: 0px;
+    border: 2px solid white;
+}
+
+.mini-left-court-long-service-line,
+.mini-left-court-area,
+.mini-left-net-area,
+.mini-right-net-area,
+.mini-right-court-area,
+.mini-right-court-long-service-line {
+    height: 30vh;
+    border: 1px solid white;
+}
+
+.mini-left-court-long-service-line,
+.mini-right-court-long-service-line {
+    border: 1px solid white;
+    max-width: 4vw;
+}
+
+.mini-left-court-area,
+.mini-right-court-area{
+    border: 1px solid white;
+    max-width: 14vw;
+}
+
+.mini-left-net-area,
+.mini-right-net-area {
+    border: 1px solid white;
+    max-width: 7vw;
+}
+
+.mini-left-net-area {
+    border-right-style: dashed;
+}
+
+.mini-right-net-area {
+    border-left-style: dashed;
+}
+
+.mini-corner-service-line,
+.mini-court-service-line {
+    /*width: 3vh;*/
+    height: 3vh;
+    border: 1px solid white;
+}
+
+.mini-court-back-service-area,
+.mini-court-service-area {
+    height: 12vh;
+    border: 1px solid white;
+}
+
 .setup-menu-option,
 .match-type-container,
 .server-side-container,
 .game-interval-container {
+    /*
     position: absolute;
     z-index: 999;
+    */
 }
 .server-side-container {
     top: 68px;
@@ -143,7 +224,7 @@ li a {
     background-color: lightblue;
     box-shadow: 1px 2px #888888;
     position: absolute;
-    top: 165px;
+    bottom: 0px;
     padding: 0;
     left: 0;
 }
