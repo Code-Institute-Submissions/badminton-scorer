@@ -137,16 +137,11 @@
 
 .mini-court-settings {
     position: relative;
-    width: 50vw;
     /*height: 30vh;*/
     object-fit: contain;
+    left: 2vh;
     margin-right: 0;
     margin-left: 0;    
-}
-
-.mini-court {
-    padding: 0px;
-    border: 2px solid white;
 }
 
 .mini-left-court-long-service-line,
@@ -156,25 +151,25 @@
 .mini-right-court-area,
 .mini-right-court-long-service-line {
     height: 30vh;
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 .mini-left-court-long-service-line,
 .mini-right-court-long-service-line {
     border: 1px solid white;
-    max-width: 4vw;
+    max-width: 3vw;
 }
 
 .mini-left-court-area,
 .mini-right-court-area{
     border: 1px solid white;
-    max-width: 14vw;
+    max-width: 11vw;
 }
 
 .mini-left-net-area,
 .mini-right-net-area {
     border: 1px solid white;
-    max-width: 7vw;
+    max-width: 6vw;
 }
 
 .mini-left-net-area {
@@ -199,37 +194,58 @@
     object-fit: contain;
 }
 
+.mini-right-court-left-player-container,
+.mini-right-court-right-player-container  {
+    text-align: end;
+}
+
+.mini-left-court-left-player-container,
+.mini-left-court-right-player-container  {
+    text-align: left;
+}
+
+
 .match-type-container,
 .server-side-container,
-.game-interval-container {
+.game-interval-container,
+.game-voice-over {
     position: absolute;
     z-index: 999;
 }
 
 .match-type-container {
-    left: 51vw;
-    top: 0.8vh;
+    left: 41vw;
+    top: 1.4vh;
 }
 
 .server-side-container {
-    left: 62vw;
-    top: 0.8vh;
+    left: 49vw;
+    top: 1.4vh;
 }
 
 .game-interval-container {
-    top: 9vh;
-    left: 51vw;
-    width: 22vw;
-    height: 15vh;
-    color: black;
+    padding: 5px 0 5px 5px;
+    top: 14.4vh;
+    left: 41vw;
+    width: 16vw;
+   /* height: 15vh;*/
+}
+
+.game-voice-over {
+    top: 25.5vh;
+    left: 41vw;
+    width: 16vw;
+    height: 6.5vh;
+    padding-left: 0.5vh;
+    padding-top: 1vh;
 }
 
 #mid-interval-seconds,
 #full-interval-seconds {
-    width: 45px;
+    width: 3vw;
     padding: 0;
 }
-
+/*
 .setup-menu-option {
     width: 300px;
     height: 200px;
@@ -239,7 +255,7 @@
     top: 31vh;
     background-color: rgb(197, 95, 95);
 }
-
+*/
 .start-match-btn {
     position: relative;
     margin: 1vh 0vh 0vh 0vh;
@@ -257,22 +273,20 @@
 }
 
 .match-type-container, .server-side-container,
-.game-interval-container {
+.game-interval-container, .game-voice-over {
     border: 2px solid lightblue;
     box-shadow: 1px 2px #888888;
-    font-size: 4vh;
+    font-size: 2vh;
     
 }
-.game-interval-container {
-    padding: 5px 0 5px 5px;
-}
+
 .label-second {
     margin: 0;
     padding: 0;
     border: 0;
 }
 .match-type-container, .server-side-container {
-    width: 11vw;
+    width: 8vw;
     padding: 0.5vh 0.5vh 0 0;
 }
 
@@ -282,15 +296,15 @@
     display: block;
     position: relative;
     padding: 0px;
-    padding-left: 25px;
-    /*margin-bottom: 12px;*/
+    padding-left: 3vh;
+    margin-left: 1vh;
     cursor: pointer;
     /*font-size: 22px;*/
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: black
+    /*color: black*/
 }
 
 /* Hide the browser's default radio button */
@@ -305,8 +319,8 @@
     position: absolute;
     top: 0;
     left: 2px;
-    height: 20px;
-    width: 20px;
+    height: 2vh;
+    width: 2vh;
     background-color: #eee;
     border-radius: 50%;
 }
@@ -315,8 +329,8 @@
     position: absolute;
     top: 0;
     left: 2px;
-    height: 20px;
-    width: 20px;
+    height: 2vh;
+    width: 2vh;
     background-color: #eee;
     border-radius: 50%;
 }
@@ -355,20 +369,38 @@
 /* Style the indicator (dot/circle) */
 .radio-container .player-checkmark:after,
 .radio-container .shuttle-checkmark:after {
- 	top: 6px;
-	left: 6px;
-	width: 8px;
-	height: 8px;
+ 	top: 0.6vh;
+	left: 0.6vh;
+	width: 0.8vh;
+	height: 0.8vh;
 	border-radius: 50%;
 	background: white;
 }
 
-@media only screen and (min-width: 576px) {
+input#full-interval-seconds {
+    margin-left: 0.2vh;
+}
+
+@media (min-width: 576px) {
     .modal-dialog {
-        width: auto;
+        max-width: 60vw;
+        margin-left: auto;
+        margin-right: auto'
     }
 }
 
+@media only screen and (min-width: 576px) {
+    .modal-dialog {
+        width: 60vw;
+    }
+}
+/*
+@media (min-width: 992px) {
+    .modal-lg {
+        max-width: 70vw;
+    }
+}
+*/
 @media only screen and (min-height: 200px) {
     .master-container {
         margin-top: 0;

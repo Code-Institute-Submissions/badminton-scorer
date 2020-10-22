@@ -15,14 +15,16 @@
 
 img#mini-left-court-left-side-shuttle,
 img#mini-left-court-right-side-shuttle {
-    left: 11vw;
+    position: absolute;
+    left: 4vw;
     height: 6.5vh;
 }
 
 img#mini-right-court-left-side-shuttle,
 img#mini-right-court-right-side-shuttle {
-    right: 11vw;
-    height: 8vh;   
+    position: absolute;
+    right: 0vw;
+    height: 7vh;   
 }
 
 @media only screen and (max-height: 540px) and (max-width: 720px) {

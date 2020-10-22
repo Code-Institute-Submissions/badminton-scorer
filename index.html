@@ -230,7 +230,8 @@
                         </button>
                     </div>
                     <div class="container-fluid modal-body">
-                        <div class="container-fluid mini-court-settings">
+                    <div class="row">
+                        <div class="col container-fluid mini-court-settings">
                             <div class="row mini-court">
                                 <div class="col mini-left-court-long-service-line">
                                     <div class="row mini-corner-service-line">
@@ -247,7 +248,7 @@
                                     </div>
                                     <div class="row mini-court-service-area">
                                         <div class="container-fluid mini-left-court-left-player-container">
-                                            <div class="player-font-dropdown mini-bottom-court-players">
+                                            <div class="player-font-dropdown mini-top-court-players">
                                                 <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
                                                     <img src="assets/images/blue-player.png" alt="dropdown image" class="img-responsive mini-team-a-player-1-img">
                                                     <span class="caret"></span>
@@ -265,6 +266,23 @@
                                         <input type="text" class="form-control control-border mini-team-player mini-left-team-player" name="mini-team-a-player-1" data-form-field="mini-team-a-player-1" id="mini-team-a-player-1" value="" />
                                     </div>
                                     <div class="row mini-court-service-area">
+                                        <div class="container-fluid mini-left-court-right-player-container">
+                                            <div class="player-font-dropdown mini-bottom-court-players">
+                                                <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
+                                                    <img src="assets/images/yellow-player.png" alt="dropdown image" class="img-responsive mini-team-a-player-2-img">
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="blue-player-font" href="#">Blue</a></li>
+                                                    <li><a class="green-player-font" href="#">Green</a></li>
+                                                    <li><a class="pink-player-font" href="#">Pink</a></li>
+                                                    <li><a class="red-player-font" href="#">Red</a></li>
+                                                    <li><a class="yellow-player-font" href="#">Yellow</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <img id="mini-left-court-right-side-shuttle" class="img-responsive mini-left-court-shuttles" alt="left-court-shuttles" src="assets/images/left-shuttle.png" >
+                                        <input type="text" class="form-control control-border mini-team-player mini-left-team-player" name="mini-team-a-player-2" data-form-field="mini-team-a-player-2" id="mini-team-a-player-2" value="" />
                                     </div>
                                     <div class="row mini-court-service-line">
                                     </div>
@@ -277,6 +295,23 @@
                                     <div class="row mini-court-service-area">
                                     </div>
                                     <div class="row mini-court-service-area">
+                                        <div class="container-fluid mini-right-court-left-player-container">
+                                            <div class="player-font-dropdown mini-bottom-court-players">
+                                                <button class="btn btn-primary dropdown-toggle player-drop-down-toggle" type="button" data-toggle="dropdown">
+                                                    <img src="assets/images/green-player.png" alt="dropdown image" class="img-responsive mini-team-b-player-1-img">
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="blue-player-font" href="#">Blue</a></li>
+                                                    <li><a class="green-player-font" href="#">Green</a></li>
+                                                    <li><a class="pink-player-font" href="#">Pink</a></li>
+                                                    <li><a class="red-player-font" href="#">Red</a></li>
+                                                    <li><a class="yellow-player-font" href="#">Yellow</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <img id="mini-right-court-left-side-shuttle" class="img-responsive mini-right-court-shuttles" alt="right-court-shuttles" src="assets/images/right-shuttle.png" >
+                                        <input type="text" class="form-control control-border mini-team-player mini-right-team-player" name="mini-team-b-player-1" data-form-field="mini-team-b-player-1" id="mini-team-b-player-1" value="" />
                                     </div>
                                     <div class="row mini-court-service-line">
                                     </div>
@@ -294,6 +329,7 @@
                             </div>
                         </div>
                         <div class="container-fluid match-type-container">
+                            <label>Match Type</label>
                             <label class="radio-container" onclick="showHidePlayers('hide', 1)">Singles
                                 <input type="radio" checked="checked" name="match-type" id="single-match">
                                 <span class="player-checkmark"></span>
@@ -304,26 +340,35 @@
                             </label>
                         </div>
                         <div class="container-fluid server-side-container">
-                            <label class="radio-container" onclick="showHideShuttle('left', 'right')">Left Server
+                            <label>Service</label>
+                            <label class="radio-container" onclick="showHideShuttle('left', 'right')">Left
                                 <input type="radio" checked="checked" name="service-side">
                                 <span class="shuttle-checkmark"></span>
                             </label>
-                            <label class="radio-container" onclick="showHideShuttle('right', 'right')">Right Server
+                            <label class="radio-container" onclick="showHideShuttle('right', 'right')">Right
                                 <input type="radio" name="service-side">
                                 <span class="shuttle-checkmark"></span>
                             </label>
                         </div>
                         <div class="container-fluid game-interval-container">
                             <input type="checkbox" name="mid-interval-break" id="mid-interval-break">
-                            <label for="mid-interval-seconds" class="checkbox-container">Mid-Interval (seconds):
-                                <input type="number" min="0" max="360" onkeypress="validate(event)" name="mid-interval-seconds" id="mid-interval-seconds">
-                            </label>
+                            <label for="mid-interval-seconds" class="checkbox-container">Mid-Interval (sec):
+                                <input type="number" min="0" max="360" onkeypress="validate(event)" name="mid-interval-seconds" id="mid-interval-seconds" value="60">
+                            </label><br>
                             <input type="checkbox" name="full-interval-break" id="full-interval-break">
-                            <label for="full-interval-seconds" class="checkbox-container">Full-Interval (seconds):
-                                <input type="number" min="0" max="360" onkeypress="validate(event)" name="full-interval-seconds" id="full-interval-seconds">
+                            <label for="full-interval-seconds" class="checkbox-container">Full-Interval (sec):
+                                <input type="number" min="0" max="360" onkeypress="validate(event)" name="full-interval-seconds" id="full-interval-seconds" value="120">
                             </label>
                         </div>
+                        <div class="container-fluid game-voice-over">
+                            <input type="checkbox" name="voice-over" id="voice-over" checked="Checked"> 
+                            <label for="voice-over" class="checkbox-container">Enable Voice Over   
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
                         <button class="start-match-btn" onclick="gameStart()">START MATCH</button>
+                    </div>
                     </div>
                 </div>
             </div>

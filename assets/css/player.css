@@ -4,7 +4,9 @@
     padding: 0;
 }
 .img-responsive {
+    /*
     left: 50%;
+    */
 }
 
 .player-font-dropdown {
@@ -13,20 +15,24 @@
 
 .mini-team-a-player-1-img, .mini-team-b-player-2-img,
 .mini-team-a-player-2-img, .mini-team-b-player-1-img {
-    left: 0;
+    /*left: 0;*/
     height: 8vh;   
     position: fixed;
     transform: translate(-50%, 0%);
-    opacity: 0.7;  
+    opacity: 0.7;
+    top: 0vh;
 }
 
-.team-a-player-1-img, .team-b-player-2-img,
-.team-a-player-2-img, .team-b-player-1-img,
-.mini-team-a-player-1-img, .mini-team-b-player-2-img,
-.mini-team-a-player-2-img, .mini-team-b-player-1-img {
+.team-a-player-1-img, .team-a-player-2-img,
+.mini-team-a-player-1-img, .mini-team-a-player-2-img {
     position: absolute;
-    left: 20px;
-    top: 0;
+    left: 2.0vh;
+}
+
+.team-a-player-2-img, .team-b-player-1-img,
+.mini-team-b-player-1-img, .mini-team-b-player-2-img {
+    position: absolute;
+    left: 10vh;
 }
 
 .player-font-dropdown > .dropdown-menu {
@@ -50,6 +56,7 @@
 .player-drop-down-toggle {
     background-color: #305930;
     border-color: #305930;
+    font-size: 1.5vh;
 }
 
 .player-drop-down-toggle:disabled {
@@ -62,7 +69,7 @@
 }
 
 .green-player {
-    height: 11vh;   
+    height: 10vh;   
 }
 
 .blue-player-font {
@@ -108,7 +115,8 @@
     margin-top: 3vh;
 }
 
-.right-team-player {
+.right-team-player,
+.mini-right-team-player {
     left: 10px;
     text-align: end;
 }
@@ -125,18 +133,16 @@
 }
 
 /* ----- for the mini-court players ----- */
-.mini-left-team-player {
-
-}
-
 @media only screen and (min-height: 280px) {
     .top-court-players {
         top: 20px;
     }
+    /*
     .left-team-player,
     .mini-left-team-player {
         margin-top: 1vh;
     }
+    */
 }
 @media only screen and (max-height: 414px) {
     .team-player {
