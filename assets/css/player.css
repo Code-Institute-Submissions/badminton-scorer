@@ -32,7 +32,7 @@
 .team-a-player-2-img, .team-b-player-1-img,
 .mini-team-b-player-1-img, .mini-team-b-player-2-img {
     position: absolute;
-    left: 10vh;
+    left: 15vh;
 }
 
 .player-font-dropdown > .dropdown-menu {
@@ -108,7 +108,7 @@
 .left-team-player,
 .mini-left-team-player {
     right: 10px;
-    color: solid black!important;
+    /*color: solid black!important;*/
     font-size: 2vh;
     padding: 0.5vh;
     height: 4vh;
@@ -118,6 +118,11 @@
 .right-team-player,
 .mini-right-team-player {
     left: 10px;
+    /*color: solid black!important;*/
+    font-size: 2vh;
+    padding: 0.5vh;
+    height: 4vh;
+    margin-top: 3vh;
     text-align: end;
 }
 
