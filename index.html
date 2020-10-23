@@ -59,8 +59,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link navbar-toggler-icon" href="#" id="navSetupMenuDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navSetupMenuDropdownMenuLink">
-                                <a class="dropdown-item" data-toggle="modal" data-target="#game-settings" > New Match</a>
-                                <a class="dropdown-item" href="#section-about-us" onclick="contactMe()">Contact the Developer</a>
+                                <a class="dropdown-item" id="new-match" data-toggle="modal" data-target="#game-settings" > New Match</a>
+                                <a class="dropdown-item" id="end-match" onclick="endMatch()"> End Current Match</a>
+                                <a class="dropdown-item" id="contact-developer" onclick="contactMe()">Contact the Developer</a>
                             </div>
                         </li>
                     </ul>
@@ -134,7 +135,7 @@
             <div class="container-fluid modal-dialog modal-lg">
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
-                        <h4 class="modal-title">Game Scorer Settings</h4>
+                        <h4 class="modal-title">Badminton Scorer Settings (Best of 3 Sets of 21 points)</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>

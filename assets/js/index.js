@@ -1,6 +1,5 @@
 $("document").ready(function () {
-    $(`.left-scorer`).attr("disabled", "disabled");
-    $(`.right-scorer`).attr("disabled", "disabled");
+    $(`#end-match`).hide()
     $(`.left-court-left-player-container`).hide();
     $(`.team-a-player-1`).hide();
     $(`#team-a-player-1`).hide();
@@ -62,10 +61,24 @@ $("#full-interval-seconds").keyup(function() {
   }
 });
 
-$(`.left-scorer`).mouseenter(function() {
+$(`.left-scorer`).hover(function() {
     if(startGame == true) {
         $(`.left-scorer`).css("background-color", "green")
     }
+});
+
+$(`.left-scorer`).mouseleave(function() {
+    $(`.left-scorer`).css("background-color", "gray")
+});
+
+$(`.right-scorer`).hover(function() {
+    if(startGame == true) {
+        $(`.right-scorer`).css("background-color", "green")
+    }
+});
+
+$(`.right-scorer`).mouseleave(function() {
+    $(`.right-scorer`).css("background-color", "gray")
 });
 
 // This will automatically position the Setup Menu element to the center if the window is resize.
@@ -89,14 +102,16 @@ function centerMenuSetting() {
 
 // Check for orientation changes
 window.addEventListener("orientationchange", function() {
-        centerMenuSetting();
+        //centerMenuSetting();
 }, false);
+function endMatch() {
+    $(`#end-match`).hide();
+    $(`#new-match`).show();
+};
 
 function gameStart() {
-    $(`.left-scorer`).attr("disabled", "enabled");
-    $(`.right-scorer`).attr("disabled", "enabled");
-    //$(`#game-settings`).hide();
-
+    $(`#end-match`).show();
+    $(`#new-match`).hide();
     $(`#team-a-player-1`).attr("disabled", "disabled");
     $(`#team-a-player-2`).attr("disabled", "disabled");
     $(`#team-b-player-1`).attr("disabled", "disabled");
