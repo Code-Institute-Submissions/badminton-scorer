@@ -10,6 +10,26 @@ $("document").ready(function () {
     $(`#left-court-right-side-shuttle`).show();
 });
 
+// This function will disable element passed 
+function disableElement(selector) {
+    $(`${selector}`).attr("disabled", "disabled");
+};
+
+// This function will enable element passed 
+function disableElement(selector) {
+    $(`${selector}`).attr("disabled", "enabled");
+};
+
+// This function will hide element passed 
+function hideElement(selector) {
+    $(`${selector}`).hide();
+};
+
+// This function will show element passed 
+function showElement(selector) {
+    $(`${selector}`).show();
+}
+
 // Start Source https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
 function validate(interval, evt) {
   var theEvent = evt || window.event;
@@ -35,6 +55,7 @@ $("#mid-interval-seconds").keyup(function() {
       $("#mid-interval-seconds" ).val("");
   }
 });
+
 $("#full-interval-seconds").keyup(function() {
   if($('#full-interval-seconds').val()>360 ){
       $("#full-interval-seconds" ).val("");

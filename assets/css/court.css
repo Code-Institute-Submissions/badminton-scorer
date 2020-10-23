@@ -104,6 +104,7 @@
 .right-court-left-service-area {
     border: 3px solid white;
 }
+
 .left-court-left-service-area,
 .left-court-right-service-area,
 .right-court-left-service-area,
@@ -204,7 +205,6 @@
     text-align: left;
 }
 
-
 .match-type-container,
 .server-side-container,
 .game-interval-container,
@@ -245,17 +245,7 @@
     width: 3vw;
     padding: 0;
 }
-/*
-.setup-menu-option {
-    width: 300px;
-    height: 200px;
-    border: 3px solid black;
-    margin-left: auto;
-    margin-right: auto;
-    top: 31vh;
-    background-color: rgb(197, 95, 95);
-}
-*/
+
 .start-match-btn {
     position: relative;
     margin: 1vh 0vh 0vh 0vh;
@@ -299,12 +289,10 @@
     padding-left: 3vh;
     margin-left: 1vh;
     cursor: pointer;
-    /*font-size: 22px;*/
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    /*color: black*/
 }
 
 /* Hide the browser's default radio button */
@@ -394,13 +382,7 @@ input#full-interval-seconds {
         width: 60vw;
     }
 }
-/*
-@media (min-width: 992px) {
-    .modal-lg {
-        max-width: 70vw;
-    }
-}
-*/
+
 @media only screen and (min-height: 200px) {
     .master-container {
         margin-top: 0;

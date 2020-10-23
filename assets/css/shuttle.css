@@ -6,11 +6,25 @@
 }
 
 .left-court-shuttles {
-    height: 9.5vh;   
+    height: 9.5vh;
+    position: relative;
+    left: 12vh;
+}
+
+#left-court-left-side-shuttle,
+#right-court-right-side-shuttle {
+    margin-top: 5vh;
 }
 
 .right-court-shuttles {
-    height: 11vh;   
+    height: 11vh;
+    position: relative;
+    left: 6vh;
+}
+
+#left-court-right-side-shuttle,
+#right-court-left-side-shuttle {
+    margin-top: 2vh;
 }
 
 img#mini-left-court-left-side-shuttle,
@@ -25,12 +39,6 @@ img#mini-right-court-right-side-shuttle {
     position: absolute;
     right: 0vw;
     height: 7.5vh;   
-}
-
-@media only screen and (max-height: 540px) and (max-width: 720px) {
-    #left-court-right-side-shuttle {
-        bottom: 40px;
-    }
 }
 
 @media only screen and (max-height: 280px) and (max-width: 653px) {
