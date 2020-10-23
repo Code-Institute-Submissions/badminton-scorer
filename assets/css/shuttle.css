@@ -37,7 +37,7 @@ img#mini-left-court-right-side-shuttle {
 img#mini-right-court-left-side-shuttle,
 img#mini-right-court-right-side-shuttle {
     position: absolute;
-    right: 0vw;
+    right: 0.8vw;
     height: 7.5vh;   
 }
 

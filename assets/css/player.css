@@ -51,14 +51,15 @@ input#team-a-player-1, input#team-a-player-2 {
 
 input#team-b-player-1, input#team-b-player-2 {
     left: 2vh;
+    text-align: end;
 }
 
 input#team-a-player-1, input#team-b-player-2 {
-    margin-top: 18vh
+    margin-top: 18vh;
 }
 
 input#team-a-player-2, input#team-b-player-1 {
-    margin-top: 14vh
+    margin-top: 14vh;
 }
 
 
@@ -75,9 +76,20 @@ input#team-a-player-2, input#team-b-player-1 {
     opacity: 0.8;
     transform: translate3d(80px, 10px, 10px)!important;
     min-width: auto;
-    left: -4vh!important;
 }
 
+ul.dropdown-menu.show {
+    left: -8vh!important;
+}
+/*
+ul.dropdown-menu.right-drop-down-menu.show {
+    left: -8vh!important;
+}
+
+ul.dropdown-menu.left-drop-down-menu.show {
+    left: -8vh!important;
+}
+*/
 .player-font-dropdown > ul > li {
     font-weight: 900;
     font-size: 2vh;

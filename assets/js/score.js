@@ -4,7 +4,7 @@ var serviceOver = 2;
 var pending = false;
 var startGame = false;
 var player = {};
-var numberOfGames = 0;
+var numberOfSet = 1;
 
 function incrementScoreDelay(scoreSide) {
     $(`.left-scorer`).prop("disabled", true);
@@ -133,6 +133,7 @@ function incrementScore(scoreSide) {
             speakThisMsg = "all";
             window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
         } else {
+            //Here to put logic to end game set base on team score
             window.speechSynthesis.speak(new SpeechSynthesisUtterance(teamBScore));   
             window.speechSynthesis.speak(new SpeechSynthesisUtterance(teamAScore));
         };

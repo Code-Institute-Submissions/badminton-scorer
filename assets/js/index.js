@@ -1,18 +1,9 @@
 $("document").ready(function () {
-    $(`#end-match`).hide()
+    // ----- Initialize Mini-Court Area on Game Settings Modal and Menu settings -----
+    // Hide End Match menu
+    hideElement(`#end-match`);
 
-    // ----- Initialize Mini-Court Area on Game Settings Modal -----
     // --- Hide shuttles ---
-    /*
-    $(`#left-court-left-side-shuttle`).hide();
-    $(`#left-court-right-side-shuttle`).show();
-    $(`#right-court-left-side-shuttle`).hide();
-    $(`#right-court-right-side-shuttle`).hide();
-    $(`#mini-left-court-left-side-shuttle`).hide();
-    $(`#mini-left-court-right-side-shuttle`).show();
-    $(`#mini-right-court-left-side-shuttle`).hide();
-    $(`#mini-right-court-right-side-shuttle`).hide();
-    */
     showHideShuttle("main", "left", "right");
     showHideShuttle("mini", "left", "right");
     
@@ -20,29 +11,14 @@ $("document").ready(function () {
     showHidePlayers("main", "hide", "1");
     showHidePlayers("mini", "hide", "1");
 
-    /*
-    $(`.mini-left-court-left-player-container`).hide();
-    $(`#left-court-left-side-shuttle`).show();
-
-
-    $(`.team-a-player-1`).hide();
-    $(`#team-a-player-1`).hide();
-    $(`.right-court-left-player-container`).hide();
-    $(`.team-b-player-1`).hide();
-    $(`#team-b-player-1`).hide();
-    $(`#left-court-right-side-shuttle`).show();
-    */
     // Main COurt Area
-    $(`#team-a-player-1`).attr("disabled", "disabled");
-    $(`#team-a-player-2`).attr("disabled", "disabled");
-    $(`#team-b-player-1`).attr("disabled", "disabled");
-    $(`#team-b-player-2`).attr("disabled", "disabled");
+    disableElement(`#team-a-player-1`);
+    disableElement(`#team-a-player-2`);
+    disableElement(`#team-b-player-1`);
+    disableElement(`#team-b-player-2`);
+
+    console.log("Initialized")
 });
-
-
-function showHideGameMenuItems(option, matchType) {
-
-};
 
 // This function will disable element passed 
 function disableElement(selector) {

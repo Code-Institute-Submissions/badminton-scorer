@@ -27,10 +27,10 @@ $('a').click(function() {
 // Variable to hold the macth type Singles/Doubles
 function showHidePlayers(courtType, option, matchType) {
     if(option == 'hide') {
-        $(`.left-court-left-player-container`).hide();
+        $(`.team-a-player-1-img`).hide();
         //$(`.team-a-player-1`).hide();
         $(`#team-a-player-1`).hide();
-        $(`.right-court-left-player-container`).hide();
+        $(`.team-b-player-1-img`).hide();
         //$(`.team-b-player-1`).hide();
         $(`#team-b-player-1`).hide();
         if (courtType == "mini") {
@@ -40,10 +40,10 @@ function showHidePlayers(courtType, option, matchType) {
             $(`#mini-team-b-player-1`).hide();
         };
     } else {
-        $(`.left-court-left-player-container`).show();
+        $(`.team-a-player-1-img`).show();
         //$(`.team-a-player-1`).show();
         $(`#team-a-player-1`).show();
-        $(`.right-court-left-player-container`).show();
+        $(`.team-b-player-1-img`).show();
         //$(`.team-b-player-1`).show();
         $(`#team-b-player-1`).show();
         if (courtType == "mini") {
