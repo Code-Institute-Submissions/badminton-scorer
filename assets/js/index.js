@@ -17,6 +17,11 @@ $("document").ready(function () {
     disableElement(`#team-b-player-1`);
     disableElement(`#team-b-player-2`);
 
+    playerA = new player("Player One", "blue", true); //Variable to hold the Player A object
+    playerB = new player("Player Two", "blue", true); //Variable to hold the Player B object
+    playerC = new player("Player Three", "blue", true); //Variable to hold the Player C object
+    playerD = new player("Player Four", "blue", true); //Variable to hold the Player D object
+
     console.log("Initialized")
 });
 
@@ -25,10 +30,10 @@ var intFullIntervalBreak = 0;
 var blnVoiceOver = true;
 
 //Instantiate each player with default names and icon color
-var playerA = new Player("Player One", "blue"); //Variable to hold the Player A object
-var playerB = new Player("Player Two", "blue"); //Variable to hold the Player B object
-var playerC = new Player("Player Three", "blue"); //Variable to hold the Player C object
-var playerD = new Player("Player Four", "blue"); //Variable to hold the Player D object
+//var playerA = new player(); //Variable to hold the Player A object
+//var playerB = new player(); //Variable to hold the Player B object
+//var playerC = new player(); //Variable to hold the Player C object
+//var playerD = new player(); //Variable to hold the Player D object
 var gameMatchType = 1; //variable to hold the Match Type 1-Singles Match/2-Dubles Match
 
 // Start Source https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
@@ -154,7 +159,9 @@ function setBackgroundColor(selector, color) {
 };
 
 function speakThisMsg(message) {
+    if(blnVoiceOver) {
     let thisMsg = new SpeechSynthesisUtterance();
     thisMsg = message;
     window.speechSynthesis.speak(new SpeechSynthesisUtterance(thisMsg));
+    };
 };

@@ -166,6 +166,14 @@ ul.dropdown-menu.left-drop-down-menu.show {
     font-weight: bolder;
 }
 
+input#mini-team-a-player-1,
+input#mini-team-a-player-2,
+input#mini-team-b-player-1,
+input#mini-team-b-player-2 {
+    background-color: #305930;
+    color: white
+}
+
 .form-control:disabled, .form-control[readonly] {
     background-color: #305930;
     opacity: 1;

@@ -49,29 +49,24 @@ function showHidePlayers(courtType, option, matchType) {
     gameMatchType = matchType;
 };
 
-function Player (name, color, isVisible) {
+function player (name, color, isVisible) {
     this.name = name;
     this.color = color;
     this.isVisible = isVisible;
 };
 
 $('#mini-team-a-player-1').on("change", function() { 
-    playerA.name = this.value;
-    $(`#mini-team-a-player-1`).attr("Value", this.value);
+    playerA.name = $(`#mini-team-a-player-1`).val();
 });
 
 $('#mini-team-a-player-2').on("change", function() { 
-    playerB.name = this.value;
-    $(`#mini-team-a-player-2`).attr("Value", this.value);
-    console.log(playerB.name);
+    playerB.name = $(`#mini-team-a-player-2`).val();
 });
 
 $('#mini-team-b-player-1').on("change", function() { 
-    playerB.name = this.value;
-    $(`#mini-team-b-player-1`).attr("Value", this.value);
+    playerC.name = $(`#mini-team-b-player-1`).val();
 });
 
 $('#mini-team-b-player-2').on("change", function() { 
-    playerB.name = this.value;
-    $(`#mini-team-b-player-2`).attr("Value", this.value);
+    playerD.name = $(`#mini-team-b-player-2`).val();
 });

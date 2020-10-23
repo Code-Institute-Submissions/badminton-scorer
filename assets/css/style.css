@@ -24,10 +24,6 @@ header {
     font-size: 2rem;
 }
 
-.score-board-container{
-    position: relative;
-}
-
 .score-board-container,
 .left-player-container,
 .right-player-container,
@@ -52,13 +48,57 @@ header {
 }
 
 .score-board-container {
-    width: 300px;
+    position: relative;
+    height: 10vh;
+    width: 36vw;
     margin-left: auto;
     margin-right: auto;
 }
 
 .player-score-board-container {
     justify-content: center;
+    border: 2px solid white;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.team-A-players, .team-a-set-one, .team-a-set-two, .team-a-set-three {
+    border: 3px dodgerblue;
+    background-color: dodgerblue;
+    color: black;
+}
+
+.team-B-players, .team-b-set-one, .team-b-set-two, .team-b-set-three  {
+    border: 3px solid lightseagreen;
+    background: lightseagreen;    
+    color: black;
+}
+
+.team-B-players {
+    text-align: end;
+}
+
+.score-tally-board {
+    border: 2px solid black;
+    display: flex;
+    padding: 0px 0px 0px 0px;
+}
+
+.set-one, .set-two, .set-three {
+    padding-right: 0;
+    padding-left: 0;
+    flex-grow: 0;
+}
+
+.team-a-set-one, .team-a-set-two, .team-a-set-three,
+.team-b-set-one, .team-b-set-two, .team-b-set-three   {
+    border: 2px solid black;
+    height: 4.5vh;
+    width: 3vw;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 body {
