@@ -80,10 +80,11 @@
     border-radius: 20px;
     align-items: center;
 }
-
+/*
 .left-scorer:hover, .right-scorer:hover {
     background-color: green
 }
+*/
 .left-court-area, .right-court-area {
     padding: 0;
     margin: 0;

@@ -62,6 +62,12 @@ $("#full-interval-seconds").keyup(function() {
   }
 });
 
+$(`.left-scorer`).mouseenter(function() {
+    if(startGame == true) {
+        $(`.left-scorer`).css("background-color", "green")
+    }
+});
+
 // This will automatically position the Setup Menu element to the center if the window is resize.
 function centerMenuSetting() {
     /*
@@ -89,8 +95,7 @@ window.addEventListener("orientationchange", function() {
 function gameStart() {
     $(`.left-scorer`).attr("disabled", "enabled");
     $(`.right-scorer`).attr("disabled", "enabled");
-    $(".player-drop-down-toggle").prop("disabled", true);
-    $(`.setup-menu-option`).hide();
+    //$(`#game-settings`).hide();
 
     $(`#team-a-player-1`).attr("disabled", "disabled");
     $(`#team-a-player-2`).attr("disabled", "disabled");
