@@ -14,7 +14,6 @@
         <link rel="stylesheet" href="assets/css/shuttle.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/player.css" type="text/css" />
     </head>
-    <!--body onresize="centerMenuSetting()" onload="centerMenuSetting()"-->
     <body>
         <header>
             <section class="container-fluid score-board-container">
@@ -258,22 +257,22 @@
                         </div>
                         <div class="container-fluid match-type-container">
                             <label>Match Type</label>
-                            <label class="radio-container" onclick="showHidePlayers('hide', 1)">Singles
+                            <label class="radio-container" onclick="showHidePlayers('mini', 'hide', 1)">Singles
                                 <input type="radio" checked="checked" name="match-type" id="single-match">
                                 <span class="player-checkmark"></span>
                             </label>
-                            <label class="radio-container" onclick="showHidePlayers('show', 2)">Doubles
+                            <label class="radio-container" onclick="showHidePlayers('mini', 'show', 2)">Doubles
                                 <input type="radio" name="match-type" id="double-match">
                                 <span class="player-checkmark"></span>
                             </label>
                         </div>
                         <div class="container-fluid server-side-container">
                             <label>Service</label>
-                            <label class="radio-container" onclick="showHideShuttle('left', 'right')">Left
+                            <label class="radio-container" onclick="showHideShuttle('mini', 'left', 'right')">Left
                                 <input type="radio" checked="checked" name="service-side">
                                 <span class="shuttle-checkmark"></span>
                             </label>
-                            <label class="radio-container" onclick="showHideShuttle('right', 'right')">Right
+                            <label class="radio-container" onclick="showHideShuttle('mini', 'right', 'right')">Right
                                 <input type="radio" name="service-side">
                                 <span class="shuttle-checkmark"></span>
                             </label>

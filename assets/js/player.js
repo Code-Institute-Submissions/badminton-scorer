@@ -1,9 +1,9 @@
 //Instantiate each player with default names and icon color
-var playerA = new Player("Player A", "blue");
-var playerB = new Player("Player B", "blue");
-var playerC = new Player("Player C", "blue");
-var playerD = new Player("Player D", "blue");
-var gameMatchType = 1;
+var playerA = new Player("Player A", "blue"); //Variable to hold the Player A object
+var playerB = new Player("Player B", "blue"); //Variable to hold the Player B object
+var playerC = new Player("Player C", "blue"); //Variable to hold the Player C object
+var playerD = new Player("Player D", "blue"); //Variable to hold the Player D object
+var gameMatchType = 1; //variable to hold the Match Type 1-Singles Match/2-Dubles Match
 
 $('a').click(function() {
     console.log($(this).text().toLowerCase());
@@ -25,28 +25,41 @@ $('a').click(function() {
 });
 
 // Variable to hold the macth type Singles/Doubles
-function showHidePlayers(option, matchType) {
+function showHidePlayers(courtType, option, matchType) {
     if(option == 'hide') {
         $(`.left-court-left-player-container`).hide();
-        $(`.team-a-player-1`).hide();
+        //$(`.team-a-player-1`).hide();
         $(`#team-a-player-1`).hide();
         $(`.right-court-left-player-container`).hide();
-        $(`.team-b-player-1`).hide();
+        //$(`.team-b-player-1`).hide();
         $(`#team-b-player-1`).hide();
+        if (courtType == "mini") {
+            $(`.mini-left-court-left-player-container`).hide();
+            $(`#mini-team-a-player-1`).hide();
+            $(`.mini-right-court-left-player-container`).hide();
+            $(`#mini-team-b-player-1`).hide();
+        };
     } else {
         $(`.left-court-left-player-container`).show();
-        $(`.team-a-player-1`).show();
+        //$(`.team-a-player-1`).show();
         $(`#team-a-player-1`).show();
         $(`.right-court-left-player-container`).show();
-        $(`.team-b-player-1`).show();
+        //$(`.team-b-player-1`).show();
         $(`#team-b-player-1`).show();
+        if (courtType == "mini") {
+            $(`.mini-left-court-left-player-container`).show();
+            $(`#mini-team-a-player-1`).show();
+            $(`.mini-right-court-left-player-container`).show();
+            $(`#mini-team-b-player-1`).show();
+        };
     }
     gameMatchType = matchType;
 };
 
-function Player (name, color) {
+function Player (name, color, isVisible) {
     this.name = name;
     this.color = color;
+    this.isVisible = isVisible;
 };
 
 $('#team-a-player-1').on("change", function() { 

@@ -1,13 +1,48 @@
 $("document").ready(function () {
     $(`#end-match`).hide()
-    $(`.left-court-left-player-container`).hide();
+
+    // ----- Initialize Mini-Court Area on Game Settings Modal -----
+    // --- Hide shuttles ---
+    /*
+    $(`#left-court-left-side-shuttle`).hide();
+    $(`#left-court-right-side-shuttle`).show();
+    $(`#right-court-left-side-shuttle`).hide();
+    $(`#right-court-right-side-shuttle`).hide();
+    $(`#mini-left-court-left-side-shuttle`).hide();
+    $(`#mini-left-court-right-side-shuttle`).show();
+    $(`#mini-right-court-left-side-shuttle`).hide();
+    $(`#mini-right-court-right-side-shuttle`).hide();
+    */
+    showHideShuttle("main", "left", "right");
+    showHideShuttle("mini", "left", "right");
+    
+    // --- Hide Players ---
+    showHidePlayers("main", "hide", "1");
+    showHidePlayers("mini", "hide", "1");
+
+    /*
+    $(`.mini-left-court-left-player-container`).hide();
+    $(`#left-court-left-side-shuttle`).show();
+
+
     $(`.team-a-player-1`).hide();
     $(`#team-a-player-1`).hide();
     $(`.right-court-left-player-container`).hide();
     $(`.team-b-player-1`).hide();
     $(`#team-b-player-1`).hide();
     $(`#left-court-right-side-shuttle`).show();
+    */
+    // Main COurt Area
+    $(`#team-a-player-1`).attr("disabled", "disabled");
+    $(`#team-a-player-2`).attr("disabled", "disabled");
+    $(`#team-b-player-1`).attr("disabled", "disabled");
+    $(`#team-b-player-2`).attr("disabled", "disabled");
 });
+
+
+function showHideGameMenuItems(option, matchType) {
+
+};
 
 // This function will disable element passed 
 function disableElement(selector) {
@@ -81,29 +116,11 @@ $(`.right-scorer`).mouseleave(function() {
     $(`.right-scorer`).css("background-color", "gray")
 });
 
-// This will automatically position the Setup Menu element to the center if the window is resize.
-function centerMenuSetting() {
-    /*
-    $(`.setup-menu-option`).css("left", ($(`.master-container`).width() / 2) - ($(`.setup-menu-option`).width() / 2));
-    $(`.setup-menu-option`).css("top", ($(`.master-container`).height() / 2) );
-    $(`.left-court-shuttles`).css("left", ($(".left-court-left-service-area").width() / 2) + $(`.left-court-shuttles`).width() / 2);
-    $(`.right-court-shuttles`).css("left", ($(".right-court-left-service-area").width() / 2) - $(`.right-court-shuttles`).width() / 2);
-    $(`#left-court-left-side-shuttle`).css("top", ($(`.left-court-left-service-area`).height() / 6));
-    $(`#left-court-right-side-shuttle`).css("top", $(`.left-court-right-service-area`).height());
-    $(`#right-court-right-side-shuttle`).css("top", ($(`.left-court-left-service-area`).height() / 6));
-    $(`#right-court-left-side-shuttle`).css("top", $(`.left-court-right-service-area`).height());
-    $(`.team-player`).width($(`.left-court-left-service-area`).width() * 0.5);
-    $(`#team-a-player-1`).css("top", ($(`.master-container`).height() / 2) - $(`#team-a-player-1`).height() * 4);
-    $(`#team-b-player-2`).css("top", ($(`.master-container`).height() / 2) - $(`#team-a-player-2`).height() * 4);
-    $(`#team-a-player-2`).css("top", ($(`.master-container`).height()) - $(`#team-a-player-1`).height() * 6);
-    $(`#team-b-player-1`).css("top", ($(`.master-container`).height()) - $(`#team-a-player-2`).height() * 6);
-    */
-};
-
 // Check for orientation changes
 window.addEventListener("orientationchange", function() {
         //centerMenuSetting();
 }, false);
+
 function endMatch() {
     $(`#end-match`).hide();
     $(`#new-match`).show();
@@ -128,7 +145,5 @@ function gameStart() {
         speakThisMsg = "play";
         window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
     };
-
     //To this block of codes need to move when user press Start Match button
-    return;
 };
