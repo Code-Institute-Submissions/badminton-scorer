@@ -258,7 +258,7 @@
                         <div class="container-fluid match-type-container">
                             <label>Match Type</label>
                             <label class="radio-container" onclick="showHidePlayers('mini', 'hide', 1)">Singles
-                                <input type="radio" checked="checked" name="match-type" id="single-match">
+                                <input type="radio" checked name="match-type" id="single-match">
                                 <span class="player-checkmark"></span>
                             </label>
                             <label class="radio-container" onclick="showHidePlayers('mini', 'show', 2)">Doubles
@@ -269,26 +269,26 @@
                         <div class="container-fluid server-side-container">
                             <label>Service</label>
                             <label class="radio-container" onclick="showHideShuttle('mini', 'left', 'right')">Left
-                                <input type="radio" checked="checked" name="service-side">
+                                <input type="radio" checked name="service-side" id="left-service">
                                 <span class="shuttle-checkmark"></span>
                             </label>
                             <label class="radio-container" onclick="showHideShuttle('mini', 'right', 'right')">Right
-                                <input type="radio" name="service-side">
+                                <input type="radio" name="service-side" id="right-service">
                                 <span class="shuttle-checkmark"></span>
                             </label>
                         </div>
                         <div class="container-fluid game-interval-container">
-                            <input type="checkbox" name="mid-interval-break" id="mid-interval-break">
+                            <input type="checkbox" name="mid-interval-break" id="mid-interval-break" checked onchange="enableMidIntervalInput()">
                             <label for="mid-interval-seconds" class="checkbox-container">Mid-Interval (sec):
-                                <input type="number" min="0" max="360" onkeypress="validate(event)" name="mid-interval-seconds" id="mid-interval-seconds" value="60">
+                                <input type="number" min="30" max="60" onkeypress="validate(event)" name="mid-interval-seconds" id="mid-interval-seconds" value="60">
                             </label><br>
-                            <input type="checkbox" name="full-interval-break" id="full-interval-break">
+                            <input type="checkbox" name="full-interval-break" id="full-interval-break" checked onchange="enableFullIntervalInput()">
                             <label for="full-interval-seconds" class="checkbox-container">Full-Interval (sec):
-                                <input type="number" min="0" max="360" onkeypress="validate(event)" name="full-interval-seconds" id="full-interval-seconds" value="120">
+                                <input type="number" min="60" max="120" onkeypress="validate(event)" name="full-interval-seconds" id="full-interval-seconds" value="120">
                             </label>
                         </div>
                         <div class="container-fluid game-voice-over">
-                            <input type="checkbox" name="voice-over" id="voice-over" checked="Checked"> 
+                            <input type="checkbox" name="voice-over" id="voice-over" checked onchange="enableVoiceOver()"> 
                             <label for="voice-over" class="checkbox-container">Enable Voice Over   
                             </label>
                         </div>

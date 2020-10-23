@@ -1,10 +1,3 @@
-//Instantiate each player with default names and icon color
-var playerA = new Player("Player A", "blue"); //Variable to hold the Player A object
-var playerB = new Player("Player B", "blue"); //Variable to hold the Player B object
-var playerC = new Player("Player C", "blue"); //Variable to hold the Player C object
-var playerD = new Player("Player D", "blue"); //Variable to hold the Player D object
-var gameMatchType = 1; //variable to hold the Match Type 1-Singles Match/2-Dubles Match
-
 $('a').click(function() {
     console.log($(this).text().toLowerCase());
     $(this).parent().parent().prev().children('img').attr("src", `assets/images/${$(this).text().toLowerCase()}-player.png`);
@@ -62,22 +55,23 @@ function Player (name, color, isVisible) {
     this.isVisible = isVisible;
 };
 
-$('#team-a-player-1').on("change", function() { 
+$('#mini-team-a-player-1').on("change", function() { 
     playerA.name = this.value;
-    $(`#team-a-player-1`).attr("Value", this.value);
+    $(`#mini-team-a-player-1`).attr("Value", this.value);
 });
 
-$('#team-a-player-2').on("change", function() { 
+$('#mini-team-a-player-2').on("change", function() { 
     playerB.name = this.value;
-    $(`#team-a-player-2`).attr("Value", this.value);
+    $(`#mini-team-a-player-2`).attr("Value", this.value);
+    console.log(playerB.name);
 });
 
-$('#team-b-player-1').on("change", function() { 
+$('#mini-team-b-player-1').on("change", function() { 
     playerB.name = this.value;
-    $(`#team-b-player-1`).attr("Value", this.value);
+    $(`#mini-team-b-player-1`).attr("Value", this.value);
 });
 
-$('#team-b-player-2').on("change", function() { 
+$('#mini-team-b-player-2').on("change", function() { 
     playerB.name = this.value;
-    $(`#team-b-player-2`).attr("Value", this.value);
+    $(`#mini-team-b-player-2`).attr("Value", this.value);
 });
