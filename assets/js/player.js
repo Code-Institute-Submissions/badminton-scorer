@@ -1,5 +1,5 @@
 $('a').click(function() {
-    console.log($(this).text().toLowerCase());
+    //console.log($(this).text().toLowerCase());
     $(this).parent().parent().prev().children('img').attr("src", `assets/images/${$(this).text().toLowerCase()}-player.png`);
     var classNames = $(this).parent().parent().parent().parent().attr("class").split(" ");
     if ($(`.${classNames[1]}`).attr("class").indexOf("left-court-left-player-container") != -1 ) {
@@ -21,10 +21,8 @@ $('a').click(function() {
 function showHidePlayers(courtType, option, matchType) {
     if(option == 'hide') {
         $(`.team-a-player-1-img`).hide();
-        //$(`.team-a-player-1`).hide();
         $(`#team-a-player-1`).hide();
         $(`.team-b-player-1-img`).hide();
-        //$(`.team-b-player-1`).hide();
         $(`#team-b-player-1`).hide();
         if (courtType == "mini") {
             $(`.mini-left-court-left-player-container`).hide();
@@ -34,10 +32,8 @@ function showHidePlayers(courtType, option, matchType) {
         };
     } else {
         $(`.team-a-player-1-img`).show();
-        //$(`.team-a-player-1`).show();
         $(`#team-a-player-1`).show();
         $(`.team-b-player-1-img`).show();
-        //$(`.team-b-player-1`).show();
         $(`#team-b-player-1`).show();
         if (courtType == "mini") {
             $(`.mini-left-court-left-player-container`).show();
@@ -56,17 +52,21 @@ function player (name, color, isVisible) {
 };
 
 $('#mini-team-a-player-1').on("change", function() { 
-    playerA.name = $(`#mini-team-a-player-1`).val();
+    playerA.name = getElementValue(`#mini-team-a-player-1`);
+    setElementValue(`#team-a-player-1`, playerA.name)
 });
 
 $('#mini-team-a-player-2').on("change", function() { 
-    playerB.name = $(`#mini-team-a-player-2`).val();
+    playerB.name = getElementValue(`#mini-team-a-player-2`);
+    setElementValue(`#team-a-player-2`, playerB.name)
 });
 
 $('#mini-team-b-player-1').on("change", function() { 
-    playerC.name = $(`#mini-team-b-player-1`).val();
+    playerC.name = getElementValue(`#mini-team-b-player-1`);
+    setElementValue(`#team-b-player-1`, playerC.name)
 });
 
 $('#mini-team-b-player-2').on("change", function() { 
-    playerD.name = $(`#mini-team-b-player-2`).val();
+    playerD.name = getElementValue(`#mini-team-b-player-2`);
+    setElementValue(`#team-b-player-2`, playerD.name)
 });

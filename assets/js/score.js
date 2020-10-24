@@ -5,7 +5,7 @@ var pending = false;
 var startGame = false;
 var player = {};
 var numberOfSet = 1;
-
+/*
 function incrementScoreDelay(scoreSide) {
     $(`.left-scorer`).prop("disabled", true);
     $('.left-scorer').off('mouseenter mouseleave'); 
@@ -20,7 +20,7 @@ function incrementScoreDelay(scoreSide) {
     $('.left-scorer').on('mouseenter mouseleave');
     return;
 };
-
+*/
 function incrementScore(scoreSide) {
     if(!startGame) {
         alert("Game not started yet!");
@@ -28,43 +28,35 @@ function incrementScore(scoreSide) {
         return;
     };
     if (gameMatchType == 1) {
-        $(`#team-a-player-1`).val($(`#team-a-player-2`).val());
-        $(`.team-a-player-1-img`).attr("src", $(`.team-a-player-2-img`).attr("src"));
-        $(`#team-b-player-1`).val($(`#team-b-player-2`).val());
-        $(`.team-b-player-1-img`).attr("src", $(`.team-b-player-2-img`).attr("src"));
+        setElementValue(`#team-a-player-1`, getElementValue(`#team-a-player-2`));
+        setElementSrc(`.team-a-player-1-img`, $(`.team-a-player-2-img`).attr("src"));
+        setElementValue(`#team-b-player-1`, getElementValue(`#team-b-player-2`));
+        setElementSrc(`.team-b-player-1-img`, $(`.team-b-player-2-img`).attr("src"));
     };
     if (scoreSide == 'left') {
         teamAScore++;
         if (teamAScore % 2 == 0) {
-            showHideShuttle(`${scoreSide}`, 'right');
+            showHideShuttle("main", `${scoreSide}`, 'right');
             if (gameMatchType == 1) {
-                $(`.left-court-right-player-container`).show();
-                $(`.team-a-player-2`).show();
+                $(`.team-a-player-2-img`).show();
                 $(`#team-a-player-2`).show();
-                $(`.left-court-left-player-container`).hide();
-                $(`.team-a-player-1`).hide();
+                $(`.team-a-player-1-img`).hide();
                 $(`#team-a-player-1`).hide();
-                $(`.right-court-right-player-container`).show();
-                $(`.team-b-player-2`).show();
+                $(`.team-b-player-2-img`).show();
                 $(`#team-b-player-2`).show();
-                $(`.right-court-left-player-container`).hide();
-                $(`.team-b-player-1`).hide();
+                $(`.team-b-player-1-img`).hide();
                 $(`#team-b-player-1`).hide();
             }
         } else {
-            showHideShuttle(`${scoreSide}`, 'left');
+            showHideShuttle("main", `${scoreSide}`, 'left');
             if (gameMatchType == 1) {
-                $(`.left-court-right-player-container`).hide();
-                $(`.team-a-player-2`).hide();
+                $(`.team-a-player-2-img`).hide();
                 $(`#team-a-player-2`).hide();
-                $(`.left-court-left-player-container`).show();
-                $(`.team-a-player-1`).show();
+                $(`.team-a-player-1-img`).show();
                 $(`#team-a-player-1`).show();
-                $(`.right-court-right-player-container`).hide();
-                $(`.team-b-player-2`).hide();
+                $(`.team-b-player-2-img`).hide();
                 $(`#team-b-player-2`).hide();
-                $(`.right-court-left-player-container`).show();
-                $(`.team-b-player-1`).show();
+                $(`.team-b-player-1-img`).show();
                 $(`#team-b-player-1`).show();
             }
         };
@@ -88,35 +80,27 @@ function incrementScore(scoreSide) {
     } else if (scoreSide == 'right') {
         teamBScore++;
         if (teamBScore % 2 == 0) {
-            showHideShuttle(`${scoreSide}`, 'right');
+            showHideShuttle("main", `${scoreSide}`, 'right');
             if (gameMatchType == 1) {
-                $(`.left-court-right-player-container`).show();
-                $(`.team-a-player-2`).show();
+                $(`.team-a-player-2-img`).show();
                 $(`#team-a-player-2`).show();
-                $(`.left-court-left-player-container`).hide();
-                $(`.team-a-player-1`).hide();
+                $(`.team-a-player-1-img`).hide();
                 $(`#team-a-player-1`).hide();
-                $(`.right-court-right-player-container`).show();
-                $(`.team-b-player-2`).show();
+                $(`.team-b-player-2-img`).show();
                 $(`#team-b-player-2`).show();
-                $(`.right-court-left-player-container`).hide();
-                $(`.team-b-player-1`).hide();
+                $(`.team-b-player-1-img`).hide();
                 $(`#team-b-player-1`).hide();
             }
         } else {
-            showHideShuttle(`${scoreSide}`, 'left');
+            showHideShuttle("main", `${scoreSide}`, 'left');
             if (gameMatchType == 1) {
-                $(`.left-court-right-player-container`).hide();
-                $(`.team-a-player-2`).hide();
+                $(`.team-a-player-2-img`).hide();
                 $(`#team-a-player-2`).hide();
-                $(`.left-court-left-player-container`).show();
-                $(`.team-a-player-1`).show();
+                $(`.team-a-player-1-img`).show();
                 $(`#team-a-player-1`).show();
-                $(`.right-court-right-player-container`).hide();
-                $(`.team-b-player-2`).hide();
+                $(`.team-b-player-2-img`).hide();
                 $(`#team-b-player-2`).hide();
-                $(`.right-court-left-player-container`).show();
-                $(`.team-b-player-1`).show();
+                $(`.team-b-player-1-img`).show();
                 $(`#team-b-player-1`).show();
             }
         };
@@ -141,8 +125,7 @@ function incrementScore(scoreSide) {
     };
     //This will enable to +1 Div until all the following code has been executed.
     $(`.left-scorer`).prop("disabled", false);
-    console.log('enable')
-    return;
+    //console.log('enable')
 };
 
 function switchPlayer(scoreSide) {

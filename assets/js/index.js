@@ -17,10 +17,10 @@ $("document").ready(function () {
     disableElement(`#team-b-player-1`);
     disableElement(`#team-b-player-2`);
 
-    playerA = new player("Player One", "blue", true); //Variable to hold the Player A object
-    playerB = new player("Player Two", "blue", true); //Variable to hold the Player B object
-    playerC = new player("Player Three", "blue", true); //Variable to hold the Player C object
-    playerD = new player("Player Four", "blue", true); //Variable to hold the Player D object
+    playerA = new player("PLAYER NAME", "blue", false); //Variable to hold the Player A object
+    playerB = new player("PLAYER NAME", "yellow", true); //Variable to hold the Player B object
+    playerC = new player("PLAYER NAME", "green", false); //Variable to hold the Player C object
+    playerD = new player("PLAYER NAME", "red", true); //Variable to hold the Player D object
 
     console.log("Initialized")
 });
@@ -28,12 +28,6 @@ $("document").ready(function () {
 var intMidIntervalBreak = 0;
 var intFullIntervalBreak = 0;
 var blnVoiceOver = true;
-
-//Instantiate each player with default names and icon color
-//var playerA = new player(); //Variable to hold the Player A object
-//var playerB = new player(); //Variable to hold the Player B object
-//var playerC = new player(); //Variable to hold the Player C object
-//var playerD = new player(); //Variable to hold the Player D object
 var gameMatchType = 1; //variable to hold the Match Type 1-Singles Match/2-Dubles Match
 
 // Start Source https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
@@ -123,6 +117,26 @@ function gameStart() {
     disableElement(`#team-a-player-2`);
     disableElement(`#team-b-player-1`);
     disableElement(`#team-b-player-2`);
+
+    // set Player's Image color and Name
+    setElementSrc(`.team-a-player-1-img`, `assets/images/${playerA.color}-player.png`)
+    setElementSrc(`.team-a-player-2-img`, `assets/images/${playerB.color}-player.png`)
+    setElementSrc(`.team-b-player-1-img`, `assets/images/${playerC.color}-player.png`)
+    setElementSrc(`.team-b-player-2-img`, `assets/images/${playerD.color}-player.png`)
+    setElementValue(`#team-a-player-1`, playerA.name)
+    setElementValue(`#team-a-player-2`, playerB.name)
+    setElementValue(`#team-b-player-1`, playerC.name)
+    setElementValue(`#team-b-player-2`, playerD.name)
+
+    // set ScoreBoards Player Names and all Score default to zero
+    setElementInnerHTML(`#team-a-names`, gameMatchType == 2 ? playerA.name + "<br>" + playerB.name: playerB.name)
+    setElementInnerHTML(`#team-b-names`, gameMatchType == 2 ? playerC.name + "<br>" + playerD.name: playerD.name)
+    setElementInnerHTML(`#team-a-set-one`, "0")
+    setElementInnerHTML(`#team-b-set-one`, "0")
+    setElementInnerHTML(`#team-a-set-two`, "0")
+    setElementInnerHTML(`#team-b-set-two`, "0")
+    setElementInnerHTML(`#team-a-set-three`, "0")
+    setElementInnerHTML(`#team-b-set-three`, "0")
     startGame = true;
 
     //From this block of codes need to move when user press Start Match button
@@ -154,9 +168,31 @@ function showElement(selector) {
     $(`${selector}`).show();
 };
 
+// This function will set element background color 
 function setBackgroundColor(selector, color) {
     $(`${selector}`).css("background-color", color);
 };
+
+// This function will get element's value 
+function getElementValue(selector) {
+    return $(`${selector}`).val();
+};
+
+// This function will set element's value 
+function setElementValue(selector, value) {
+    $(`${selector}`).val(value);
+};
+
+// This function will set image element's src attribute 
+function setElementSrc(selector, source) {
+    $(`${selector}`).attr("src", source);
+};
+
+// This function will set element's innerText
+function setElementInnerHTML(selector, innerHTML) {
+    $(`${selector}`).html(innerHTML);
+};
+
 
 function speakThisMsg(message) {
     if(blnVoiceOver) {

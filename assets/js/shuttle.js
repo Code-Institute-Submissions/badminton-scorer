@@ -14,5 +14,6 @@ function showHideShuttle(courtType, courtSide, serviceSide) {
         $(`#${courtType}-${courtSide}-court-${serviceSide}-side-shuttle`).show();
     };
     $(`#${courtSide}-court-${serviceSide}-side-shuttle`).show();
-    console.log(teamAScore, teamBScore, courtSide, serviceSide);
+    console.log(`#${courtSide}-court-${serviceSide}-side-shuttle`);
+    //console.log(teamAScore, teamBScore, courtSide, serviceSide);
 };

@@ -8,7 +8,7 @@
 .left-court-shuttles {
     height: 9.5vh;
     position: relative;
-    left: 12vh;
+    left: 10vh;
 }
 
 #left-court-left-side-shuttle,
@@ -19,7 +19,7 @@
 .right-court-shuttles {
     height: 11vh;
     position: relative;
-    left: 6vh;
+    left: 2vh;
 }
 
 #left-court-right-side-shuttle,

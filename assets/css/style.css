@@ -50,7 +50,7 @@ header {
 .score-board-container {
     position: relative;
     height: 10vh;
-    width: 36vw;
+    width: 30vw;
     margin-left: auto;
     margin-right: auto;
 }
@@ -62,19 +62,25 @@ header {
     padding: 0px 0px 0px 0px;
 }
 
-.team-A-players, .team-a-set-one, .team-a-set-two, .team-a-set-three {
+.team-a-players, .team-a-set-one, .team-a-set-two, .team-a-set-three {
     border: 3px dodgerblue;
     background-color: dodgerblue;
     color: black;
 }
 
-.team-B-players, .team-b-set-one, .team-b-set-two, .team-b-set-three  {
+.team-b-players, .team-b-set-one, .team-b-set-two, .team-b-set-three  {
     border: 3px solid lightseagreen;
     background: lightseagreen;    
     color: black;
 }
 
-.team-B-players {
+.team-a-players, .team-b-players {
+    font-weight: 900;
+    padding-left: 0.3vw;
+    padding-right: 0.3vw;
+}
+
+.team-b-players {
     text-align: end;
 }
 
@@ -93,12 +99,16 @@ header {
 .team-a-set-one, .team-a-set-two, .team-a-set-three,
 .team-b-set-one, .team-b-set-two, .team-b-set-three   {
     border: 2px solid black;
-    height: 4.5vh;
+    height: 4.7vh;
     width: 3vw;
     padding-left: 0;
     padding-right: 0;
     margin-right: 0;
     margin-left: 0;
+    /*align-content: center;*/
+    justify-content: center;
+    font-size: 2.5vh;
+    font-weight: 900;
 }
 
 body {
@@ -115,7 +125,7 @@ body {
 
 .footer-navbar {
     justify-content: center;
-    margin-top: 18vh;
+    margin-top: 15vh;
 }
 
 .master-container {
