@@ -14,7 +14,7 @@ function incrementScore(scoreSide) {
         console.log("Game not started yet!")
         return;
     };
-    console.log('Game On!', teamAScore, teamBScore);
+
     // disable the button until all have been executed
     disableElement(`.left-scorer`);
     disableElement(`.right-scorer`);
@@ -84,6 +84,30 @@ function incrementScore(scoreSide) {
         serviceOver = 'left';
     };
 
+    // Reflect the score on the Score Tally Board
+    console.log(blnMidBreak, gameSet, teamAScore, teamBScore);
+    switch(gameSet) {
+        case 1:
+            setElementInnerHTML(`#team-a-set-one`, teamAScore);
+            setElementInnerHTML(`#team-b-set-one`, teamBScore);
+            break;
+        case 2:
+            setElementInnerHTML(`#team-a-set-two`, teamBScore);
+            setElementInnerHTML(`#team-b-set-two`, teamAScore);
+            break;
+        case 3:
+            switch(blnMidBreak) {
+                case false:
+                    setElementInnerHTML(`#team-a-set-three`, teamAScore);
+                    setElementInnerHTML(`#team-b-set-three`, teamBScore);
+                    break;
+                case true:
+                    setElementInnerHTML(`#team-a-set-three`, teamBScore);
+                    setElementInnerHTML(`#team-b-set-three`, teamAScore);
+                    break;
+            }
+    };
+
     // let's put some delay (2secs) here if voice over is enabled
     voiceTimer = 3;
     if (blnVoiceOver) {
@@ -94,61 +118,57 @@ function incrementScore(scoreSide) {
     };
 
     // This will enable the mid-game interval timer when a team reached 11 points first
-    if ((teamAScore == 11 && teamBScore < 11) || (teamBScore == 11 || teamAScore < 11))  {
+    if (((teamAScore == 11 && teamBScore < 11) || (teamBScore == 11 && teamAScore < 11)) && blnMidBreak == false)  {
         setElementInnerHTML(`#interval-timer`, intMidIntervalBreak);
         $('#game-interval').modal('show');
         hideElement(`#close-interval`);
-        intervalCountdown(intMidIntervalBreak);
-        (gameSet == 3) ? blnMidBreak = true : blnMidBreak = false;
+        if (intMidIntervalBreak > 0){
+            intervalCountdown(intMidIntervalBreak);
+            $("#close-interval").click();
+        };
+        blnMidBreak = true;
+        if(gameSet == 3 && blnMidBreak) {
+            switchCourt(teamAScore > teamBScore ? "right" : "left");
+        };
     };
 
     // This will enable the full-game interval timer if one of the following condition is met
     // 1. If a team score 21 points first and with a lead points of 2 or more (i.e. 21:19 or 19:21, or 21:7 etc)
     // 2. if a team score is greater than 21 points with a lead points of 2 (i.e. 22:20, 20:22, 23:21 etc.)
     // 3. if a team reaches 30 points first (i.e. 30:29 or 29:30)
-    console.log(teamAScore, teamBScore)
-    if ((teamAScore == 21 && teamBScore <= 19) || (teamBScore == 21 || teamAScore <= 19)
-        || (teamAScore > 21 && (teamAScore-teamBScore) >= 2) || (teamBScore > 21 && teamBScore - teamAScore > 2)
-        || (teamAScore == 30 || teamBScore == 30)) {
+    if (((teamAScore == 21 && teamBScore <= 19) || (teamBScore == 21 && teamAScore <= 19))
+        || ((teamAScore > 21 && (teamAScore-teamBScore) >= 2) || (teamBScore > 21 && teamBScore - teamAScore > 2))
+        || (teamAScore == 30 || teamBScore == 30)
+        ) {
         setElementInnerHTML(`#interval-timer`, intFullIntervalBreak);
         $('#game-interval').modal('show');
         hideElement(`#close-interval`);
-        intervalCountdown(intFullIntervalBreak);
+        if (intFullIntervalBreak > 0) {
+            intervalCountdown(intFullIntervalBreak);
+        } else {
+            $("#close-interval").click();
+        };
         gameSet++;
         teamAScore = 0;
         teamBScore = 0;
-    }
-
-    // Reflect the score on the Score Tally Board
-    switch(gameSet) {
-        case 1:
-            setElementValue(`#team-a-set-one`, teamAScore);
-            setElementValue(`#team-b-set-one`, teamBScore);
-            break;
-        case 2:
-            setElementValue(`#team-a-set-one`, teamBScore);
-            setElementValue(`#team-b-set-one`, teamAScore);
-            break;
-        case 3:
-            switch(blnMidBreak) {
-                case false:
-                    setElementValue(`#team-a-set-one`, teamAScore);
-                    setElementValue(`#team-b-set-one`, teamBScore);
-                    break;
-                case true:
-                    setElementValue(`#team-a-set-one`, teamBScore);
-                    setElementValue(`#team-b-set-one`, teamAScore);
-                    break;
-            }
+        blnMidBreak = false;
+        switchCourt(teamAScore > teamBScore ? 'right' : 'left');
     };
+
 };
 
 function intervalCountdown(seconds) {
+    if (seconds <= 0) {
+        console.log("Enter Here!")
+        $("#close-interval").click();
+        return;
+    };
     let counter = seconds;
     const interval = setInterval(() => {
+        console.log("Did it Enter Here!")
         setElementInnerHTML(`#interval-timer`, counter);
         counter--;
-        if (counter < 0 ) {
+        if (counter <= 0 ) {
             clearInterval(interval);
             $("#close-interval").click();
         }
@@ -156,10 +176,13 @@ function intervalCountdown(seconds) {
 };
 
 function delayForVoice(seconds) {
+    if (seconds <= 0) {
+        return;
+    };
     let counter = seconds;
     const interval = setInterval(() => {
         counter--;
-        if (counter < 0 ) {
+        if (counter <= 0 ) {
             clearInterval(interval);
             enableElement(`.left-scorer`);
             enableElement(`.right-scorer`);

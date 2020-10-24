@@ -17,10 +17,10 @@ $("document").ready(function () {
     disableElement(`#team-b-player-1`);
     disableElement(`#team-b-player-2`);
 
-    playerA = new player("PLAYER NAME", "blue", false); //Variable to hold the Player A object
-    playerB = new player("PLAYER NAME", "yellow", true); //Variable to hold the Player B object
-    playerC = new player("PLAYER NAME", "green", false); //Variable to hold the Player C object
-    playerD = new player("PLAYER NAME", "red", true); //Variable to hold the Player D object
+    playerA = new player("PLAYER NAME", "assets/images/blue-player.png", false); //Variable to hold the Player A object
+    playerB = new player("PLAYER NAME", "assets/images/yellow-player.png", true); //Variable to hold the Player B object
+    playerC = new player("PLAYER NAME", "assets/images/green-player.png", false); //Variable to hold the Player C object
+    playerD = new player("PLAYER NAME", "assets/images/red-player.png", true); //Variable to hold the Player D object
 
     console.log("Initialized")
 });
@@ -119,10 +119,10 @@ function gameStart() {
     disableElement(`#team-b-player-2`);
 
     // set Player's Image color and Name
-    setElementSrc(`.team-a-player-1-img`, `assets/images/${playerA.color}-player.png`)
-    setElementSrc(`.team-a-player-2-img`, `assets/images/${playerB.color}-player.png`)
-    setElementSrc(`.team-b-player-1-img`, `assets/images/${playerC.color}-player.png`)
-    setElementSrc(`.team-b-player-2-img`, `assets/images/${playerD.color}-player.png`)
+    setElementSrc(`.team-a-player-1-img`, playerA.src)
+    setElementSrc(`.team-a-player-2-img`, playerB.src)
+    setElementSrc(`.team-b-player-1-img`, playerC.src)
+    setElementSrc(`.team-b-player-2-img`, playerD.src)
     setElementValue(`#team-a-player-1`, playerA.name)
     setElementValue(`#team-a-player-2`, playerB.name)
     setElementValue(`#team-b-player-1`, playerC.name)
@@ -194,7 +194,7 @@ function setElementSrc(selector, source) {
 
 // This function will set image element's src attribute 
 function getElementSrc(selector, source) {
-    $(`${selector}`).attr("src");
+    return $(`${selector}`).attr("src");
 };
 
 // This function will set element's innerText
@@ -204,7 +204,6 @@ function setElementInnerHTML(selector, innerHTML) {
 
 function speakThisMsg(message) {
     if(blnVoiceOver) {
-        console.log(blnVoiceOver);
         let thisMsg = new SpeechSynthesisUtterance();
         thisMsg = message;
         window.speechSynthesis.speak(new SpeechSynthesisUtterance(thisMsg));

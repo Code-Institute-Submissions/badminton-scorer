@@ -15,7 +15,8 @@ img#left-court-right-side-shuttle {
 }
 
 img#left-court-left-side-shuttle {
-    left: 7vw;
+    /*left: 7vw;*/
+    left: 5vw;
 }
 
 #left-court-left-side-shuttle,
@@ -33,7 +34,8 @@ img#right-court-right-side-shuttle {
 }
 
 img#right-court-left-side-shuttle {
-    left: 2.5vw;
+    /*left: 2.5vw;*/
+    left: 0.5vw;
 }
 
 #left-court-right-side-shuttle,
