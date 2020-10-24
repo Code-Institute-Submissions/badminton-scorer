@@ -137,6 +137,10 @@ function gameStart() {
     setElementInnerHTML(`#team-b-set-two`, "0")
     setElementInnerHTML(`#team-a-set-three`, "0")
     setElementInnerHTML(`#team-b-set-three`, "0")
+
+    $(`#mid-interval-break`).is(':checked') ? intMidIntervalBreak = getElementValue(`#mid-interval-seconds`) : intMidIntervalBreak = 0;
+    $(`#full-interval-break`).is(':checked') ? intFullIntervalBreak = getElementValue(`#full-interval-seconds`) : intFullIntervalBreak = 0;
+    console.log(intMidIntervalBreak, intFullIntervalBreak);
     startGame = true;
 
     //From this block of codes need to move when user press Start Match button

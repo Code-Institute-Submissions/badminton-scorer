@@ -123,9 +123,27 @@ function incrementScore(scoreSide) {
         };
         serviceOver = 'left';
     };
-    //This will enable to +1 Div until all the following code has been executed.
+    //This will enable the +1 Div until all the following code has been executed.
     $(`.left-scorer`).prop("disabled", false);
+    if(teamAScore == 11 || teamBScore == 11) {
+        $('#game-interval').modal('show');
+        console.log(intMidIntervalBreak);
+        for (i = intMidIntervalBreak; i > 0 ; i--) {
+            $.wait(1000);
+            console.log(i);
+            setElementInnerHTML(`#interval-timer`, i);
+            //$('#game-interval').modal('show');
+        }
+        //$("#close-interval").click();
+    };
     //console.log('enable')
+};
+
+// function to wait
+$.wait = function(ms) {
+    var defer = $.Deferred();
+    setTimeout(function() { defer.resolve(); }, ms);
+    return defer;
 };
 
 function switchPlayer(scoreSide) {

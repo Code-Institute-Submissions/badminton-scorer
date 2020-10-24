@@ -167,7 +167,7 @@ li a {
     /*height: 50vh;*/
     padding-right: 0px;
     padding-left: 0px;
-    margin: 0l
+    margin: 0;
     margin-right: 0;
     margin-left: 0;    
 }
@@ -193,6 +193,22 @@ li a {
 .dropdown-item:hover {
     cursor: pointer;
     background-color: #f76606;
+}
+
+#game-interval {
+    width: 20vw;
+    top: 20vh;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+}
+
+#game-interval > * {
+    width: 20vw;
+}
+
+#interval-timer {
+    font-size: 20vh;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation:portrait) {
