@@ -74,8 +74,8 @@ header {
 }
 
 .team-b-players, .team-b-set-one, .team-b-set-two, .team-b-set-three  {
-    border: 3px solid lightseagreen;
-    background: lightseagreen;    
+    border: 3px solid lightcoral;
+    background: lightcoral;    
     color: black;
 }
 

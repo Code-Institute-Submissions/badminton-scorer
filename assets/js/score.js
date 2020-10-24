@@ -3,10 +3,11 @@ var teamBScore = 0;
 var serviceOver = 2;
 var startGame = false;
 var player = {};
-var gameSet = 3;
+var gameSet = 1;
 var voiceTimer = 3;
 var timeToVoiceOver = 0;
 var blnMidBreak = false;
+var scoreboard = [];
 
 function incrementScore(scoreSide) {
     if(!startGame) {
@@ -90,20 +91,24 @@ function incrementScore(scoreSide) {
         case 1:
             setElementInnerHTML(`#team-a-set-one`, teamAScore);
             setElementInnerHTML(`#team-b-set-one`, teamBScore);
+            scoreboard.push(gameset, scoreSide == 'left' ? "X" : "0")
             break;
         case 2:
             setElementInnerHTML(`#team-a-set-two`, teamBScore);
             setElementInnerHTML(`#team-b-set-two`, teamAScore);
+            scoreboard.push(gameset, scoreSide == 'left' ? "0" : "X")
             break;
         case 3:
             switch(blnMidBreak) {
                 case false:
                     setElementInnerHTML(`#team-a-set-three`, teamAScore);
                     setElementInnerHTML(`#team-b-set-three`, teamBScore);
+                    scoreboard.push(gameset, scoreSide == 'left' ? "X" : "0")
                     break;
                 case true:
                     setElementInnerHTML(`#team-a-set-three`, teamBScore);
                     setElementInnerHTML(`#team-b-set-three`, teamAScore);
+                    scoreboard.push(gameset, scoreSide == 'left' ? "0" : "X")
                     break;
             }
     };
