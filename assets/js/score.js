@@ -4,6 +4,8 @@ var serviceOver = 2;
 var startGame = false;
 var player = {};
 var numberOfSet = 1;
+var voiceTimer = 3;
+var timeToVoiceOver = 0;
 
 function incrementScore(scoreSide) {
     if(!startGame) {
@@ -11,6 +13,13 @@ function incrementScore(scoreSide) {
         console.log("Game not started yet!")
         return;
     };
+
+    // disable the button until all have been executed
+    disableElement(`.left-scorer`);
+    disableElement(`.right-scorer`);
+    setBackgroundColor(`.left-scorer`, "gray")
+    setBackgroundColor(`.right-scorer`, "gray")
+
     if (gameMatchType == 1) {
         setElementValue(`#team-a-player-1`, getElementValue(`#team-a-player-2`));
         setElementSrc(`.team-a-player-1-img`, getElementSrc(`.team-a-player-2-img`));
@@ -66,7 +75,6 @@ function incrementScore(scoreSide) {
         if (teamBScore == teamAScore) {
             speakThisMsg(teamBScore);   
             speakThisMsg("all");
-            speakThisMsg(speakThisMsg);
         } else {
             //Here to put logic to end game set base on team score
             speakThisMsg(teamBScore);   
@@ -76,38 +84,44 @@ function incrementScore(scoreSide) {
     };
 
     // let's put some delay (2secs) here if voice over is enabled
-    var voiceTimer = 5;
-    var timeToVoiceOver = setInterval(delayforVoice, 5000);
-    function delayforVoice() {
-        if (voiceTimer == -1) {
-            clearTimeout(voiceTimer);
-            enableElement(`.left-scorer`);
-            enableElement(`.right-scorer`);
-        } else {
-            voiceTimer--;
-            disableElement(`left-scorer`);
-            disableElement(`right-scorer`);
-        }
+    voiceTimer = 3;
+    if (blnVoiceOver) {
+        delayForVoice(voiceTimer);
+    } else {
+        enableElement(`.left-scorer`);
+        enableElement(`.right-scorer`);
     };
-
     // This will enable the mid-game timer when a team reached 11 points
     if(teamAScore == 11 || teamBScore == 11) {
         setElementInnerHTML(`#interval-timer`, intMidIntervalBreak);
         $('#game-interval').modal('show');
         hideElement(`#close-interval`);
-        var timeLeft = intMidIntervalBreak-1;
-        var timerSec = setInterval(countdown, 1000);
-        function countdown() {
-            if (timeLeft == -1) {
-                clearTimeout(timerSec);
-                $("#close-interval").click();
-            } else {
-                $('#game-interval').modal('show');
-                setElementInnerHTML(`#interval-timer`, timeLeft);
-                timeLeft--
-            }
-        };
+        intervalCountdown(intMidIntervalBreak);
     };
+};
+
+function intervalCountdown(seconds) {
+    let counter = seconds;
+    const interval = setInterval(() => {
+        setElementInnerHTML(`#interval-timer`, counter);
+        counter--;
+        if (counter < 0 ) {
+            clearInterval(interval);
+            $("#close-interval").click();
+        }
+    }, 1000);
+};
+
+function delayForVoice(seconds) {
+    let counter = seconds;
+    const interval = setInterval(() => {
+        counter--;
+        if (counter < 0 ) {
+            clearInterval(interval);
+            enableElement(`.left-scorer`);
+            enableElement(`.right-scorer`);
+        }
+    }, 1000);
 };
 
 // function to call for set timeout
@@ -152,3 +166,4 @@ function oddScoreShowHidePlayers() {
     showElement(`.team-b-player-1-img`);
     showElement(`#team-b-player-1`);
 };
+

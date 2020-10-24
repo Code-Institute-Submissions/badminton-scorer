@@ -141,7 +141,6 @@ function gameStart() {
     $(`#mid-interval-break`).is(':checked') ? intMidIntervalBreak = getElementValue(`#mid-interval-seconds`) : intMidIntervalBreak = 0;
     $(`#full-interval-break`).is(':checked') ? intFullIntervalBreak = getElementValue(`#full-interval-seconds`) : intFullIntervalBreak = 0;
     startGame = true;
-    blnVoiceOverFin = true
 
     //From this block of codes need to move when user press Start Match button
     if (teamAScore == 0 && teamBScore == 0) {
@@ -149,6 +148,7 @@ function gameStart() {
         speakThisMsg("love all");
         speakThisMsg("play");
     };
+    //delayForVoice(voiceTimer);
     //To this block of codes need to move when user press Start Match button
 };
 
@@ -204,8 +204,9 @@ function setElementInnerHTML(selector, innerHTML) {
 
 function speakThisMsg(message) {
     if(blnVoiceOver) {
-    let thisMsg = new SpeechSynthesisUtterance();
-    thisMsg = message;
-    window.speechSynthesis.speak(new SpeechSynthesisUtterance(thisMsg));
+        console.log(blnVoiceOver);
+        let thisMsg = new SpeechSynthesisUtterance();
+        thisMsg = message;
+        window.speechSynthesis.speak(new SpeechSynthesisUtterance(thisMsg));
     };
 };
