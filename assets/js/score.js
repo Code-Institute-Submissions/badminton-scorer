@@ -3,7 +3,7 @@ var teamBScore = 0;
 var serviceOver = 2;
 var startGame = false;
 var player = {};
-var gameSet = 1;
+var gameSet = 3;
 var voiceTimer = 3;
 var timeToVoiceOver = 0;
 var blnMidBreak = false;
@@ -85,7 +85,7 @@ function incrementScore(scoreSide) {
     };
 
     // Reflect the score on the Score Tally Board
-    console.log(blnMidBreak, gameSet, teamAScore, teamBScore);
+    console.log(blnMidBreak, gameSet, scoreSide, teamAScore, teamBScore);
     switch(gameSet) {
         case 1:
             setElementInnerHTML(`#team-a-set-one`, teamAScore);
@@ -124,11 +124,12 @@ function incrementScore(scoreSide) {
         hideElement(`#close-interval`);
         if (intMidIntervalBreak > 0){
             intervalCountdown(intMidIntervalBreak);
+        } else {
             $("#close-interval").click();
         };
         blnMidBreak = true;
-        if(gameSet == 3 && blnMidBreak) {
-            switchCourt(teamAScore > teamBScore ? "right" : "left");
+        if(gameSet == 3 && ((teamAScore == 11 && teamBScore < 11) || (teamBScore == 11 && teamAScore < 11))) {
+            switchCourt((teamAScore > teamBScore) ? "right" : "left");
         };
     };
 
@@ -149,23 +150,23 @@ function incrementScore(scoreSide) {
             $("#close-interval").click();
         };
         gameSet++;
+        switchCourt(teamAScore > teamBScore ? 'right' : 'left');
         teamAScore = 0;
         teamBScore = 0;
         blnMidBreak = false;
-        switchCourt(teamAScore > teamBScore ? 'right' : 'left');
     };
-
+    if (gameSet >= 3) {
+        //End of Game Match Here
+    };
 };
 
 function intervalCountdown(seconds) {
     if (seconds <= 0) {
-        console.log("Enter Here!")
         $("#close-interval").click();
         return;
     };
     let counter = seconds;
     const interval = setInterval(() => {
-        console.log("Did it Enter Here!")
         setElementInnerHTML(`#interval-timer`, counter);
         counter--;
         if (counter <= 0 ) {

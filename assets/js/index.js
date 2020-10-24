@@ -127,6 +127,16 @@ function gameStart() {
     setElementValue(`#team-a-player-2`, playerB.name)
     setElementValue(`#team-b-player-1`, playerC.name)
     setElementValue(`#team-b-player-2`, playerD.name)
+    if (gameMatchType == 1) {
+        setElementSrc(`.team-a-player-1-img`, playerB.src)
+        setElementSrc(`.team-b-player-1-img`, playerD.src)
+        setElementValue(`#team-a-player-1`, playerB.name)
+        setElementValue(`#team-b-player-1`, playerD.name)
+        playerA.name = playerB.name;
+        playerA.src = playerB.src;
+        playerC.name = playerD.name
+        playerC.src = playerD.src
+    };
 
     // set ScoreBoards Player Names and all Score default to zero
     setElementInnerHTML(`#team-a-names`, gameMatchType == 2 ? playerA.name + "<br>" + playerB.name: playerB.name)
@@ -148,7 +158,6 @@ function gameStart() {
         speakThisMsg("love all");
         speakThisMsg("play");
     };
-    //delayForVoice(voiceTimer);
     //To this block of codes need to move when user press Start Match button
 };
 

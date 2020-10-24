@@ -73,22 +73,57 @@ $('#mini-team-b-player-2').on("change", function() {
 });
 
 function switchCourt(courtServe) {
-    setElementValue(`#team-a-player-1`, playerC.name);
-    setElementSrc(`.team-a-player-1-img`, playerC.src);
-    setElementValue(`#team-a-player-2`, playerD.name);
-    setElementSrc(`.team-a-player-2-img`, playerD.src);
-    setElementValue(`#team-b-player-1`, playerA.name);
-    setElementSrc(`.team-b-player-1-img`, playerA.src);
-    setElementValue(`#team-b-player-2`, playerB.name);
-    setElementSrc(`.team-b-player-2-img`, playerB.src);
-    showHideShuttle("main", courtServe, "right");
-    if (gameMatchType == 1) {
-        $(`.team-a-player-1-img`).hide()
+    console.log(gameSet, courtServe)
+    if (gameSet % 2 == 0) {
+        setElementValue(`#team-a-player-1`, playerC.name);
+        setElementSrc(`.team-a-player-1-img`, playerC.src);
+        setElementValue(`#team-a-player-2`, playerD.name);
+        setElementSrc(`.team-a-player-2-img`, playerD.src);
+        setElementValue(`#team-b-player-1`, playerA.name);
+        setElementSrc(`.team-b-player-1-img`, playerA.src);
+        setElementValue(`#team-b-player-2`, playerB.name);
+        setElementSrc(`.team-b-player-2-img`, playerB.src);
+        showHideShuttle("main", courtServe, "right");
+    } else {
+        if (gameSet == 3 && blnMidBreak == true) {
+            //var tempPlayer = (getElementValue(`#team-a-player-1`), getElementSrc(`.team-a-player-1-img`), true);
+            setElementValue(`#team-a-player-1`, playerC.name);
+            setElementSrc(`.team-a-player-1-img`, playerC.src);
+            setElementValue(`#team-a-player-2`, playerD.name);
+            setElementSrc(`.team-a-player-2-img`, playerD.src);
+            setElementValue(`#team-b-player-1`, playerB.name);
+            setElementSrc(`.team-b-player-1-img`, playerB.src);
+            setElementValue(`#team-b-player-2`, playerA.name);
+            setElementSrc(`.team-b-player-2-img`, playerA.src);
+            if (teamAScore == 11 && teamBScore < 11) {
+                showHideShuttle("main", "right", "left")
+            } else if (teamBScore == 11 && teamAScore < 11) {
+                showHideShuttle("main", "left", "left")
+            };
+            var tempScore = teamAScore;
+            teamAScore = teamBScore;
+            teamBScore = tempScore;
+        } else {
+            setElementValue(`#team-a-player-1`, playerA.name);
+            setElementSrc(`.team-a-player-1-img`, playerA.src);
+            setElementValue(`#team-a-player-2`, playerB.name);
+            setElementSrc(`.team-a-player-2-img`, playerB.src);
+            setElementValue(`#team-b-player-1`, playerC.name);
+            setElementSrc(`.team-b-player-1-img`, playerC.src);
+            setElementValue(`#team-b-player-2`, playerD.name);
+            setElementSrc(`.team-b-player-2-img`, playerD.src);
+            showHideShuttle("main", courtServe, "right");
+        };
+        //showHideShuttle("main", courtServe, "right");
+    };
+
+    if (gameMatchType == 1 && (gameSet != 3 && blnMidBreak == false)) {
         $(`#team-a-player-1`).hide()
+        $(`.team-a-player-1-img`).hide()
         $(`#team-a-player-2`).show()
         $(`.team-a-player-2-img`).show()
-        $(`.team-b-player-1-img`).hide()
         $(`#team-b-player-1`).hide()
+        $(`.team-b-player-1-img`).hide()
         $(`#team-b-player-2`).show()
         $(`.team-b-player-2-img`).show()
     }
