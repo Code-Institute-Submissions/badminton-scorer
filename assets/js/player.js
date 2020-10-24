@@ -1,3 +1,4 @@
+// This function will listen to event when user click the player image and select a color from the dropdown list. It will set each player's color
 $('a').click(function() {
     //console.log($(this).text().toLowerCase());
     $(this).parent().parent().prev().children('img').attr("src", `assets/images/${$(this).text().toLowerCase()}-player.png`);
@@ -20,26 +21,26 @@ $('a').click(function() {
 // Variable to hold the macth type Singles/Doubles
 function showHidePlayers(courtType, option, matchType) {
     if(option == 'hide') {
-        $(`.team-a-player-1-img`).hide();
-        $(`#team-a-player-1`).hide();
-        $(`.team-b-player-1-img`).hide();
-        $(`#team-b-player-1`).hide();
+        hideElement(`.team-a-player-1-img`);
+        hideElement(`#team-a-player-1`);
+        hideElement(`.team-b-player-1-img`);
+        hideElement(`#team-b-player-1`);
         if (courtType == "mini") {
-            $(`.mini-left-court-left-player-container`).hide();
-            $(`#mini-team-a-player-1`).hide();
-            $(`.mini-right-court-left-player-container`).hide();
-            $(`#mini-team-b-player-1`).hide();
+            hideElement(`.mini-left-court-left-player-container`);
+            hideElement(`#mini-team-a-player-1`);
+            hideElement(`.mini-right-court-left-player-container`);
+            hideElement(`#mini-team-b-player-1`);
         };
     } else {
-        $(`.team-a-player-1-img`).show();
-        $(`#team-a-player-1`).show();
-        $(`.team-b-player-1-img`).show();
-        $(`#team-b-player-1`).show();
+        showElement(`.team-a-player-1-img`);
+        showElement(`#team-a-player-1`);
+        showElement(`.team-b-player-1-img`);
+        showElement(`#team-b-player-1`);
         if (courtType == "mini") {
-            $(`.mini-left-court-left-player-container`).show();
-            $(`#mini-team-a-player-1`).show();
-            $(`.mini-right-court-left-player-container`).show();
-            $(`#mini-team-b-player-1`).show();
+            showElement(`.mini-left-court-left-player-container`);
+            showElement(`#mini-team-a-player-1`);
+            showElement(`.mini-right-court-left-player-container`);
+            showElement(`#mini-team-b-player-1`);
         };
     }
     gameMatchType = matchType;

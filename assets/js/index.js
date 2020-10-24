@@ -140,8 +140,8 @@ function gameStart() {
 
     $(`#mid-interval-break`).is(':checked') ? intMidIntervalBreak = getElementValue(`#mid-interval-seconds`) : intMidIntervalBreak = 0;
     $(`#full-interval-break`).is(':checked') ? intFullIntervalBreak = getElementValue(`#full-interval-seconds`) : intFullIntervalBreak = 0;
-    console.log(intMidIntervalBreak, intFullIntervalBreak);
     startGame = true;
+    blnVoiceOverFin = true
 
     //From this block of codes need to move when user press Start Match button
     if (teamAScore == 0 && teamBScore == 0) {
@@ -192,11 +192,15 @@ function setElementSrc(selector, source) {
     $(`${selector}`).attr("src", source);
 };
 
+// This function will set image element's src attribute 
+function getElementSrc(selector, source) {
+    $(`${selector}`).attr("src");
+};
+
 // This function will set element's innerText
 function setElementInnerHTML(selector, innerHTML) {
     $(`${selector}`).html(innerHTML);
 };
-
 
 function speakThisMsg(message) {
     if(blnVoiceOver) {

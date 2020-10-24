@@ -1,26 +1,10 @@
 var teamAScore = 0;
 var teamBScore = 0;
 var serviceOver = 2;
-var pending = false;
 var startGame = false;
 var player = {};
 var numberOfSet = 1;
-/*
-function incrementScoreDelay(scoreSide) {
-    $(`.left-scorer`).prop("disabled", true);
-    $('.left-scorer').off('mouseenter mouseleave'); 
-    if (!pending) {
-        pending = true;     
-        setTimeout(() => { 
-            incrementScorewithDelay(`${scoreSide}`);
-            pending = false;
-        }, 3000);
-    };
-    $(`.left-scorer`).prop("disabled", false);
-    $('.left-scorer').on('mouseenter mouseleave');
-    return;
-};
-*/
+
 function incrementScore(scoreSide) {
     if(!startGame) {
         alert("Game not started yet!");
@@ -29,52 +13,35 @@ function incrementScore(scoreSide) {
     };
     if (gameMatchType == 1) {
         setElementValue(`#team-a-player-1`, getElementValue(`#team-a-player-2`));
-        setElementSrc(`.team-a-player-1-img`, $(`.team-a-player-2-img`).attr("src"));
+        setElementSrc(`.team-a-player-1-img`, getElementSrc(`.team-a-player-2-img`));
         setElementValue(`#team-b-player-1`, getElementValue(`#team-b-player-2`));
-        setElementSrc(`.team-b-player-1-img`, $(`.team-b-player-2-img`).attr("src"));
+        setElementSrc(`.team-b-player-1-img`, getElementSrc(`.team-b-player-2-img`));
     };
     if (scoreSide == 'left') {
         teamAScore++;
         if (teamAScore % 2 == 0) {
             showHideShuttle("main", `${scoreSide}`, 'right');
             if (gameMatchType == 1) {
-                $(`.team-a-player-2-img`).show();
-                $(`#team-a-player-2`).show();
-                $(`.team-a-player-1-img`).hide();
-                $(`#team-a-player-1`).hide();
-                $(`.team-b-player-2-img`).show();
-                $(`#team-b-player-2`).show();
-                $(`.team-b-player-1-img`).hide();
-                $(`#team-b-player-1`).hide();
+                evenScoreShowHidePlayers();
             }
         } else {
             showHideShuttle("main", `${scoreSide}`, 'left');
             if (gameMatchType == 1) {
-                $(`.team-a-player-2-img`).hide();
-                $(`#team-a-player-2`).hide();
-                $(`.team-a-player-1-img`).show();
-                $(`#team-a-player-1`).show();
-                $(`.team-b-player-2-img`).hide();
-                $(`#team-b-player-2`).hide();
-                $(`.team-b-player-1-img`).show();
-                $(`#team-b-player-1`).show();
+                oddScoreShowHidePlayers();
             }
         };
         if (scoreSide == 'left' && serviceOver == 'left') {
-            speakThisMsg = "Service  Over";
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
+            speakThisMsg("Service  Over");
         } else {
             switchPlayer(`${scoreSide}`);
         };
-        speakThisMsg = "Score";
-        window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
+        speakThisMsg("Score");
         if (teamAScore == teamBScore) {
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(teamAScore));   
-            speakThisMsg = "all";
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
+            speakThisMsg(teamAScore);   
+            speakThisMsg("all");
         } else {
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(teamAScore));   
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(teamBScore));
+            speakThisMsg(teamAScore);   
+            speakThisMsg(teamBScore);
         };
         serviceOver = 'right';
     } else if (scoreSide == 'right') {
@@ -82,87 +49,106 @@ function incrementScore(scoreSide) {
         if (teamBScore % 2 == 0) {
             showHideShuttle("main", `${scoreSide}`, 'right');
             if (gameMatchType == 1) {
-                $(`.team-a-player-2-img`).show();
-                $(`#team-a-player-2`).show();
-                $(`.team-a-player-1-img`).hide();
-                $(`#team-a-player-1`).hide();
-                $(`.team-b-player-2-img`).show();
-                $(`#team-b-player-2`).show();
-                $(`.team-b-player-1-img`).hide();
-                $(`#team-b-player-1`).hide();
+                evenScoreShowHidePlayers();
             }
         } else {
             showHideShuttle("main", `${scoreSide}`, 'left');
             if (gameMatchType == 1) {
-                $(`.team-a-player-2-img`).hide();
-                $(`#team-a-player-2`).hide();
-                $(`.team-a-player-1-img`).show();
-                $(`#team-a-player-1`).show();
-                $(`.team-b-player-2-img`).hide();
-                $(`#team-b-player-2`).hide();
-                $(`.team-b-player-1-img`).show();
-                $(`#team-b-player-1`).show();
+                oddScoreShowHidePlayers();
             }
         };
         if (scoreSide == 'right' && serviceOver == 'right') {
-            speakThisMsg = "Service  Over";
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
+            speakThisMsg("Service  Over");
         } else {
             switchPlayer(`${scoreSide}`);
         };
-        speakThisMsg = "Score";
-        window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
+        speakThisMsg("Score");
         if (teamBScore == teamAScore) {
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(teamBScore));   
-            speakThisMsg = "all";
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(speakThisMsg));
+            speakThisMsg(teamBScore);   
+            speakThisMsg("all");
+            speakThisMsg(speakThisMsg);
         } else {
             //Here to put logic to end game set base on team score
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(teamBScore));   
-            window.speechSynthesis.speak(new SpeechSynthesisUtterance(teamAScore));
+            speakThisMsg(teamBScore);   
+            speakThisMsg(teamAScore);
         };
         serviceOver = 'left';
     };
-    //This will enable the +1 Div until all the following code has been executed.
-    $(`.left-scorer`).prop("disabled", false);
-    if(teamAScore == 11 || teamBScore == 11) {
-        $('#game-interval').modal('show');
-        console.log(intMidIntervalBreak);
-        for (i = intMidIntervalBreak; i > 0 ; i--) {
-            $.wait(1000);
-            console.log(i);
-            setElementInnerHTML(`#interval-timer`, i);
-            //$('#game-interval').modal('show');
+
+    // let's put some delay (2secs) here if voice over is enabled
+    var voiceTimer = 5;
+    var timeToVoiceOver = setInterval(delayforVoice, 5000);
+    function delayforVoice() {
+        if (voiceTimer == -1) {
+            clearTimeout(voiceTimer);
+            enableElement(`.left-scorer`);
+            enableElement(`.right-scorer`);
+        } else {
+            voiceTimer--;
+            disableElement(`left-scorer`);
+            disableElement(`right-scorer`);
         }
-        //$("#close-interval").click();
     };
-    //console.log('enable')
+
+    // This will enable the mid-game timer when a team reached 11 points
+    if(teamAScore == 11 || teamBScore == 11) {
+        setElementInnerHTML(`#interval-timer`, intMidIntervalBreak);
+        $('#game-interval').modal('show');
+        hideElement(`#close-interval`);
+        var timeLeft = intMidIntervalBreak-1;
+        var timerSec = setInterval(countdown, 1000);
+        function countdown() {
+            if (timeLeft == -1) {
+                clearTimeout(timerSec);
+                $("#close-interval").click();
+            } else {
+                $('#game-interval').modal('show');
+                setElementInnerHTML(`#interval-timer`, timeLeft);
+                timeLeft--
+            }
+        };
+    };
 };
 
-// function to wait
-$.wait = function(ms) {
-    var defer = $.Deferred();
-    setTimeout(function() { defer.resolve(); }, ms);
-    return defer;
-};
-
+// function to call for set timeout
 function switchPlayer(scoreSide) {
     var tempName = "";
     var tempColor = "";
     if (scoreSide == 'left') {
-        tempName = $(`#team-a-player-1`).val();
-        tempColor = $(`.team-a-player-1-img`).attr("src");
-        $(`#team-a-player-1`).val($(`#team-a-player-2`).val());
-        $(`.team-a-player-1-img`).attr("src", $(`.team-a-player-2-img`).attr("src"));
-        $(`#team-a-player-2`).val(tempName);
-        $(`.team-a-player-2-img`).attr("src", tempColor);
+        tempName = getElementValue(`#team-a-player-1`);
+        tempColor = getElementSrc(`.team-a-player-1-img`);
+        setElementValue(`#team-a-player-1`, getElementValue(`#team-a-player-2`));
+        setElementSrc(`.team-a-player-1-img`, getElementSrc(`.team-a-player-2-img`));
+        setElementValue(`#team-a-player-2`, tempName);
+        setElementSrc(`.team-a-player-2-img`, tempColor);
     } else if (scoreSide == 'right') {
-        tempName = $(`#team-b-player-1`).val();
-        tempColor = $(`.team-b-player-1-img`).attr("src");
-        $(`#team-b-player-1`).val($(`#team-b-player-2`).val());
-        $(`.team-b-player-1-img`).attr("src", $(`.team-b-player-2-img`).attr("src"));
-        $(`#team-b-player-2`).val(tempName);
-        $(`.team-b-player-2-img`).attr("src", tempColor);
+        tempName = getElementValue(`#team-b-player-1`);
+        tempColor = getElementSrc(`.team-b-player-1-img`);
+        setElementValue(`#team-b-player-1`, getElementValue(`#team-b-player-2`));
+        setElementSrc(`.team-b-player-1-img`, getElementSrc(`.team-b-player-2-img`));
+        setElementValue(`#team-b-player-2`, tempName);
+        setElementSrc(`.team-b-player-2-img`, tempColor);
     };
+};
 
+function evenScoreShowHidePlayers() {
+    showElement(`.team-a-player-2-img`);
+    showElement(`#team-a-player-2`);
+    hideElement(`.team-a-player-1-img`);
+    hideElement(`#team-a-player-1`);
+    showElement(`.team-b-player-2-img`);
+    showElement(`#team-b-player-2`);
+    hideElement(`.team-b-player-1-img`);
+    hideElement(`#team-b-player-1`);
+};
+
+function oddScoreShowHidePlayers() {
+    hideElement(`.team-a-player-2-img`);
+    hideElement(`#team-a-player-2`);
+    showElement(`.team-a-player-1-img`);
+    showElement(`#team-a-player-1`);
+    hideElement(`.team-b-player-2-img`);
+    hideElement(`#team-b-player-2`);
+    showElement(`.team-b-player-1-img`);
+    showElement(`#team-b-player-1`);
 };
