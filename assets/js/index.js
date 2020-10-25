@@ -22,9 +22,6 @@ $("document").ready(function () {
     playerC = new player("PLAYER NAME", "assets/images/green-player.png", false); //Variable to hold the Player C object
     playerD = new player("PLAYER NAME", "assets/images/red-player.png", true); //Variable to hold the Player D object
 
-    setElementInnerHTML(`.tally-team-a-players`, gameMatchType == 2 ? playerA.name + "/" + playerB.name : playerB.name);
-    setElementInnerHTML(`.tally-team-b-players`, gameMatchType == 2 ? playerC.name + "/" + playerD.name : playerD.name);
-
     console.log("Initialized")
 });
 
@@ -144,6 +141,9 @@ function gameStart() {
     // set ScoreBoards Player Names and all Score default to zero
     setElementInnerHTML(`#team-a-names`, gameMatchType == 2 ? playerA.name + "<br>" + playerB.name: playerB.name)
     setElementInnerHTML(`#team-b-names`, gameMatchType == 2 ? playerC.name + "<br>" + playerD.name: playerD.name)
+    setElementInnerHTML(`.tally-team-a-players`, gameMatchType == 2 ? playerA.name + "/" + playerB.name : playerB.name);
+    setElementInnerHTML(`.tally-team-b-players`, gameMatchType == 2 ? playerC.name + "/" + playerD.name : playerD.name);
+
     setElementInnerHTML(`#team-a-set-one`, "0")
     setElementInnerHTML(`#team-b-set-one`, "0")
     setElementInnerHTML(`#team-a-set-two`, "0")
@@ -214,6 +214,12 @@ function setElementInnerHTML(selector, innerHTML) {
     $(`${selector}`).html(innerHTML);
 };
 
+// This function will append child to a parent
+function appendChild(selector, htmlText) {
+    $(`${selector}`).append(htmlText);
+}
+
+// Voice-Over synthesizer for text input
 function speakThisMsg(message) {
     if(blnVoiceOver) {
         let thisMsg = new SpeechSynthesisUtterance();

@@ -68,13 +68,13 @@ header {
 }
 
 .team-a-players, .team-a-set-one, .team-a-set-two, .team-a-set-three {
-    border: 3px dodgerblue;
+    /*border: 3px dodgerblue;*/
     background-color: dodgerblue;
     color: black;
 }
 
 .team-b-players, .team-b-set-one, .team-b-set-two, .team-b-set-three  {
-    border: 3px solid lightcoral;
+    /*border: 3px solid lightcoral;*/
     background: lightcoral;    
     color: black;
 }
@@ -218,8 +218,16 @@ li a {
 
 
 /* ***** Start of Tally Score Board Result page ***** */
+#end-game-result-dialog {
+    top: 20vh;
+}
+
 table, th, td {
-  border: 1px solid black;
+  border: 2px solid black;
+}
+
+.rally-points {
+    width: 1vw;
 }
 
 #main-tally-score-board {
@@ -239,22 +247,40 @@ table, th, td {
 }
 
 .tally-team-b-players {
-    border: 3px solid lightcoral;
     background: lightcoral;
     color: black;
     /*text-align: left;*/
 }
 
 .tally-team-a-players {
-    border: 3px dodgerblue;
     background-color: dodgerblue;
     color: black;
+    min-width: 5vw;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation:portrait) {
     html {
         transform: rotate(-90deg);
         transform-origin: left top;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    #end-game-result-dialog {
+        width: 100%;
+    }
+}
+@media (min-width: 576px) {
+    #end-game-result-dialog {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 100%;
+        margin: 1.75rem auto;
     }
 }
 /*

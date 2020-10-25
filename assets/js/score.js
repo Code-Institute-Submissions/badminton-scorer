@@ -94,8 +94,10 @@ function incrementScore(scoreSide) {
             // For the Tally Result Report
             setElementInnerHTML(`#tally-team-a-set-one`, teamAScore);
             setElementInnerHTML(`#tally-team-b-set-one`, teamBScore);
-
-            scoreboard.push(gameset, scoreSide == 'left' ? "X" : "0")
+            
+            appendChild(`#score-board-headings`, `<td class="rally-points">-</td>`)
+            appendChild(`#main-tally-set-1-a`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`)
+            appendChild(`#main-tally-set-1-b`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`)
             break;
         case 2:
             setElementInnerHTML(`#team-a-set-two`, teamBScore);
@@ -103,7 +105,9 @@ function incrementScore(scoreSide) {
             // For the Tally Result Report
             setElementInnerHTML(`#tally-team-a-set-two`, teamAScore);
             setElementInnerHTML(`#tally-team-b-set-two`, teamBScore);
-            scoreboard.push(gameset, scoreSide == 'left' ? "0" : "X")
+
+            appendChild(`#main-tally-set-2-a`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`)
+            appendChild(`#main-tally-set-2-b`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`)
             break;
         case 3:
             switch(blnMidBreak) {
@@ -113,7 +117,9 @@ function incrementScore(scoreSide) {
                     // For the Tally Result Report
                     setElementInnerHTML(`#tally-team-a-set-three`, teamAScore);
                     setElementInnerHTML(`#tally-team-b-set-three`, teamBScore);
-                    scoreboard.push(gameset, scoreSide == 'left' ? "X" : "0")
+
+                    appendChild(`#main-tally-set-2-a`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`)
+                    appendChild(`#main-tally-set-2-b`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`)
                     break;
                 case true:
                     setElementInnerHTML(`#team-a-set-three`, teamBScore);
@@ -121,7 +127,9 @@ function incrementScore(scoreSide) {
                     // For the Tally Result Report
                     setElementInnerHTML(`#tally-team-a-set-three`, teamBScore);
                     setElementInnerHTML(`#tally-team-b-set-three`, teamAScore);
-                    scoreboard.push(gameset, scoreSide == 'left' ? "0" : "X")
+
+                    appendChild(`#main-tally-set-2-a`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`)
+                    appendChild(`#main-tally-set-2-b`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`)
                     break;
             }
     };
