@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="assets/css/shuttle.css" type="text/css" />
         <link rel="stylesheet" href="assets/css/player.css" type="text/css" />
     </head>
-    <body id="court-body">
+    <body id="court-body" onload="startNewMatch()">
         <header>
             <section class="container-fluid score-board-container">
                 <section class="container-fluid left-player-container">
@@ -338,19 +338,20 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="container-fluid modal-body">
-                        <h5 id="interval-timer">1</h5>
+                    <div class="container-fluid modal-body" id="game-set-interval">
+                        <h5 id="interval-timer">...</h5>
+                        <button data-dismiss="modal" id="start-new-set">Start Set</button>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- **** Modal for End Game Match **** -->
-        <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-match">
+        <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-set">
             <div class="container-fluid modal-dialog modal-sm">
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
-                        <h4 class="modal-title">End Game Match</h4>
+                        <h4 class="modal-title" id="game-set">End Game Match</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-game-match">
                             <span aria-hidden="true">&times;</span>
                         </button>

@@ -7,7 +7,6 @@ var gameSet = 1;
 var voiceTimer = 3;
 var timeToVoiceOver = 0;
 var blnMidBreak = false;
-var scoreboard = [];
 
 function incrementScore(scoreSide) {
     if(!startGame) {
@@ -145,18 +144,20 @@ function incrementScore(scoreSide) {
 
     // This will enable the mid-game interval timer when a team reached 11 points first
     if (((teamAScore == 11 && teamBScore < 11) || (teamBScore == 11 && teamAScore < 11)) && blnMidBreak == false)  {
-        setElementInnerHTML(`#interval-timer`, intMidIntervalBreak);
+        setElementInnerHTML(`#interval-timer`, "...");
+        blnMidBreak = true;
+        if(gameSet == 3 && ((teamAScore == 11 && teamBScore < 11) || (teamBScore == 11 && teamAScore < 11))) {
+            switchCourt((teamAScore > teamBScore) ? "right" : "left");
+        };
         $('#game-interval').modal('show');
         hideElement(`#close-interval`);
+        hideElement(`#start-new-set`)
         if (intMidIntervalBreak > 0){
             intervalCountdown(intMidIntervalBreak);
         } else {
             $("#close-interval").click();
         };
-        blnMidBreak = true;
-        if(gameSet == 3 && ((teamAScore == 11 && teamBScore < 11) || (teamBScore == 11 && teamAScore < 11))) {
-            switchCourt((teamAScore > teamBScore) ? "right" : "left");
-        };
+        blnMidBreak = false;
     };
 
     // This will enable the full-game interval timer if one of the following condition is met
@@ -164,22 +165,23 @@ function incrementScore(scoreSide) {
     // 2. if a team score is greater than 21 points with a lead points of 2 (i.e. 22:20, 20:22, 23:21 etc.)
     // 3. if a team reaches 30 points first (i.e. 30:29 or 29:30)
     if (((teamAScore == 21 && teamBScore <= 19) || (teamBScore == 21 && teamAScore <= 19))
-        || ((teamAScore > 21 && (teamAScore-teamBScore) >= 2) || (teamBScore > 21 && teamBScore - teamAScore > 2))
+        || ((teamAScore > 21 && (teamAScore-teamBScore) >= 2) || (teamBScore > 21 && teamBScore - teamAScore >= 2))
         || (teamAScore == 30 || teamBScore == 30)
         ) {
-        setElementInnerHTML(`#interval-timer`, intFullIntervalBreak);
+        setElementInnerHTML(`#interval-timer`, "...");
         $('#game-interval').modal('show');
         hideElement(`#close-interval`);
         if (intFullIntervalBreak > 0) {
+            hideElement(`#start-new-set`)
             intervalCountdown(intFullIntervalBreak);
         } else {
-            $("#close-interval").click();
+            setElementInnerHTML(`#interval-timer`, "0");
+            showElement(`#start-new-set`)
         };
         gameSet++;
         switchCourt(teamAScore > teamBScore ? 'right' : 'left');
         teamAScore = 0;
         teamBScore = 0;
-        blnMidBreak = false;
     };
     if (gameSet >= 3) {
         //End of Game Match Here
@@ -195,7 +197,7 @@ function intervalCountdown(seconds) {
     const interval = setInterval(() => {
         setElementInnerHTML(`#interval-timer`, counter);
         counter--;
-        if (counter <= 0 ) {
+        if (counter < 0 ) {
             clearInterval(interval);
             $("#close-interval").click();
         }

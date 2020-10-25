@@ -220,6 +220,7 @@ li a {
 /* ***** Start of Tally Score Board Result page ***** */
 #end-game-result-dialog {
     top: 20vh;
+    width: fit-content;
 }
 
 table, th, td {
@@ -228,6 +229,7 @@ table, th, td {
 
 .rally-points {
     width: 1vw;
+    text-align: center;
 }
 
 #main-tally-score-board {
@@ -255,8 +257,15 @@ table, th, td {
 .tally-team-a-players {
     background-color: dodgerblue;
     color: black;
-    min-width: 5vw;
+    /*min-width: 5vw;*/
 }
+
+#start-new-set {
+    font-weight: bolder;
+    height: 6vh;
+    width: 100%;
+    font-size: 3vh;
+};
 
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation:portrait) {
     html {

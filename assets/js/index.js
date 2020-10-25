@@ -30,6 +30,10 @@ var intFullIntervalBreak = 0;
 var blnVoiceOver = true;
 var gameMatchType = 1; //variable to hold the Match Type 1-Singles Match/2-Dubles Match
 
+function startNewMatch() {
+    $('#game-settings').modal('show');
+}
+
 // Start Source https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
 function validate(interval, evt) {
   var theEvent = evt || window.event;
@@ -155,13 +159,11 @@ function gameStart() {
     $(`#full-interval-break`).is(':checked') ? intFullIntervalBreak = getElementValue(`#full-interval-seconds`) : intFullIntervalBreak = 0;
     startGame = true;
 
-    //From this block of codes need to move when user press Start Match button
     if (teamAScore == 0 && teamBScore == 0) {
         $(`#left-service`).is(':checked') ? speakThisMsg(playerB.name + " to " + playerD.name): speakThisMsg(playerD.name + " to " + playerB.name);
         speakThisMsg("love all");
         speakThisMsg("play");
     };
-    //To this block of codes need to move when user press Start Match button
 };
 
 // This function will disable element passed 

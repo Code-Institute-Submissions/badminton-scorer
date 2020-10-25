@@ -83,10 +83,14 @@ function switchCourt(courtServe) {
         setElementSrc(`.team-b-player-1-img`, playerA.src);
         setElementValue(`#team-b-player-2`, playerB.name);
         setElementSrc(`.team-b-player-2-img`, playerB.src);
+        if (gameMatchType == 1) {
+            switchPlayerSide("a");
+            switchPlayerSide("b");
+        }
         showHideShuttle("main", courtServe, "right");
     } else {
         if (gameSet == 3 && blnMidBreak == true) {
-            //var tempPlayer = (getElementValue(`#team-a-player-1`), getElementSrc(`.team-a-player-1-img`), true);
+            console.log("Game Set 3 should not enter here first")
             setElementValue(`#team-a-player-1`, playerC.name);
             setElementSrc(`.team-a-player-1-img`, playerC.src);
             setElementValue(`#team-a-player-2`, playerD.name);
@@ -104,6 +108,7 @@ function switchCourt(courtServe) {
             teamAScore = teamBScore;
             teamBScore = tempScore;
         } else {
+            console.log("Game Set 3 should ENTER here first, Player One should be on the leftcourt, Player Two should be on the right court")
             setElementValue(`#team-a-player-1`, playerA.name);
             setElementSrc(`.team-a-player-1-img`, playerA.src);
             setElementValue(`#team-a-player-2`, playerB.name);
@@ -112,19 +117,40 @@ function switchCourt(courtServe) {
             setElementSrc(`.team-b-player-1-img`, playerC.src);
             setElementValue(`#team-b-player-2`, playerD.name);
             setElementSrc(`.team-b-player-2-img`, playerD.src);
+            if (gameMatchType == 1) {
+                switchPlayerSide("a");
+                switchPlayerSide("b");
+            }
             showHideShuttle("main", courtServe, "right");
         };
         //showHideShuttle("main", courtServe, "right");
     };
 
-    if (gameMatchType == 1 && (gameSet != 3 && blnMidBreak == false)) {
-        $(`#team-a-player-1`).hide()
-        $(`.team-a-player-1-img`).hide()
-        $(`#team-a-player-2`).show()
-        $(`.team-a-player-2-img`).show()
-        $(`#team-b-player-1`).hide()
-        $(`.team-b-player-1-img`).hide()
-        $(`#team-b-player-2`).show()
-        $(`.team-b-player-2-img`).show()
-    }
+    //if (gameMatchType == 1 && (gameSet != 3 && blnMidBreak == false)) {
+    //    $(`#team-a-player-1`).hide()
+    //    $(`.team-a-player-1-img`).hide()
+    //    $(`#team-a-player-2`).show()
+    //    $(`.team-a-player-2-img`).show()
+    //    $(`#team-b-player-1`).hide()
+    //    $(`.team-b-player-1-img`).hide()
+    //    $(`#team-b-player-2`).show()
+    //    $(`.team-b-player-2-img`).show()
+    //}
 }
+
+function switchPlayerSide(side) {
+    let tempPlayer = new player();
+    tempPlayer.name = getElementValue(`#team-${side}-player-1`);
+    tempPlayer.src = getElementSrc(`.team-${side}-player-1-img`);
+
+    setElementValue(`#team-${side}-player-1`, getElementValue(`#team-${side}-player-2`));
+    setElementSrc(`.team-${side}-player-1-img`, getElementSrc(`.team-${side}-player-2-img`));
+    setElementValue(`#team-${side}-player-2`, tempPlayer.name);
+    setElementSrc(`.team-${side}-player-2-img`, tempPlayer.src);
+    //if (gameMatchType == 1) {
+        hideElement(`.team-${side}-player-1-img`);
+        hideElement(`#team-${side}-player-1`);
+        showElement(`.team-${side}-player-2-img`);
+        showElement(`#team-${side}-player-2`);
+    //}
+};
