@@ -91,11 +91,18 @@ function incrementScore(scoreSide) {
         case 1:
             setElementInnerHTML(`#team-a-set-one`, teamAScore);
             setElementInnerHTML(`#team-b-set-one`, teamBScore);
+            // For the Tally Result Report
+            setElementInnerHTML(`#tally-team-a-set-one`, teamAScore);
+            setElementInnerHTML(`#tally-team-b-set-one`, teamBScore);
+
             scoreboard.push(gameset, scoreSide == 'left' ? "X" : "0")
             break;
         case 2:
             setElementInnerHTML(`#team-a-set-two`, teamBScore);
             setElementInnerHTML(`#team-b-set-two`, teamAScore);
+            // For the Tally Result Report
+            setElementInnerHTML(`#tally-team-a-set-two`, teamAScore);
+            setElementInnerHTML(`#tally-team-b-set-two`, teamBScore);
             scoreboard.push(gameset, scoreSide == 'left' ? "0" : "X")
             break;
         case 3:
@@ -103,11 +110,17 @@ function incrementScore(scoreSide) {
                 case false:
                     setElementInnerHTML(`#team-a-set-three`, teamAScore);
                     setElementInnerHTML(`#team-b-set-three`, teamBScore);
+                    // For the Tally Result Report
+                    setElementInnerHTML(`#tally-team-a-set-three`, teamAScore);
+                    setElementInnerHTML(`#tally-team-b-set-three`, teamBScore);
                     scoreboard.push(gameset, scoreSide == 'left' ? "X" : "0")
                     break;
                 case true:
                     setElementInnerHTML(`#team-a-set-three`, teamBScore);
                     setElementInnerHTML(`#team-b-set-three`, teamAScore);
+                    // For the Tally Result Report
+                    setElementInnerHTML(`#tally-team-a-set-three`, teamBScore);
+                    setElementInnerHTML(`#tally-team-b-set-three`, teamAScore);
                     scoreboard.push(gameset, scoreSide == 'left' ? "0" : "X")
                     break;
             }

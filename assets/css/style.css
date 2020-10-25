@@ -216,6 +216,41 @@ li a {
     font-size: 20vh;
 }
 
+
+/* ***** Start of Tally Score Board Result page ***** */
+table, th, td {
+  border: 1px solid black;
+}
+
+#main-tally-score-board {
+    width: 100%;
+}
+
+#game-set-col {
+    width: 6vw;
+}
+
+#warning-card-col {
+    width: 8vw;
+}
+
+.warning-cards {
+    width: 2vw;
+}
+
+.tally-team-b-players {
+    border: 3px solid lightcoral;
+    background: lightcoral;
+    color: black;
+    /*text-align: left;*/
+}
+
+.tally-team-a-players {
+    border: 3px dodgerblue;
+    background-color: dodgerblue;
+    color: black;
+}
+
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation:portrait) {
     html {
         transform: rotate(-90deg);

@@ -22,6 +22,9 @@ $("document").ready(function () {
     playerC = new player("PLAYER NAME", "assets/images/green-player.png", false); //Variable to hold the Player C object
     playerD = new player("PLAYER NAME", "assets/images/red-player.png", true); //Variable to hold the Player D object
 
+    setElementInnerHTML(`.tally-team-a-players`, gameMatchType == 2 ? playerA.name + "/" + playerB.name : playerB.name);
+    setElementInnerHTML(`.tally-team-b-players`, gameMatchType == 2 ? playerC.name + "/" + playerD.name : playerD.name);
+
     console.log("Initialized")
 });
 
