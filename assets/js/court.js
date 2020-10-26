@@ -3,7 +3,17 @@ $("document").ready(function () {
     // Hide End Match menu
     hideElement(`#end-match`);
     addClass(`#team-a-yellow-card`, "not-active");
+    addClass(`#team-a-red-card`, "not-active");
+    addClass(`#team-a-black-card`, "not-active");
+    addClass(`#team-b-yellow-card`, "not-active");
+    addClass(`#team-b-red-card`, "not-active");
+    addClass(`#team-b-black-card`, "not-active");
+    addStyle(`#team-a-yellow-card`, "text-shadow", "gray 1px 1px 1px")
+    addStyle(`#team-a-red-card`, "text-shadow", "gray 1px 1px 1px")
+    addStyle(`#team-a-black-card`, "text-shadow", "gray 1px 1px 1px")
     addStyle(`#team-b-yellow-card`, "text-shadow", "gray 1px 1px 1px")
+    addStyle(`#team-b-red-card`, "text-shadow", "gray 1px 1px 1px")
+    addStyle(`#team-b-black-card`, "text-shadow", "gray 1px 1px 1px")
 
     // --- Hide shuttles ---
     showHideShuttle("main", "left", "right");

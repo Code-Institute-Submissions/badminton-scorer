@@ -35,18 +35,6 @@ header {
     display: flex;
 }
 
-.score-style {
-    text-align: center;
-    font-size: 20px;
-    font-weight: 800;    
-    border-radius: 20px;
-    height: 60vh;
-    width: 4vw;
-    align-content: center;
-    justify-content: center;
-    background-color: gray;
-}
-
 .left-player-container,
 .right-player-container {
     width: 30px;
@@ -139,7 +127,7 @@ body {
 
 .footer-navbar {
     justify-content: center;
-    margin-top: 15vh;
+    /*margin-top: 15vh;*/
 }
 
 .master-container {

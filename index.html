@@ -20,9 +20,9 @@
                 <section class="container-fluid left-player-container">
                     <nav class="navbar navbar-dark navbar-expand-sm header-navbar">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown left-player-dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navLeftPlayerDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navLeftPlayerDropdownMenuLink">
+                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navLeftPlayerDropdownMenuLink">
                                     <a class="dropdown-item" id="team-a-yellow-card" onclick="issueYellowCard('left')">Issue Yellow Card</a>
                                     <a class="dropdown-item" id="team-a-red-card" onclick="issueRedCard('left')">Issue Red Card</a>
                                     <a class="dropdown-item" id="team-a-black-card" onclick="issueBlackCard('left')">Issue Black Card</a>
@@ -98,9 +98,9 @@
                 <section class="container-fluid right-player-container">
                     <nav class="navbar navbar-dark navbar-expand-sm header-navbar">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown right-player-dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navRightPlayerDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                                <div class="dropdown-menu" aria-labelledby="navRightPlayerDropdownMenuLink">
+                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navRightPlayerDropdownMenuLink">
                                     <a class="dropdown-item" id="team-b-yellow-card" onclick="issueYellowCard('right')">Issue Yellow Card</a>
                                     <a class="dropdown-item" id="team-b-red-card" onclick="issueRedCard('right')">Issue Red Card</a>
                                     <a class="dropdown-item" id="team-b-black-card" onclick="issueBlackCard('right')">Issue Black Card</a>
@@ -129,7 +129,7 @@
         <section>
             <div class="container-fluid master-container">
                 <div class="row container-row">
-                    <div class="col">
+                    <div class="col scorer-col">
                         <button class="score-style left-scorer" onclick="incrementScore('left')">+1</button>
                     </div>
                     <div class="row court-row">
@@ -170,7 +170,7 @@
                         <div class="col bottom-sideline">
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col scorer-col">
                         <button class="score-style right-scorer" onclick="incrementScore('right')">+1</button>
                     </div>
                 </div>

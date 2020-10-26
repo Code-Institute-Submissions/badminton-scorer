@@ -3,19 +3,19 @@
 .left-court-long-service-line, 
 .right-court-long-service-line,
 .left-scorer, .right-scorer {
-    height: 60vh;
+    height: 70vh;
 }
 
 .left-court-left-service-area,
 .left-court-right-service-area,
 .right-court-left-service-area,
 .right-court-right-service-area {
-    height: 30vh;
+    height: 35vh;
 } 
 
 .top-sideline, .bottom-sideline {
     height: 5vh;
-    width: 62vw;
+    width: 80vw;
 }
 
 .left-scorer, .right-scorer {
@@ -33,12 +33,24 @@
 .left-court-right-service-area, 
 .right-court-left-service-area, 
 .right-court-right-service-area {
-    width: 22vw;
+    width: 30vw;
 }
 
 .left-court-long-service-line, 
 .right-court-long-service-line {
     width: 5vw;
+}
+
+.score-style {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;    
+    border-radius: 20px;
+    height: 70vh;
+    width: 4vw;
+    align-content: center;
+    justify-content: center;
+    background-color: gray;
 }
 
 /* ----- Court areas positioning here ----- */
@@ -377,9 +389,54 @@ input#full-interval-seconds {
 }
 
 @media only screen and (min-width: 568px) and (max-height: 414px) and (max-width: 670px) {
+    .score-board-container {
+        width: 60vw!important;
+    }
+    .team-a-players, .team-b-players {
+        font-size: 3vh;
+        height: -webkit-fill-available;
+    }    
+    .set-one, .set-two, .set-three,
+    .warning-cards {
+        top: -0.3vh;
+    }
     #game-settings {
         top: 10vh;
     }
+
+    #team-a-yellow-card,
+    #team-a-red-card,
+    #team-a-black-card,
+    #team-b-yellow-card,
+    #team-b-red-card,
+    #team-b-black-card {
+        padding: 2px;
+        font-size: 4vh;
+    }
+
+    .dropdown-menu-left,
+    .dropdown-menu-right {
+        min-width: 20vw;
+        width: 20vw;
+    }
+    .score-style {
+        padding: 0;
+        margin: 0;
+        width: 8vw!important;
+    }
+    .scorer-col {
+        padding-right: 1vw!important;
+        padding-left: 1vw!important;
+    }
+    .left-player-dropdown{
+        left: 2vh;
+    }
+    .left-player-dropdown,
+    .right-player-dropdown{
+        top: -4vh;
+    }
+
+    /* Main Court-Area */
     .modal-dialog {
         width: 90vw;
         margin-left: auto;
@@ -467,7 +524,6 @@ input#full-interval-seconds {
         top: 15vh
     }
 }
-*/
 @media only screen and (max-height: 320px) and (min-width: 500px) {
     .score-style {
         padding: 0;
@@ -491,3 +547,4 @@ input#full-interval-seconds {
         font-weight: 800;    
     }
 }
+*/
