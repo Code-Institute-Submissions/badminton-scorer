@@ -118,8 +118,8 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navSetupMenuDropdownMenuLink">
                                 <a class="dropdown-item" id="new-match" data-toggle="modal" data-target="#game-settings" >New Match</a>
                                 <a class="dropdown-item" id="end-match" onclick="endMatch()">End Current Match</a>
-                                <a class="dropdown-item" id="game-result" data-toggle="modal" data-target="#end-game-result">Score Result</a>
                                 <a class="dropdown-item" id="contact-developer" onclick="contactMe()">Contact the Developer</a>
+                                <a class="dropdown-item" id="about-app" onclick="aboutTheApp()">About the App</a>
                             </div>
                         </li>
                     </ul>
@@ -395,7 +395,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="showGameResult()">Proceed</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="showGameResult()">Proceed</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     </div>
                 </div>

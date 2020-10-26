@@ -2,6 +2,8 @@ $("document").ready(function () {
     // ----- Initialize Mini-Court Area on Game Settings Modal and Menu settings -----
     // Hide End Match menu
     hideElement(`#end-match`);
+    addClass(`#team-a-yellow-card`, "not-active");
+    addStyle(`#team-b-yellow-card`, "text-shadow", "gray 1px 1px 1px")
 
     // --- Hide shuttles ---
     showHideShuttle("main", "left", "right");
@@ -45,6 +47,10 @@ function gameStart() {
     disableElement(`#team-a-player-2`);
     disableElement(`#team-b-player-1`);
     disableElement(`#team-b-player-2`);
+    removeClass(`#team-a-yellow-card`, "not-active");
+    removeClass(`#team-b-yellow-card`, "not-active");
+    removeStyle(`#team-a-yellow-card`);
+    removeStyle(`#team-a-yellow-card`);
 
     // set Player's Image color and Name
     setElementSrc(`.team-a-player-1-img`, playerA.src)
@@ -187,6 +193,7 @@ window.addEventListener("orientationchange", function() {
 
 // This will end the current match with input notes and will show the Match Result Tally Score Board after. 
 function endMatch() {
+    startGame = false;
     hideElement(`#end-match`);
     showElement(`#new-match`);
     //Show modal for End-Game Reason
@@ -195,7 +202,7 @@ function endMatch() {
 
 function showGameResult() {
     //Show modal Match Result Tally Score Board
-    setElementInnerHTML(`#umpire-notes`, getElementValue(`#additional-notes`));
+    appendChild(`#umpire-notes`, `<p style="margin-left:1vw;">${getElementValue("#additional-notes")}</p>`);
     $('#end-game-result').modal('show');
 };
 
@@ -219,7 +226,7 @@ function issueProperYellowCard(side, noOfIssue) {
         addClass(`#team-${(side == 'left'? 'a':'b')}-yellow-card`, "not-active");
         addStyle(`#team-${(side == 'left'? 'a':'b')}-yellow-card`, "text-shadow", "gray 1px 1px 1px")
         removeClass(`#team-${(side == 'left'? 'a':'b')}-red-card`, "not-active");
-        $(`#team-${(side == 'left'? 'a':'b')}-red-card`).removeAttr("style");
+        removeStyle(`#team-${(side == 'left'? 'a':'b')}-red-card`);
         // For Match Results
         setBackgroundColor(`#team-${(side == 'left'? 'a':'b')}-yellow-two`, "yellow");
     };
@@ -231,7 +238,7 @@ function issueRedCard(side) {
     addClass(`#team-${(side == 'left'? 'a':'b')}-red-card`, "not-active");
     addStyle(`#team-${(side == 'left'? 'a':'b')}-red-card`, "text-shadow", "gray 1px 1px 1px")
     removeClass(`#team-${(side == 'left'? 'a':'b')}-black-card`, "not-active");
-    $(`#team-${(side == 'left'? 'a':'b')}-black-card`).removeAttr("style");
+    removeStyle(`#team-${(side == 'left'? 'a':'b')}-black-card`);
     // For Match Results
     setBackgroundColor(`#team-${(side == 'left'? 'a':'b')}-red`, "red");
 };
@@ -313,6 +320,11 @@ function addClass(selector, className) {
 // This function will remove class to an element
 function removeClass(selector, className) {
     $(`${selector}`).removeClass(className);
+};
+
+// This function will remove css style to an element
+function removeStyle(selector) {
+    $(`${selector}`).removeAttr("style");
 };
 
 // Voice-Over synthesizer for text input

@@ -107,8 +107,8 @@ function incrementScore(scoreSide) {
             setElementInnerHTML(`#tally-team-a-set-two`, teamAScore);
             setElementInnerHTML(`#tally-team-b-set-two`, teamBScore);
 
-            appendChild(`#main-tally-set-2-a`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`)
-            appendChild(`#main-tally-set-2-b`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`)
+            appendChild(`#main-tally-set-2-a`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`)
+            appendChild(`#main-tally-set-2-b`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`)
             break;
         case 3:
             switch(blnMidBreak) {
@@ -119,8 +119,8 @@ function incrementScore(scoreSide) {
                     setElementInnerHTML(`#tally-team-a-set-three`, teamAScore);
                     setElementInnerHTML(`#tally-team-b-set-three`, teamBScore);
 
-                    appendChild(`#main-tally-set-2-a`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`)
-                    appendChild(`#main-tally-set-2-b`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`)
+                    appendChild(`#main-tally-set-3-a`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`)
+                    appendChild(`#main-tally-set-3-b`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`)
                     break;
                 case true:
                     setElementInnerHTML(`#team-a-set-three`, teamBScore);
@@ -129,8 +129,8 @@ function incrementScore(scoreSide) {
                     setElementInnerHTML(`#tally-team-a-set-three`, teamBScore);
                     setElementInnerHTML(`#tally-team-b-set-three`, teamAScore);
 
-                    appendChild(`#main-tally-set-2-a`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`)
-                    appendChild(`#main-tally-set-2-b`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`)
+                    appendChild(`#main-tally-set-3-a`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`)
+                    appendChild(`#main-tally-set-3-b`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`)
                     break;
             }
     };
@@ -159,17 +159,17 @@ function incrementScore(scoreSide) {
         } else {
             $("#close-interval").click();
         };
-        blnMidBreak = false;
     };
 
     // This will enable the full-game interval timer if one of the following condition is met
     // 1. If a team score 21 points first and with a lead points of 2 or more (i.e. 21:19 or 19:21, or 21:7 etc)
     // 2. if a team score is greater than 21 points with a lead points of 2 (i.e. 22:20, 20:22, 23:21 etc.)
     // 3. if a team reaches 30 points first (i.e. 30:29 or 29:30)
-    if (((teamAScore == 21 && teamBScore <= 19) || (teamBScore == 21 && teamAScore <= 19))
+    if ((((teamAScore == 21 && teamBScore <= 19) || (teamBScore == 21 && teamAScore <= 19))
         || ((teamAScore > 21 && (teamAScore-teamBScore) >= 2) || (teamBScore > 21 && teamBScore - teamAScore >= 2))
         || (teamAScore == 30 || teamBScore == 30)
-        ) {
+        ) && gameSet <= 3) {
+        blnMidBreak = false;
         setElementInnerHTML(`#interval-timer`, "...");
         $('#game-interval').modal('show');
         hideElement(`#close-interval`);
@@ -192,7 +192,7 @@ function incrementScore(scoreSide) {
                 break;
         };
 
-        if (teamAScore > teamBScore)
+        //if (teamAScore > teamBScore)
         gameSet++;
         switchCourt(teamAScore > teamBScore ? 'right' : 'left');
         teamAScore = 0;
