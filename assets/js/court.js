@@ -197,6 +197,7 @@ function endMatch() {
     hideElement(`#end-match`);
     showElement(`#new-match`);
     //Show modal for End-Game Reason
+    $('#game-interval').modal('hide');
     $('#end-game-set').modal('show');
 };
 
