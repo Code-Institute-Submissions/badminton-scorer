@@ -1,5 +1,7 @@
 var teamAScore = 0;
 var teamBScore = 0;
+var teamAGameWin = 0;
+var teamBGameWin = 0;
 var serviceOver = 2;
 var startGame = false;
 var player = {};
@@ -134,7 +136,7 @@ function incrementScore(scoreSide) {
     };
 
     // let's put some delay (2secs) here if voice over is enabled
-    voiceTimer = 3;
+    voiceTimer = 2;
     if (blnVoiceOver) {
         delayForVoice(voiceTimer);
     } else {
@@ -178,13 +180,27 @@ function incrementScore(scoreSide) {
             setElementInnerHTML(`#interval-timer`, "0");
             showElement(`#start-new-set`)
         };
+
+        // Set Team Number of win here
+        switch(gameSet) {
+            case 1:
+                (teamAScore > teamBScore) ? teamAGameWin++ : teamBGameWin++;
+                break;
+            case 2:
+            case 3:
+                (teamAScore > teamBScore) ? teamBGameWin++ : teamAGameWin++;
+                break;
+        };
+
+        if (teamAScore > teamBScore)
         gameSet++;
         switchCourt(teamAScore > teamBScore ? 'right' : 'left');
         teamAScore = 0;
         teamBScore = 0;
     };
-    if (gameSet >= 3) {
-        //End of Game Match Here
+    if (gameSet >= 3 || teamAScore == 2 || teamBGameWin == 2) {
+        //End of Game Match Here show Match Result Tally Score Board
+        $('#end-game-result').modal('show');
     };
 };
 

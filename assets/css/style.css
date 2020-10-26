@@ -55,7 +55,7 @@ header {
 .score-board-container {
     position: relative;
     height: 10vh;
-    width: 30vw;
+    width: 35vw;
     margin-left: auto;
     margin-right: auto;
 }
@@ -67,13 +67,13 @@ header {
     padding: 0px 0px 0px 0px;
 }
 
-.team-a-players, .team-a-set-one, .team-a-set-two, .team-a-set-three {
+.team-a-players, .team-a-set-one, .team-a-set-two, .team-a-set-three, .team-a-warning {
     /*border: 3px dodgerblue;*/
     background-color: dodgerblue;
     color: black;
 }
 
-.team-b-players, .team-b-set-one, .team-b-set-two, .team-b-set-three  {
+.team-b-players, .team-b-set-one, .team-b-set-two, .team-b-set-three, .team-b-warning  {
     /*border: 3px solid lightcoral;*/
     background: lightcoral;    
     color: black;
@@ -95,22 +95,31 @@ header {
     padding: 0px 0px 0px 0px;
 }
 
-.set-one, .set-two, .set-three {
+.set-one, .set-two, .set-three, .warning-cards {
     padding-right: 0;
     padding-left: 0;
     flex-grow: 0;
 }
 
+.team-a-warning, .team-b-warning  {
+    width: 1.5vw;
+}
+
 .team-a-set-one, .team-a-set-two, .team-a-set-three,
-.team-b-set-one, .team-b-set-two, .team-b-set-three   {
+.team-b-set-one, .team-b-set-two, .team-b-set-three {
     border: 2px solid black;
+    width: 2vw;
+}
+
+.team-a-set-one, .team-a-set-two, .team-a-set-three,
+.team-b-set-one, .team-b-set-two, .team-b-set-three,
+.team-a-warning, .team-b-warning  {
     height: 4.7vh;
-    width: 3vw;
     padding-left: 0;
     padding-right: 0;
     margin-right: 0;
     margin-left: 0;
-    /*align-content: center;*/
+    text-align: center;
     justify-content: center;
     font-size: 2.5vh;
     font-weight: 900;
@@ -162,6 +171,13 @@ li a {
     left: auto;
 }
 
+.not-active {
+  pointer-events: none;
+  cursor: not-allowed;
+  text-decoration: none;
+  color: black;
+}
+
 /* ----- Setup Settings ----- */
 #game-settings {
     top: 20vh;
@@ -195,8 +211,8 @@ li a {
     background-color: #f76606;
 }
 
-.dropdown-item:hover {
-    cursor: pointer;
+.dropdown-item:disabled {
+    cursor: not-allowed;
     background-color: #f76606;
 }
 
@@ -219,12 +235,13 @@ li a {
 
 /* ***** Start of Tally Score Board Result page ***** */
 #end-game-result-dialog {
-    top: 20vh;
+    top: 15vh;
     width: fit-content;
 }
 
 table, th, td {
   border: 2px solid black;
+  margin: 1vh;
 }
 
 .rally-points {
@@ -247,7 +264,16 @@ table, th, td {
 .warning-cards {
     width: 2vw;
 }
-
+/*
+#team-a-yellow-card,
+#team-a-red-card,
+#team-a-black-card,
+#team-b-yellow-card,
+#team-b-red-card,
+#team-b-black-card {
+    text-shadow: gray 1px 1px 1px;
+};
+*/
 .tally-team-b-players {
     background: lightcoral;
     color: black;

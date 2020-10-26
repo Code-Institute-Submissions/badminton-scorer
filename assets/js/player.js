@@ -18,7 +18,7 @@ $('a').click(function() {
     };
 });
 
-// Variable to hold the macth type Singles/Doubles
+// This will show/hide players depending on matchtype etc.
 function showHidePlayers(courtType, option, matchType) {
     if(option == 'hide') {
         hideElement(`.team-a-player-1-img`);
@@ -46,6 +46,7 @@ function showHidePlayers(courtType, option, matchType) {
     gameMatchType = matchType;
 };
 
+// Create Player object 
 function player (name, src, isVisible) {
     this.name = name;
     this.src = src;
@@ -123,19 +124,7 @@ function switchCourt(courtServe) {
             }
             showHideShuttle("main", courtServe, "right");
         };
-        //showHideShuttle("main", courtServe, "right");
     };
-
-    //if (gameMatchType == 1 && (gameSet != 3 && blnMidBreak == false)) {
-    //    $(`#team-a-player-1`).hide()
-    //    $(`.team-a-player-1-img`).hide()
-    //    $(`#team-a-player-2`).show()
-    //    $(`.team-a-player-2-img`).show()
-    //    $(`#team-b-player-1`).hide()
-    //    $(`.team-b-player-1-img`).hide()
-    //    $(`#team-b-player-2`).show()
-    //    $(`.team-b-player-2-img`).show()
-    //}
 }
 
 function switchPlayerSide(side) {
@@ -147,10 +136,9 @@ function switchPlayerSide(side) {
     setElementSrc(`.team-${side}-player-1-img`, getElementSrc(`.team-${side}-player-2-img`));
     setElementValue(`#team-${side}-player-2`, tempPlayer.name);
     setElementSrc(`.team-${side}-player-2-img`, tempPlayer.src);
-    //if (gameMatchType == 1) {
-        hideElement(`.team-${side}-player-1-img`);
-        hideElement(`#team-${side}-player-1`);
-        showElement(`.team-${side}-player-2-img`);
-        showElement(`#team-${side}-player-2`);
-    //}
+
+    hideElement(`.team-${side}-player-1-img`);
+    hideElement(`#team-${side}-player-1`);
+    showElement(`.team-${side}-player-2-img`);
+    showElement(`#team-${side}-player-2`);
 };
