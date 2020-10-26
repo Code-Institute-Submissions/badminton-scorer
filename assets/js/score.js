@@ -198,7 +198,7 @@ function incrementScore(scoreSide) {
         teamAScore = 0;
         teamBScore = 0;
     };
-    if (gameSet >= 3 || teamAScore == 2 || teamBGameWin == 2) {
+    if (teamAGameWin == 2 || teamBGameWin == 2) {
         //End of Game Match Here show Match Result Tally Score Board
         $('#end-game-result').modal('show');
     };

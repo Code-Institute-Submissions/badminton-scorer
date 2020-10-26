@@ -221,7 +221,7 @@ function issueProperYellowCard(side, noOfIssue) {
         removeClass(`#team-${(side == 'left'? 'a':'b')}-red-card`, "not-active");
         $(`#team-${(side == 'left'? 'a':'b')}-red-card`).removeAttr("style");
         // For Match Results
-        setBackgroundColor(`#team-${(side == 'left'? 'a':'b')}-yellow-one`, "yellow");
+        setBackgroundColor(`#team-${(side == 'left'? 'a':'b')}-yellow-two`, "yellow");
     };
 };
 
