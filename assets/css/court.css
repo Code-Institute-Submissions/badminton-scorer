@@ -128,6 +128,10 @@
     top: -3px;
 } 
 
+.left-mini-corner-service-line {
+    width: 41vw;
+}
+
 .left-court-long-service-line, 
 .right-court-long-service-line {
     padding: 0;
@@ -182,7 +186,7 @@
 
 .mini-left-net-area,
 .mini-right-net-area {
-    border: 1px solid white;
+    border: 2px solid white;
     max-width: 6vw;
 }
 
@@ -202,7 +206,7 @@
 .mini-corner-service-line,
 .mini-court-service-line {
     height: 3vh;
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 .mini-court-back-service-area,
@@ -246,14 +250,14 @@
     padding: 5px 0 5px 5px;
     top: 14.4vh;
     left: 41vw;
-    width: 16vw;
+    width: 20vw;
    /* height: 15vh;*/
 }
 
 .game-voice-over {
     top: 25.5vh;
     left: 41vw;
-    width: 16vw;
+    width: 20vw;
     height: 6.5vh;
     padding-left: 0.5vh;
     padding-top: 1vh;
@@ -267,7 +271,7 @@
 
 .start-match-btn {
     position: relative;
-    margin: 1vh 0vh 0vh 0vh;
+    margin: 2vh 0vh 0vh 0vh;
     width: 100%;
     background-color: lightblue;
     box-shadow: 1px 2px #888888;
@@ -295,7 +299,7 @@
     border: 0;
 }
 .match-type-container, .server-side-container {
-    width: 8vw;
+    width: 10vw;
     padding: 0.5vh 0.5vh 0 0;
 }
 
@@ -387,91 +391,19 @@
 input#full-interval-seconds {
     margin-left: 0.2vh;
 }
-/*
-@media only screen and (min-width: 568px) and (min-height: 410px) {
-    .score-board-container {
-        width: 60vw!important;
-    }
 
-    .modal-dialog {
-        width: 90vw;
-        margin-left: auto;
-        margin-right: auto'
-    }
-    
-    .mini-court-settings {
-        top: -2vh;
-        left: 4vh;
-        height: 40vh;
-    }
-    
-    .mini-corner-service-line,
-    .mini-court-back-service-area {
-        width: 5vw;
-    }
-    
-    .mini-court-service-line {
-        width: 18vw;
-    }   
-    .mini-left-court-long-service-line, 
-    .mini-left-court-area, 
-    .mini-left-net-area, 
-    .mini-right-net-area, 
-    .mini-right-court-area, 
-    .mini-right-court-long-service-line {
-        height: 40vh;
-    }
-    .mini-left-court-long-service-line,
-    .mini-right-court-long-service-line {
-        max-width: 5vw;
-    }
-    .mini-left-court-area,
-    .mini-right-court-area{
-        max-width: 18vw;
-    }
-    .mini-court-back-service-area, 
-    .mini-court-service-area {
-        height: 17vh;
-    }
-    .mini-left-net-area,
-    .mini-right-net-area {
-        max-width: 9vw;
-    }
-    .match-type-container {
-        left: 67vw;
-    }
-    .server-side-container {
-        left: 75vw;
-    }
-    .game-interval-container {
-        top: 17.4vh;
-        left: 67vw;
-    }
-    .game-voice-over {
-        top: 35.5vh;
-        left: 67vw;
-    }
-    .score-style {
-        padding: 0;
-        margin: 0;
-        width: 6vw!important;
-    }
+@media only screen and (min-width: 568px) and (min-height: 410px) {
 }
-*/
-@media only screen { /*and (min-width: 568px) and (max-height: 414px) and (max-width: 670px) {*/
+
+
+@media only screen { 
     .score-board-container {
         width: 60vw!important;
     }
     .team-a-players, .team-b-players {
-        font-size: 3vh;
+        font-size: 2.5vh;
         height: -webkit-fill-available;
     }
-    /*   
-    .set-one, .set-two, .set-three,
-    .warning-cards {
-        top: -0.3vh;
-    }
-    */
     #game-settings {
         top: 10vh;
     }
@@ -500,22 +432,12 @@ input#full-interval-seconds {
         padding-right: 1vw!important;
         padding-left: 1vw!important;
     }
-    /*
-    .left-player-dropdown{
-        left: 2vh;
-    }
-    .left-player-dropdown,
-    .right-player-dropdown{
-        top: -4vh;
-    }
-    */
-    .modal-dialog {
-        width: 90vw;
+    .game-settings-dialog {
+        width: 94vw;
         margin-left: auto;
         margin-right: auto'
     }
     .mini-court-settings {
-        top: -2vh;
         left: 4vh;
         height: 40vh;
     }
@@ -534,7 +456,7 @@ input#full-interval-seconds {
     .mini-right-net-area, 
     .mini-right-court-area, 
     .mini-right-court-long-service-line {
-        height: 41vh;
+        height: 40vh;
     }
     .mini-left-court-long-service-line,
     .mini-right-court-long-service-line {
@@ -556,22 +478,45 @@ input#full-interval-seconds {
         left: 67vw;
     }
     .server-side-container {
-        left: 75vw;
+        left: 77vw;
     }
     .game-interval-container {
-        top: 17.4vh;
         left: 67vw;
     }
     .game-voice-over {
-        top: 35.5vh;
         left: 67vw;
     }
 }
-*/
-@media (min-width: 800px) {
-    .modal-dialog {
-        max-width: 60vw!important;
-        margin-left: auto;
-        margin-right: auto'
+
+@media only screen and (max-height: 420px) {
+    .match-type-container,
+    .server-side-container {
+        top: 3vh;
+    }
+    .game-interval-container {
+        top: 19.4vh;
+    }
+    .game-voice-over {
+        top: 35.5vh;
+    }
+}
+
+@media only screen and (max-height: 360px) {
+    .game-voice-over {
+        top: 36.5vh;
+    }
+}
+
+@media only screen and (max-height: 280px) {
+    .match-type-container, .server-side-container {
+        top: 4vh;
+        height: 17vh;
+    }
+    .game-interval-container {
+        top: 20.4vh;
+        height: 19vh;
+    }
+    .game-voice-over {
+        top: 38.5vh;
     }
 }

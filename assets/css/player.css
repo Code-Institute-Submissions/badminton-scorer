@@ -64,11 +64,11 @@ input#team-a-player-2, input#team-b-player-1 {
 
 
 .mini-team-a-player-1-img, .mini-team-a-player-2-img {
-    left: 2.0vh;
+    left: 1.4vw;
 }
 
 .mini-team-b-player-1-img, .mini-team-b-player-2-img {
-    left: 15vh;
+    left: 14.6vw;
 }
 
 .player-font-dropdown > .dropdown-menu {

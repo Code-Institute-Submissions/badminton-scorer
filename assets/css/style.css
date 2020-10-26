@@ -96,7 +96,7 @@ header {
 .team-a-set-one, .team-a-set-two, .team-a-set-three,
 .team-b-set-one, .team-b-set-two, .team-b-set-three {
     border: 2px solid black;
-    width: 2vw;
+    width: vw;
 }
 
 .team-a-set-one, .team-a-set-two, .team-a-set-three,
@@ -281,6 +281,15 @@ table, th, td {
     font-size: 3vh;
 };
 
+@media only screen {
+    .team-a-set-one, .team-a-set-two, .team-a-set-three,
+    .team-b-set-one, .team-b-set-two, .team-b-set-three {
+        border: 2px solid black;
+        width: 3vw;
+    }
+
+}
+
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation:portrait) {
     html {
         transform: rotate(-90deg);
@@ -306,104 +315,3 @@ table, th, td {
         margin: 1.75rem auto;
     }
 }
-/*
-@media only screen and (max-height: 380px) {
-    .master-container {
-        margin-top: 20px;
-    }
-}
-
-@media only screen and (max-height: 540px) and (min-width: 600px) {
-    .left-scorer, .right-scorer {
-        width: 30vw;
-        height: 240vh;
-    } 
-
-    .left-court-area, .right-court-area {
-        height: 240vh;
-    }
-    .left-court-area, 
-    .right-court-area, 
-    .left-court-left-service-area,
-    .left-court-right-service-area,
-    .right-court-left-service-area,
-    .right-court-right-service-area {
-        width: 186vw;
-    } 
-    
-    .left-net-area, .right-net-area {
-        width: 78vw;
-    }
-
-    .left-court-left-service-area,
-    .left-court-right-service-area,
-    .right-court-left-service-area,
-    .right-court-right-service-area {
-        height: 120vh;
-    }
-    .left-court-long-service-line, 
-    .right-court-long-service-line {
-        height: 246vh;
-        width: 36vw;
-    }
-    
-    .top-sideline, 
-    .bottom-sideline {
-        width: 540vw;
-        height: 22vh;
-    }
-}
-
-@media only screen and (max-height: 320px) and (min-width: 500px) {
-    .left-scorer, .right-scorer {
-        width: 30px;
-        height: 220px;
-    } 
-
-    .score-style {
-        padding: 0;
-        margin: 0;
-        border: 0;
-        padding-top: 95px;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 800;    
-    }
-
-    .left-court-area, .right-court-area {
-        height: 220px;
-    }
-
-    .left-court-area, 
-    .right-court-area, 
-    .left-court-left-service-area,
-    .left-court-right-service-area,
-    .right-court-left-service-area,
-    .right-court-right-service-area {
-        width: 146px;
-    } 
-    
-    .left-net-area, .right-net-area {
-        width: 72px;
-    }
-
-    .left-court-left-service-area,
-    .left-court-right-service-area,
-    .right-court-left-service-area,
-    .right-court-right-service-area {
-        height: 110px;
-    }
-
-    .left-court-long-service-line, 
-    .right-court-long-service-line {
-        height: 226px;
-        width: 32px;
-    }
-    
-    .top-sideline, 
-    .bottom-sideline {
-        width: 500px;
-        height: 22px;
-    }
-}
-*/
