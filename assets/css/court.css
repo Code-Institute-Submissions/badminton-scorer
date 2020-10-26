@@ -182,9 +182,13 @@
     border-left-style: dashed;
 }
 
+.mini-corner-service-line, 
+.mini-court-back-service-area {
+    width: 3vw;
+}
+
 .mini-corner-service-line,
 .mini-court-service-line {
-    /*width: 3vh;*/
     height: 3vh;
     border: 1px solid white;
 }
@@ -205,7 +209,9 @@
 .mini-left-court-right-player-container  {
     text-align: left;
 }
-
+.mini-right-court-long-service-line {
+    left: -0.1vw;
+}
 .match-type-container,
 .server-side-container,
 .game-interval-container,
@@ -370,14 +376,77 @@ input#full-interval-seconds {
     margin-left: 0.2vh;
 }
 
-@media (min-width: 576px) {
+@media only screen and (min-width: 568px) and (max-height: 414px) and (max-width: 670px) {
+    #game-settings {
+        top: 10vh;
+    }
     .modal-dialog {
-        max-width: 60vw;
+        width: 90vw;
+        margin-left: auto;
+        margin-right: auto'
+    }
+    .mini-court-settings {
+        top: -2vh;
+        left: 4vh;
+        height: 40vh;
+    }
+    
+    .mini-corner-service-line,
+    .mini-court-back-service-area {
+        width: 5vw;
+    }
+    
+    .mini-court-service-line {
+        width: 18vw;
+    }   
+    .mini-left-court-long-service-line, 
+    .mini-left-court-area, 
+    .mini-left-net-area, 
+    .mini-right-net-area, 
+    .mini-right-court-area, 
+    .mini-right-court-long-service-line {
+        height: 41vh;
+    }
+    .mini-left-court-long-service-line,
+    .mini-right-court-long-service-line {
+        max-width: 5vw;
+    }
+    .mini-left-court-area,
+    .mini-right-court-area{
+        max-width: 18vw;
+    }
+    .mini-court-back-service-area, 
+    .mini-court-service-area {
+        height: 17vh;
+    }
+    .mini-left-net-area,
+    .mini-right-net-area {
+        max-width: 9vw;
+    }
+    .match-type-container {
+        left: 67vw;
+    }
+    .server-side-container {
+        left: 75vw;
+    }
+    .game-interval-container {
+        top: 17.4vh;
+        left: 67vw;
+    }
+    .game-voice-over {
+        top: 35.5vh;
+        left: 67vw;
+    }
+}
+
+@media (min-width: 800px) {
+    .modal-dialog {
+        max-width: 60vw!important;
         margin-left: auto;
         margin-right: auto'
     }
 }
-
+/*
 @media only screen and (min-width: 576px) {
     .modal-dialog {
         width: 60vw;
@@ -398,7 +467,7 @@ input#full-interval-seconds {
         top: 15vh
     }
 }
-
+*/
 @media only screen and (max-height: 320px) and (min-width: 500px) {
     .score-style {
         padding: 0;
