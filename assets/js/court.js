@@ -60,7 +60,7 @@ function gameStart() {
     removeClass(`#team-a-yellow-card`, "not-active");
     removeClass(`#team-b-yellow-card`, "not-active");
     removeStyle(`#team-a-yellow-card`);
-    removeStyle(`#team-a-yellow-card`);
+    removeStyle(`#team-b-yellow-card`);
 
     // set Player's Image color and Name
     setElementSrc(`.team-a-player-1-img`, playerA.src)

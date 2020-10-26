@@ -397,6 +397,11 @@ input#full-interval-seconds {
 
 
 @media only screen { 
+    #menu-dropdown-list {
+        left: -20vw!important;
+        font-size: 3vh!important;
+        width: 26vw!important;
+    }
     .score-board-container {
         width: 60vw!important;
     }

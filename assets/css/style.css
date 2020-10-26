@@ -199,13 +199,8 @@ li a {
     background-color: #f76606;
 }
 
-.dropdown-item:disabled {
-    cursor: not-allowed;
-    background-color: #f76606;
-}
-
 #game-interval {
-    width: 20vw;
+    width: 28vw;
     top: 20vh;
     justify-content: center;
     text-align: center;
@@ -213,7 +208,7 @@ li a {
 }
 
 #game-interval > * {
-    width: 20vw;
+    width: 28vw;
 }
 
 #interval-timer {
@@ -223,7 +218,7 @@ li a {
 
 /* ***** Start of Tally Score Board Result page ***** */
 #end-game-result-dialog {
-    top: 15vh;
+    margin: 1vh;
     width: fit-content;
 }
 
@@ -281,16 +276,15 @@ table, th, td {
     font-size: 3vh;
 };
 
-@media only screen {
+.modal-body {
+    overflow-y: auto;
+}
+
+@media only screen and (min-height: 280px){
     .team-a-set-one, .team-a-set-two, .team-a-set-three,
     .team-b-set-one, .team-b-set-two, .team-b-set-three {
         border: 2px solid black;
         width: 3vw;
-    }
-    .menu-dropdown-list {
-        left: -20vw;
-        font-size: 3vh;
-        width: 26vw;
     }
 }
 
