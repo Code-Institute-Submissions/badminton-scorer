@@ -503,6 +503,17 @@ input#full-interval-seconds {
         margin-right: auto'
     }
 }
+
+@media only screen and (min-width: 56730px8px) and (min-height: 410px) {
+    .score-board-container {
+        width: 60vw!important;
+    }
+    .score-style {
+        padding: 0;
+        margin: 0;
+        width: 8vw!important;
+    }
+}
 /*
 @media only screen and (min-width: 576px) {
     .modal-dialog {
