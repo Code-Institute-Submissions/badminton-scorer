@@ -46,14 +46,75 @@ img#right-court-left-side-shuttle {
 img#mini-left-court-left-side-shuttle,
 img#mini-left-court-right-side-shuttle {
     position: absolute;
-    left: 8vw;
+    left: 4.5vw;
     height: 6.5vh;
 }
 
 img#mini-right-court-left-side-shuttle,
 img#mini-right-court-right-side-shuttle {
     position: absolute;
-    right: 4.5vw;
+    right: 1vw;
     height: 7.5vh;   
 }
 
+@media only screen and (max-width: 1366px) {
+    img#mini-left-court-left-side-shuttle,
+    img#mini-left-court-right-side-shuttle {
+        left: 6vw;
+    }
+    img#mini-right-court-left-side-shuttle,
+    img#mini-right-court-right-side-shuttle {
+        right: 0vw;
+    }
+}
+
+@media only screen and (max-width: 823px) {
+    img#mini-left-court-left-side-shuttle,
+    img#mini-left-court-right-side-shuttle {
+        left: 6vw;
+    }
+    img#mini-right-court-left-side-shuttle,
+    img#mini-right-court-right-side-shuttle {
+        right: 2.5vw;
+    }
+}
+
+@media only screen and (max-width: 736px) {
+    img#mini-left-court-left-side-shuttle,
+    img#mini-left-court-right-side-shuttle {
+        left: 6.5vw;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    img#mini-left-court-left-side-shuttle,
+    img#mini-left-court-right-side-shuttle {
+        left: 7.5vw;
+    }
+    img#mini-right-court-left-side-shuttle,
+    img#mini-right-court-right-side-shuttle {
+        right: 2vw;
+    }
+}
+
+@media only screen and (max-width: 668px) {
+    img#mini-left-court-left-side-shuttle,
+    img#mini-left-court-right-side-shuttle {
+        left: 7vw;
+    }
+    img#mini-right-court-left-side-shuttle,
+    img#mini-right-court-right-side-shuttle {
+        right: 3.5vw;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    img#mini-left-court-left-side-shuttle,
+    img#mini-left-court-right-side-shuttle {
+        left: 8vw;
+    }
+    img#mini-right-court-left-side-shuttle,
+    img#mini-right-court-right-side-shuttle {
+        right: 4vw;
+    }
+}

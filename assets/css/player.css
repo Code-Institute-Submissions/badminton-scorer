@@ -64,11 +64,11 @@ input#team-a-player-2, input#team-b-player-1 {
 
 
 .mini-team-a-player-1-img, .mini-team-a-player-2-img {
-    left: 1.4vw;
+    left: 1.3vw;
 }
 
 .mini-team-b-player-1-img, .mini-team-b-player-2-img {
-    left: 13vw;
+    left: 14.5vw;
 }
 
 .player-font-dropdown > .dropdown-menu {
@@ -207,7 +207,7 @@ input#mini-team-b-player-2 {
 
 @media only screen and (max-width: 1366px) {
     .mini-team-a-player-1-img, .mini-team-a-player-2-img {
-        left: 2.1vw;
+        left: 1.5vw;
     }
 
     .mini-team-b-player-1-img, .mini-team-b-player-2-img {
@@ -227,11 +227,11 @@ input#mini-team-b-player-2 {
 
 @media only screen and (max-width: 736px) {
     .mini-team-b-player-1-img, .mini-team-b-player-2-img {
-        left: 11.5vw;
+        left: 11vw;
     }
 }
 
-@media only screen and (max-width: 667px) {
+@media only screen and (max-width: 668px) {
     .mini-team-a-player-1-img, .mini-team-a-player-2-img {
         left: 2.4vw;
     }
