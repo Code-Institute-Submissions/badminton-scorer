@@ -116,7 +116,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link navbar-toggler-icon" href="#" id="navSetupMenuDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                             <div class="dropdown-menu dropdown-menu-right" id="menu-dropdown-list" aria-labelledby="navSetupMenuDropdownMenuLink">
-                                <a class="dropdown-item" id="new-match" data-toggle="modal" data-target="#game-settings" >New Match</a>
+                                <a class="dropdown-item" id="new-match" onclick="startNewMatch()" >New Match</a>
                                 <a class="dropdown-item" id="end-match" onclick="endMatch()">End Current Match</a>
                                 <a class="dropdown-item" id="contact-developer" onclick="contactMe()">Contact the Developer</a>
                                 <a class="dropdown-item" id="about-app" onclick="aboutTheApp()">About the App</a>
@@ -380,13 +380,13 @@
 
         <!-- **** Modal for End Game Match **** -->
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-set">
-            <div class="container-fluid modal-dialog modal-dialog-centered modal-sm">
+            <div class="container-fluid modal-dialog modal-dialog-centered" ui-outer-click="showGameResult()" ui-outer-click-if="showGameResult()">
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title" id="game-set">Match not yet finished!</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-game-match">
+                        <!--button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-game-match" onclick="returnToCOurt()">
                             <span aria-hidden="true">&times;</span>
-                        </button>
+                        </button-->
                     </div>
                     <div class="container-fluid modal-body">
                         <div class="md-form">
@@ -475,7 +475,7 @@
                         <h6 id="umpire-notes">Additional Notes:</h6>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="enableNewGame()">Done</button>
                     </div>
                 </div>
             </div>

@@ -33,8 +33,6 @@ $("document").ready(function () {
     playerB = new player("PLAYER NAME", "assets/images/yellow-player.png", true); //Variable to hold the Player B object
     playerC = new player("PLAYER NAME", "assets/images/green-player.png", false); //Variable to hold the Player C object
     playerD = new player("PLAYER NAME", "assets/images/red-player.png", true); //Variable to hold the Player D object
-
-    console.log("Initialized")
 });
 
 var intMidIntervalBreak = 0;
@@ -46,7 +44,12 @@ var issuedRightCard = 0;
 
 // This will show the game match settings
 function startNewMatch() {
-    $('#game-settings').modal('show');
+    modalShowHide('#game-settings', 'show');
+    setPropertyValue(`#mid-interval-break`, `checked`, `true`);
+    setPropertyValue(`#full-interval-break`, `checked`, `true`);
+    setPropertyValue(`#voice-over`, "checked", `true`);
+    setElementValue(`#mid-interval-seconds`, "60");
+    setElementValue(`#full-interval-seconds`, "120")
 }
 
 // This will start the Badminton Scorer and initialize everything
@@ -201,20 +204,25 @@ window.addEventListener("orientationchange", function() {
         //centerMenuSetting();
 }, false);
 
+$(".modal").on("click",function(event){
+    console.log("CLicked outside Modal")
+    event.stopPropagation();
+};
+
 // This will end the current match with input notes and will show the Match Result Tally Score Board after. 
 function endMatch() {
     startGame = false;
     hideElement(`#end-match`);
     showElement(`#new-match`);
     //Show modal for End-Game Reason
-    $('#game-interval').modal('hide');
-    $('#end-game-set').modal('show');
+    modalShowHide('#game-interval', 'hide');
+    modalShowHide('#end-game-set', 'show');
 };
 
 function showGameResult() {
     //Show modal Match Result Tally Score Board
     appendChild(`#umpire-notes`, `<p style="margin-left:1vw;">${getElementValue("#additional-notes")}</p>`);
-    $('#end-game-result').modal('show');
+    modalShowHide('#end-game-result', 'show');
 };
 
 // This will issue a yellow card to the team base on passed parameter
@@ -336,6 +344,16 @@ function removeClass(selector, className) {
 // This function will remove css style to an element
 function removeStyle(selector) {
     $(`${selector}`).removeAttr("style");
+};
+
+// This function will show/hide modal
+function modalShowHide(selector, option) {
+    $(`${selector}`).modal(option);
+};
+
+// This function will set element property value
+function setPropertyValue(selector, property, value) {
+    $(`${selector}`).prop(property, value);
 };
 
 // Voice-Over synthesizer for text input

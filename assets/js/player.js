@@ -1,6 +1,5 @@
 // This function will listen to event when user click the player image and select a color from the dropdown list. It will set each player's color
 $('a').click(function() {
-    //console.log($(this).text().toLowerCase());
     $(this).parent().parent().prev().children('img').attr("src", `assets/images/${$(this).text().toLowerCase()}-player.png`);
     var classNames = $(this).parent().parent().parent().parent().attr("class").split(" ");
     if ($(`.${classNames[1]}`).attr("class").indexOf("left-court-left-player-container") != -1 ) {
@@ -74,7 +73,6 @@ $('#mini-team-b-player-2').on("change", function() {
 });
 
 function switchCourt(courtServe) {
-    console.log(gameSet, courtServe)
     if (gameSet % 2 == 0) {
         setElementValue(`#team-a-player-1`, playerC.name);
         setElementSrc(`.team-a-player-1-img`, playerC.src);
@@ -91,7 +89,6 @@ function switchCourt(courtServe) {
         showHideShuttle("main", courtServe, "right");
     } else {
         if (gameSet == 3 && blnMidBreak == true) {
-            console.log("Game Set 3 should not enter here first")
             setElementValue(`#team-a-player-1`, playerC.name);
             setElementSrc(`.team-a-player-1-img`, playerC.src);
             setElementValue(`#team-a-player-2`, playerD.name);

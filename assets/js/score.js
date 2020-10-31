@@ -12,8 +12,7 @@ var blnMidBreak = false;
 
 function incrementScore(scoreSide) {
     if(!startGame) {
-        alert("Game not started yet!");
-        console.log("Game not started yet!")
+        showElement(`#game-settings`)
         return;
     };
 
@@ -87,7 +86,6 @@ function incrementScore(scoreSide) {
     };
 
     // Reflect the score on the Score Tally Board
-    console.log(blnMidBreak, gameSet, scoreSide, teamAScore, teamBScore);
     switch(gameSet) {
         case 1:
             setElementInnerHTML(`#team-a-set-one`, teamAScore);
@@ -151,13 +149,15 @@ function incrementScore(scoreSide) {
         if(gameSet == 3 && ((teamAScore == 11 && teamBScore < 11) || (teamBScore == 11 && teamAScore < 11))) {
             switchCourt((teamAScore > teamBScore) ? "right" : "left");
         };
-        $('#game-interval').modal('show');
+        modalShowHide('#game-interval', 'show');
         hideElement(`#close-interval`);
         hideElement(`#start-new-set`)
-        if (intMidIntervalBreak > 0){
-            intervalCountdown(intMidIntervalBreak);
-        } else {
-            $("#close-interval").click();
+        if (teamAGameWin < 2 && teamBGameWin < 2) {
+            if (intMidIntervalBreak > 0){
+                intervalCountdown(intMidIntervalBreak);
+            } else {
+                $("#close-interval").click();
+            };
         };
     };
 
@@ -171,15 +171,15 @@ function incrementScore(scoreSide) {
         ) && gameSet <= 3) {
         blnMidBreak = false;
         setElementInnerHTML(`#interval-timer`, "...");
-        $('#game-interval').modal('show');
+        modalShowHide('#game-interval', 'show');
         hideElement(`#close-interval`);
         if (teamAGameWin < 2 && teamBGameWin < 2) {
             if (intFullIntervalBreak > 0) {
-                hideElement(`#start-new-set`)
+                hideElement(`#start-new-set`);
                 intervalCountdown(intFullIntervalBreak);
             } else {
                 setElementInnerHTML(`#interval-timer`, "0");
-                showElement(`#start-new-set`)
+                showElement(`#start-new-set`);
             };
         };
         // Set Team Number of win here
@@ -203,15 +203,20 @@ function incrementScore(scoreSide) {
         //End of Game Match Here show Match Result Tally Score Board
         setElementInnerHTML(`#game-set`, "End of Game Match!")
         hideElement(`#cancel-game`);
-        $('#end-game-set').modal('show');
+        modalShowHide('#end-game-set', 'hide');
+        modalShowHide('#end-game-set', 'show');
+        hideElement(`#game-interval`)
         hideElement(`#end-match`);
         showElement(`#new-match`)
     };
 };
 
 function enableNewGame() {
+    modalShowHide(`#end-game-set`, 'hide');
+    modalShowHide(`#game-interval`, 'hide');
     hideElement(`#end-match`);
-    showElement(`#new-match`)
+    showElement(`#new-match`);
+    modalShowHide(`#end-game-set`, 'hide');
 }
 
 function intervalCountdown(seconds) {
