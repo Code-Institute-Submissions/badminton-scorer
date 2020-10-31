@@ -173,14 +173,15 @@ function incrementScore(scoreSide) {
         setElementInnerHTML(`#interval-timer`, "...");
         $('#game-interval').modal('show');
         hideElement(`#close-interval`);
-        if (intFullIntervalBreak > 0) {
-            hideElement(`#start-new-set`)
-            intervalCountdown(intFullIntervalBreak);
-        } else {
-            setElementInnerHTML(`#interval-timer`, "0");
-            showElement(`#start-new-set`)
+        if (teamAGameWin < 2 && teamBGameWin < 2) {
+            if (intFullIntervalBreak > 0) {
+                hideElement(`#start-new-set`)
+                intervalCountdown(intFullIntervalBreak);
+            } else {
+                setElementInnerHTML(`#interval-timer`, "0");
+                showElement(`#start-new-set`)
+            };
         };
-
         // Set Team Number of win here
         switch(gameSet) {
             case 1:
