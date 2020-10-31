@@ -27,7 +27,7 @@
 }
 
 .team-b-player-1-img, .team-b-player-2-img {
-    left: 22vh;
+    left: 40vh;
 }
 
 .team-a-player-1-img, .team-b-player-2-img {
@@ -50,7 +50,7 @@ input#team-a-player-1, input#team-a-player-2 {
 }
 
 input#team-b-player-1, input#team-b-player-2 {
-    left: 2vh;
+    left: 17vh;
     text-align: end;
 }
 

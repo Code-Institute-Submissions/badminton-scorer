@@ -190,7 +190,7 @@
         
         <!-- **** Modal for Game Scorer Menu Settings **** -->
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="game-settings">
-            <div class="container-fluid modal-dialog game-settings-dialog">
+            <div class="container-fluid modal-dialog modal-dialog-centered game-settings-dialog">
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title">Badminton Scorer Settings (Best of 3 Sets of 21 points)</h4>
@@ -362,7 +362,7 @@
 
         <!-- **** Modal for Game Interval Timer **** -->
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="game-interval">
-            <div class="container-fluid modal-dialog">
+            <div class="container-fluid modal-dialog modal-dialog-centered">
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title">Game Interval</h4>
@@ -380,7 +380,7 @@
 
         <!-- **** Modal for End Game Match **** -->
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-set">
-            <div class="container-fluid modal-dialog modal-sm">
+            <div class="container-fluid modal-dialog modal-dialog-centered modal-sm">
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title" id="game-set">Match not yet finished!</h4>
@@ -396,7 +396,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="showGameResult()">Proceed</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel-game">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -404,7 +404,7 @@
 
         <!-- **** Modal for End Game Result Match **** -->
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-result">
-            <div class="container-fluid modal-dialog" id="end-game-result-dialog">
+            <div class="container-fluid modal-dialog modal-dialog-centered" id="end-game-result-dialog">
                 <div class="container-fluid modal-content" id="end-game-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title">Game Match Results</h4>

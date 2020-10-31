@@ -168,10 +168,6 @@ li a {
 }
 
 /* ----- Setup Settings ----- */
-#game-settings {
-    top: 10vh;
-}
-
 .modal-content {
     background-color: #305930;
     /*height: 50vh;*/

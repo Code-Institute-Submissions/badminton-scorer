@@ -200,7 +200,9 @@ function incrementScore(scoreSide) {
     };
     if (teamAGameWin == 2 || teamBGameWin == 2) {
         //End of Game Match Here show Match Result Tally Score Board
-        $('#end-game-result').modal('show');
+        setElementInnerHTML(`#game-set`, "End of Game Match!")
+        hideElement(`#cancel-game`);
+        $('#end-game-set').modal('show');
     };
 };
 
