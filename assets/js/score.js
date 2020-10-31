@@ -203,8 +203,15 @@ function incrementScore(scoreSide) {
         setElementInnerHTML(`#game-set`, "End of Game Match!")
         hideElement(`#cancel-game`);
         $('#end-game-set').modal('show');
+        hideElement(`#end-match`);
+        showElement(`#new-match`)
     };
 };
+
+function enableNewGame() {
+    hideElement(`#end-match`);
+    showElement(`#new-match`)
+}
 
 function intervalCountdown(seconds) {
     if (seconds <= 0) {

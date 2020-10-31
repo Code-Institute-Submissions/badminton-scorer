@@ -409,9 +409,6 @@ input#full-interval-seconds {
         font-size: 2.5vh;
         height: -webkit-fill-available;
     }
-    #game-settings {
-        top: 10vh;
-    }
 
     #team-a-yellow-card,
     #team-a-red-card,
