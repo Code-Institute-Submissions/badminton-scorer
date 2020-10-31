@@ -68,7 +68,7 @@ input#team-a-player-2, input#team-b-player-1 {
 }
 
 .mini-team-b-player-1-img, .mini-team-b-player-2-img {
-    left: 14.6vw;
+    left: 13vw;
 }
 
 .player-font-dropdown > .dropdown-menu {
@@ -146,7 +146,7 @@ ul.dropdown-menu.left-drop-down-menu.show {
 
 .mini-left-team-player {
     right: 10px;
-    font-size: 2vh;
+    font-size: 1rem;
     padding: 0.5vh;
     height: 4vh;
     margin-top: 3vh;
@@ -154,7 +154,7 @@ ul.dropdown-menu.left-drop-down-menu.show {
 
 .mini-right-team-player {
     left: 10px;
-    font-size: 2vh;
+    font-size: 1rem;
     padding: 0.5vh;
     height: 4vh;
     margin-top: 3vh;
@@ -185,5 +185,68 @@ input#mini-team-b-player-2 {
     .team-player {
         height: 1.5rem;
         font-size: 0.7rem;
+    }
+    .mini-left-team-player {
+        font-size: 0.5rem;
+    }
+
+    .mini-right-team-player {
+        font-size: 0.5rem;
+    }
+}
+
+@media only screen and (min-height: 415px) {
+    .mini-left-team-player {
+        font-size: 1rem;
+    }
+
+    .mini-right-team-player {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .mini-team-a-player-1-img, .mini-team-a-player-2-img {
+        left: 2.1vw;
+    }
+
+    .mini-team-b-player-1-img, .mini-team-b-player-2-img {
+        left: 14vw;
+    }
+}
+
+@media only screen and (max-width: 823px) {
+    .mini-team-a-player-1-img, .mini-team-a-player-2-img {
+        left: 2.1vw;
+    }
+
+    .mini-team-b-player-1-img, .mini-team-b-player-2-img {
+        left: 12vw;
+    }
+}
+
+@media only screen and (max-width: 736px) {
+    .mini-team-b-player-1-img, .mini-team-b-player-2-img {
+        left: 11.5vw;
+    }
+}
+
+@media only screen and (max-width: 667px) {
+    .mini-team-a-player-1-img, .mini-team-a-player-2-img {
+        left: 2.4vw;
+    }
+
+    .mini-team-b-player-1-img, .mini-team-b-player-2-img {
+        left: 10.5vw;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    .mini-team-a-player-1-img, .mini-team-a-player-2-img {
+        left: 2.8vw;
+    }
+
+    .mini-team-b-player-1-img, .mini-team-b-player-2-img {
+        left: 9.5vw;
     }
 }

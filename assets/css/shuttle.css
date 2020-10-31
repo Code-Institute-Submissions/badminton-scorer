@@ -46,37 +46,14 @@ img#right-court-left-side-shuttle {
 img#mini-left-court-left-side-shuttle,
 img#mini-left-court-right-side-shuttle {
     position: absolute;
-    left: 4vw;
+    left: 8vw;
     height: 6.5vh;
 }
 
 img#mini-right-court-left-side-shuttle,
 img#mini-right-court-right-side-shuttle {
     position: absolute;
-    right: 0.8vw;
+    right: 4.5vw;
     height: 7.5vh;   
 }
 
-@media only screen and (max-height: 280px) and (max-width: 653px) {
-}
-@media only screen and (max-height: 320px) and (max-width: 568px) {
-}
-@media only screen and (max-height: 360px) and (max-width: 640px) {
-}
-@media only screen and (max-height: 375px) and (max-width: 667px) {
-}
-@media only screen and (max-height: 375px) and (max-width: 812px) {
-}
-@media only screen and (max-height: 411px) and (min-width: 731px) {
-}
-@media only screen and (max-height: 414px) and (min-width: 736px) {
-}
-@media only screen and (max-height: 411px) and (max-width: 823px) {
-}
-/* ----- ipad and surface duo ----- */
-@media only screen and (max-height: 540px) and (max-width: 720px) {
-}
-@media only screen and (max-height: 768px) and (max-width: 1024px) {
-}
-@media only screen and (max-height: 1024px) and (max-width: 1336px) {
-}

@@ -123,6 +123,7 @@ body {
     border: 0;
     contain: content;
     object-fit: contain;
+    overflow-y: auto;
 }
 
 .footer-navbar {
