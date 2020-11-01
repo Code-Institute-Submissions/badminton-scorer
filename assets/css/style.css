@@ -243,26 +243,15 @@ table, th, td {
 .warning-cards {
     width: 2vw;
 }
-/*
-#team-a-yellow-card,
-#team-a-red-card,
-#team-a-black-card,
-#team-b-yellow-card,
-#team-b-red-card,
-#team-b-black-card {
-    text-shadow: gray 1px 1px 1px;
-};
-*/
+
 .tally-team-b-players {
     background: lightcoral;
     color: black;
-    /*text-align: left;*/
 }
 
 .tally-team-a-players {
     background-color: dodgerblue;
     color: black;
-    /*min-width: 5vw;*/
 }
 
 #start-new-set {
@@ -274,6 +263,18 @@ table, th, td {
 
 .modal-body {
     overflow-y: auto;
+}
+
+.mb-5, .my-5 {
+    margin-bottom: 0rem!important;
+}
+
+#contact-me {
+    width: 50vw!important;
+}
+
+#sender-name, #sender-email, #message, #subject {
+    color: black!important;
 }
 
 @media only screen and (min-height: 280px){

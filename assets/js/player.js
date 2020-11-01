@@ -106,7 +106,6 @@ function switchCourt(courtServe) {
             teamAScore = teamBScore;
             teamBScore = tempScore;
         } else {
-            console.log("Game Set 3 should ENTER here first, Player One should be on the leftcourt, Player Two should be on the right court")
             setElementValue(`#team-a-player-1`, playerA.name);
             setElementSrc(`.team-a-player-1-img`, playerA.src);
             setElementValue(`#team-a-player-2`, playerB.name);

@@ -204,25 +204,45 @@ window.addEventListener("orientationchange", function() {
         //centerMenuSetting();
 }, false);
 
+$("html").on("click", closeModal());
+
 $(".modal").on("click",function(event){
-    console.log("CLicked outside Modal")
+    modalShowHide(`#end-game-result-dialog`, 'hide')
     event.stopPropagation();
+});
+
+$("html").keyup(function (e) {
+    if (e.which == 27 && $('body').hasClass('modal-open')) {
+        console.log('esc');
+    }
+});
+
+$("html").click(function (e) {
+    if (e.target === $('.modal-scrollable')[0] && $('body').hasClass('modal-open')) {
+        console.log('click');
+    }
+});
+
+function closeModal() {
+    console.log("entered here");
+    modalShowHide(`#end-game-result-dialog`, 'hide');
 };
 
 // This will end the current match with input notes and will show the Match Result Tally Score Board after. 
 function endMatch() {
-    startGame = false;
-    hideElement(`#end-match`);
-    showElement(`#new-match`);
     //Show modal for End-Game Reason
     modalShowHide('#game-interval', 'hide');
     modalShowHide('#end-game-set', 'show');
 };
 
 function showGameResult() {
+    startGame = false;
+    hideElement(`#end-match`);
+    showElement(`#new-match`);
     //Show modal Match Result Tally Score Board
     appendChild(`#umpire-notes`, `<p style="margin-left:1vw;">${getElementValue("#additional-notes")}</p>`);
-    modalShowHide('#end-game-result', 'show');
+    modalShowHide('#end-game-result-dialog', 'hide');
+    modalShowHide('#end-game-result-dialog', 'show');
 };
 
 // This will issue a yellow card to the team base on passed parameter
@@ -362,5 +382,32 @@ function speakThisMsg(message) {
         let thisMsg = new SpeechSynthesisUtterance();
         thisMsg = message;
         window.speechSynthesis.speak(new SpeechSynthesisUtterance(thisMsg));
+    };
+};
+
+function sendMail() {
+    if (getElementValue(`#sender-name`) != "" && getElementValue(`#sender-email`) != "" && getElementValue(`#subject`) != "" && getElementValue(`#message`) != "") {
+        setElementInnerHTML(`#modal-title-contact`, "Thank you for contacting us!")
+        setElementValue(`#sender-name`, "")
+        setElementValue(`#sender-email`, "")
+        setElementValue(`#subject`, "")
+        setElementValue(`#message`, "")
+    };
+};
+
+function validateEmail() {
+    const mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const textinput = getElementValue(`#sender-email`)
+    if(textinput.match(mailformat)) {
+        setElementInnerHTML(`#sender-email`, "Your email")
+        addStyle(`#sender-email`, "color", "white")
+        return true;
+    } else {
+        if (($("#contact-me").data('bs.modal') || {})._isShown) {
+            setElementInnerHTML(`#sender-email`, "You have entered an invalid email address")
+            $(`#sender-email`).focus();
+            addStyle(`#sender-email`, "color", "red")
+            return false;
+        };
     };
 };

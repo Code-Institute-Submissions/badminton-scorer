@@ -203,8 +203,8 @@ function incrementScore(scoreSide) {
         //End of Game Match Here show Match Result Tally Score Board
         setElementInnerHTML(`#game-set`, "End of Game Match!")
         hideElement(`#cancel-game`);
-        modalShowHide('#end-game-set', 'hide');
         modalShowHide('#end-game-set', 'show');
+        modalShowHide('#end-game-result-dialog', 'hide');
         hideElement(`#game-interval`)
         hideElement(`#end-match`);
         showElement(`#new-match`)
