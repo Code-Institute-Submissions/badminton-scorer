@@ -33,6 +33,8 @@ $("document").ready(function () {
     playerB = new player("PLAYER NAME", "assets/images/yellow-player.png", true); //Variable to hold the Player B object
     playerC = new player("PLAYER NAME", "assets/images/green-player.png", false); //Variable to hold the Player C object
     playerD = new player("PLAYER NAME", "assets/images/red-player.png", true); //Variable to hold the Player D object
+
+							  
 });
 
 var intMidIntervalBreak = 0;
@@ -204,7 +206,7 @@ window.addEventListener("orientationchange", function() {
         //centerMenuSetting();
 }, false);
 
-$("html").on("click", closeModal());
+//$("html").on("click", closeModal());
 
 $(".modal").on("click",function(event){
     modalShowHide(`#end-game-result-dialog`, 'hide')
@@ -225,15 +227,18 @@ $("html").click(function (e) {
 });
 */
 
-function closeModal() {
-    if (($("#end-game-result-dialog").data('bs.modal') || {})._isShown){
-        console.log("entered here again")
-        modalShowHide(`#end-game-result-dialog`, 'hide');
-    };
-};
+//function closeModal() {
+//    if (($("#end-game-result-dialog").data('bs.modal') || {})._isShown){
+//        console.log("entered here again")
+//        modalShowHide(`#end-game-result-dialog`, 'hide');
+//    };
+//};
 
 // This will end the current match with input notes and will show the Match Result Tally Score Board after. 
 function endMatch() {
+					  
+							  
+							  
     //Show modal for End-Game Reason
     modalShowHide('#game-interval', 'hide');
     modalShowHide('#end-game-set', 'show');

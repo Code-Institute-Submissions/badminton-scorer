@@ -395,7 +395,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="showGameResult()">Proceed</button>
+                        <button type="button" class="btn btn-primary" onclick="showGameResult()">Proceed</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancel-game">Cancel</button>
                     </div>
                 </div>
@@ -403,8 +403,8 @@
         </div>
 
         <!-- **** Modal for End Game Result Match **** -->
-        <div class="container-fluid modal" tabindex="-1" role="dialog">
-            <div class="container-fluid modal-dialog modal-dialog-centered"  id="end-game-result-dialog">
+        <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-result">
+            <div class="container-fluid modal-dialog modal-dialog-centered">
                 <div class="container-fluid modal-content" id="end-game-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title">Game Match Results</h4>
