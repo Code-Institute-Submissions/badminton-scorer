@@ -33,8 +33,6 @@ $("document").ready(function () {
     playerB = new player("PLAYER NAME", "assets/images/yellow-player.png", true); //Variable to hold the Player B object
     playerC = new player("PLAYER NAME", "assets/images/green-player.png", false); //Variable to hold the Player C object
     playerD = new player("PLAYER NAME", "assets/images/red-player.png", true); //Variable to hold the Player D object
-
-							  
 });
 
 var intMidIntervalBreak = 0;
@@ -201,44 +199,8 @@ function enableVoiceOver() {
     $(`#voice-over`).is(':checked') ? blnVoiceOver = true: blnVoiceOver = false;
 };
 
-// Check for orientation changes
-window.addEventListener("orientationchange", function() {
-        //centerMenuSetting();
-}, false);
-
-//$("html").on("click", closeModal());
-
-$(".modal").on("click",function(event){
-    modalShowHide(`#end-game-result-dialog`, 'hide')
-    event.stopPropagation();
-});
-
-/*
-$("html").keyup(function (e) {
-    if (e.which == 27 && $('body').hasClass('modal-open')) {
-        console.log('esc');
-    }
-});
-
-$("html").click(function (e) {
-    if (e.target === $('.modal-scrollable')[0] && $('body').hasClass('modal-open')) {
-        console.log('click');
-    }
-});
-*/
-
-//function closeModal() {
-//    if (($("#end-game-result-dialog").data('bs.modal') || {})._isShown){
-//        console.log("entered here again")
-//        modalShowHide(`#end-game-result-dialog`, 'hide');
-//    };
-//};
-
 // This will end the current match with input notes and will show the Match Result Tally Score Board after. 
 function endMatch() {
-					  
-							  
-							  
     //Show modal for End-Game Reason
     modalShowHide('#game-interval', 'hide');
     modalShowHide('#end-game-set', 'show');
@@ -250,8 +212,8 @@ function showGameResult() {
     showElement(`#new-match`);
     //Show modal Match Result Tally Score Board
     appendChild(`#umpire-notes`, `<p style="margin-left:1vw;">${getElementValue("#additional-notes")}</p>`);
-    modalShowHide('#end-game-result-dialog', 'hide');
-    modalShowHide('#end-game-result-dialog', 'show');
+    modalShowHide('#end-game-set', 'hide');
+    modalShowHide('#end-game-result', 'show');
 };
 
 // This will issue a yellow card to the team base on passed parameter

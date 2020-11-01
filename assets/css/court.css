@@ -92,11 +92,7 @@
     border-radius: 20px;
     align-items: center;
 }
-/*
-.left-scorer:hover, .right-scorer:hover {
-    background-color: green
-}
-*/
+
 .left-court-area, .right-court-area {
     padding: 0;
     margin: 0;
@@ -155,7 +151,6 @@
 
 .mini-court-settings {
     position: relative;
-    /*height: 30vh;*/
     object-fit: contain;
     left: 2vh;
     margin-right: 0;
@@ -251,7 +246,6 @@
     top: 14.4vh;
     left: 41vw;
     width: 20vw;
-   /* height: 15vh;*/
 }
 
 .game-voice-over {
@@ -302,7 +296,6 @@
     width: 10vw;
     padding: 0.5vh 0.5vh 0 0;
 }
-
 
 /* The container */
 .radio-container {
