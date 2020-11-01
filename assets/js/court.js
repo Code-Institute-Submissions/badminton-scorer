@@ -1,6 +1,30 @@
 $("document").ready(function () {
-    // ----- Initialize Mini-Court Area on Game Settings Modal and Menu settings -----
-    // Hide End Match menu
+    // ----- Call Initialize function Mini-Court Area on Game Settings Modal and Menu settings -----
+    initializeGameCourt();
+});
+
+var intMidIntervalBreak = 0;
+var intFullIntervalBreak = 0;
+var blnVoiceOver = true;
+var gameMatchType = 1; //variable to hold the Match Type 1-Singles Match/2-Dubles Match
+var issuedLeftCard = 0;
+var issuedRightCard = 0;
+
+// This will show the game match settings
+function startNewMatch() {
+
+    initializeGameCourt();
+    modalShowHide('#game-settings', 'show');
+
+    setPropertyValue(`#mid-interval-break`, `checked`, `true`);
+    setPropertyValue(`#full-interval-break`, `checked`, `true`);
+    setPropertyValue(`#voice-over`, "checked", `true`);
+    setElementValue(`#mid-interval-seconds`, "60");
+    setElementValue(`#full-interval-seconds`, "120")
+
+}
+
+function initializeGameCourt() {
     hideElement(`#end-match`);
     addClass(`#team-a-yellow-card`, "not-active");
     addClass(`#team-a-red-card`, "not-active");
@@ -29,31 +53,29 @@ $("document").ready(function () {
     disableElement(`#team-b-player-1`);
     disableElement(`#team-b-player-2`);
 
+    // Set Player Name Value to default
+    setElementValue(`#mini-team-a-player-1`, "ENTER PLAYER NAME HERE")
+    setElementValue(`#mini-team-a-player-2`, "ENTER PLAYER NAME HERE")
+    setElementValue(`#mini-team-b-player-1`, "ENTER PLAYER NAME HERE")
+    setElementValue(`#mini-team-b-player-2`, "ENTER PLAYER NAME HERE")
+
     playerA = new player("PLAYER NAME", "assets/images/blue-player.png", false); //Variable to hold the Player A object
     playerB = new player("PLAYER NAME", "assets/images/yellow-player.png", true); //Variable to hold the Player B object
     playerC = new player("PLAYER NAME", "assets/images/green-player.png", false); //Variable to hold the Player C object
     playerD = new player("PLAYER NAME", "assets/images/red-player.png", true); //Variable to hold the Player D object
-});
-
-var intMidIntervalBreak = 0;
-var intFullIntervalBreak = 0;
-var blnVoiceOver = true;
-var gameMatchType = 1; //variable to hold the Match Type 1-Singles Match/2-Dubles Match
-var issuedLeftCard = 0;
-var issuedRightCard = 0;
-
-// This will show the game match settings
-function startNewMatch() {
-    modalShowHide('#game-settings', 'show');
-    setPropertyValue(`#mid-interval-break`, `checked`, `true`);
-    setPropertyValue(`#full-interval-break`, `checked`, `true`);
-    setPropertyValue(`#voice-over`, "checked", `true`);
-    setElementValue(`#mid-interval-seconds`, "60");
-    setElementValue(`#full-interval-seconds`, "120")
-}
+};
 
 // This will start the Badminton Scorer and initialize everything
 function gameStart() {
+    // Initialize variables on new game match
+    teamAScore = 0;
+    teamBScore = 0;
+    teamAGameWin = 0;
+    teamBGameWin = 0;
+    serviceOver = "";
+    gameSet = 1;
+    blnMidBreak = false;
+
     showElement(`#end-match`);
     hideElement(`#new-match`);
     disableElement(`#team-a-player-1`);

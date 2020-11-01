@@ -22,11 +22,11 @@
 }
 
 .team-a-player-1-img, .team-a-player-2-img {
-    left: 20vh;
+    left: 10vw;
 }
 
 .team-b-player-1-img, .team-b-player-2-img {
-    left: 40vh;
+    left: 21vw;
 }
 
 .team-a-player-1-img, .team-b-player-2-img {
@@ -40,16 +40,16 @@
 .team-player {
     background-color: #305930;
     position: absolute;
-    left: 12vh;
-    width: 28vh;
+    /*left: 12vh;*/
+    width: 24vw;
 }
 
 input#team-a-player-1, input#team-a-player-2 {
-    left: 12vh;
+    left: 6vw;
 }
 
 input#team-b-player-1, input#team-b-player-2 {
-    left: 17vh;
+    left: 0vw;
     text-align: end;
 }
 
@@ -218,7 +218,7 @@ input#mini-team-b-player-2 {
     }
 }
 
-@media only screen and (max-width: 823px) {
+@media only screen and (max-width: 824px) {
     .mini-team-a-player-1-img, .mini-team-a-player-2-img {
         left: 2.1vw;
     }

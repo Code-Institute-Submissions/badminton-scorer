@@ -2,7 +2,7 @@ var teamAScore = 0;
 var teamBScore = 0;
 var teamAGameWin = 0;
 var teamBGameWin = 0;
-var serviceOver = 2;
+var serviceOver = "";
 var startGame = false;
 var player = {};
 var gameSet = 1;
@@ -212,11 +212,13 @@ function incrementScore(scoreSide) {
 };
 
 function enableNewGame() {
-    modalShowHide(`#end-game-set`, 'hide');
-    modalShowHide(`#game-interval`, 'hide');
+    //modalShowHide(`#end-game-set`, 'hide');
+    //modalShowHide(`#game-interval`, 'hide');
     hideElement(`#end-match`);
     showElement(`#new-match`);
-    modalShowHide(`#end-game-set`, 'hide');
+    modalShowHide(`#end-game-result`, 'hide');
+    initializeGameCourt();
+    //modalShowHide(`#end-game-set`, 'hide');
 }
 
 function intervalCountdown(seconds) {
