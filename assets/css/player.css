@@ -4,7 +4,6 @@
 
 .mini-team-a-player-1-img, .mini-team-b-player-2-img,
 .mini-team-a-player-2-img, .mini-team-b-player-1-img {
-    /*left: 0;*/
     height: 8vh;   
     position: fixed;
     transform: translate(-50%, 0%);
@@ -81,15 +80,7 @@ input#team-a-player-2, input#team-b-player-1 {
 ul.dropdown-menu.show {
     left: -8vh!important;
 }
-/*
-ul.dropdown-menu.right-drop-down-menu.show {
-    left: -8vh!important;
-}
 
-ul.dropdown-menu.left-drop-down-menu.show {
-    left: -8vh!important;
-}
-*/
 .player-font-dropdown > ul > li {
     font-weight: 900;
     font-size: 2vh;

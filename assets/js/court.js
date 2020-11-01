@@ -211,6 +211,7 @@ $(".modal").on("click",function(event){
     event.stopPropagation();
 });
 
+/*
 $("html").keyup(function (e) {
     if (e.which == 27 && $('body').hasClass('modal-open')) {
         console.log('esc');
@@ -222,10 +223,13 @@ $("html").click(function (e) {
         console.log('click');
     }
 });
+*/
 
 function closeModal() {
-    console.log("entered here");
-    modalShowHide(`#end-game-result-dialog`, 'hide');
+    if (($("#end-game-result-dialog").data('bs.modal') || {})._isShown){
+        console.log("entered here again")
+        modalShowHide(`#end-game-result-dialog`, 'hide');
+    };
 };
 
 // This will end the current match with input notes and will show the Match Result Tally Score Board after. 
