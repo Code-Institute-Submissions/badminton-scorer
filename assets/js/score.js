@@ -12,7 +12,7 @@ var blnMidBreak = false;
 
 function incrementScore(scoreSide) {
     if(!startGame) {
-        showElement(`#game-settings`)
+        modalShowHide(`#game-settings`, "show")
         return;
     };
 

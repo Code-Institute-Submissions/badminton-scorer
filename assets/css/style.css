@@ -175,6 +175,10 @@ li a {
     background: white;
 }
 
+#change-orientation {
+    width: 35vw;
+}
+
 /* ----- Setup Settings ----- */
 .modal-content {
     background-color: #305930;

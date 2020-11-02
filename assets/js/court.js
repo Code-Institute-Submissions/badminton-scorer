@@ -12,15 +12,19 @@ var issuedRightCard = 0;
 
 // This will show the game match settings
 function startNewMatch() {
-    modalShowHide('#game-settings', 'show');
-    setPropertyValue(`#single-match`, `checked`, true);
-    setPropertyValue(`#left-service`, `checked`, true);
-    setPropertyValue(`#mid-interval-break`, `checked`, true);
-    setPropertyValue(`#mid-interval-break`, `checked`, true);
-    setPropertyValue(`#full-interval-break`, `checked`, true);
-    setPropertyValue(`#voice-over`, "checked", true);
-    setElementValue(`#mid-interval-seconds`, "60");
-    setElementValue(`#full-interval-seconds`, "120")
+    if(window.innerHeight > window.innerWidth) {
+        modalShowHide(`#change-orientation`, "show");
+    } else {
+        modalShowHide('#game-settings', 'show');
+        setPropertyValue(`#single-match`, `checked`, true);
+        setPropertyValue(`#left-service`, `checked`, true);
+        setPropertyValue(`#mid-interval-break`, `checked`, true);
+        setPropertyValue(`#mid-interval-break`, `checked`, true);
+        setPropertyValue(`#full-interval-break`, `checked`, true);
+        setPropertyValue(`#voice-over`, "checked", true);
+        setElementValue(`#mid-interval-seconds`, "60");
+        setElementValue(`#full-interval-seconds`, "120")
+    };
 }
 
 function initializeGameCourt() {
@@ -79,6 +83,8 @@ function initializeGameCourt() {
     playerB = new player("PLAYER NAME", "assets/images/yellow-player.png", true); //Variable to hold the Player B object
     playerC = new player("PLAYER NAME", "assets/images/green-player.png", false); //Variable to hold the Player C object
     playerD = new player("PLAYER NAME", "assets/images/red-player.png", true); //Variable to hold the Player D object
+
+    // This will check if in Porttrait Orientation
 };
 
 // This will start the Badminton Scorer and initialize everything
