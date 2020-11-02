@@ -215,6 +215,7 @@ function enableNewGame() {
     hideElement(`#end-match`);
     showElement(`#new-match`);
     modalShowHide(`#end-game-result`, 'hide');
+    $('.modal-backdrop').remove();
     initializeGameCourt();
     showAllPlayers();
 }
