@@ -12,16 +12,15 @@ var issuedRightCard = 0;
 
 // This will show the game match settings
 function startNewMatch() {
-
-    initializeGameCourt();
     modalShowHide('#game-settings', 'show');
-
-    setPropertyValue(`#mid-interval-break`, `checked`, `true`);
-    setPropertyValue(`#full-interval-break`, `checked`, `true`);
-    setPropertyValue(`#voice-over`, "checked", `true`);
+    setPropertyValue(`#single-match`, `checked`, true);
+    setPropertyValue(`#left-service`, `checked`, true);
+    setPropertyValue(`#mid-interval-break`, `checked`, true);
+    setPropertyValue(`#mid-interval-break`, `checked`, true);
+    setPropertyValue(`#full-interval-break`, `checked`, true);
+    setPropertyValue(`#voice-over`, "checked", true);
     setElementValue(`#mid-interval-seconds`, "60");
     setElementValue(`#full-interval-seconds`, "120")
-
 }
 
 function initializeGameCourt() {
@@ -38,6 +37,15 @@ function initializeGameCourt() {
     addStyle(`#team-b-yellow-card`, "text-shadow", "gray 1px 1px 1px")
     addStyle(`#team-b-red-card`, "text-shadow", "gray 1px 1px 1px")
     addStyle(`#team-b-black-card`, "text-shadow", "gray 1px 1px 1px")
+
+    // -- Set Tally score to zero
+    setElementInnerHTML(`#team-a-set-one`, 0);
+    setElementInnerHTML(`#team-b-set-one`, 0);
+    setElementInnerHTML(`#team-a-set-two`, 0);
+    setElementInnerHTML(`#team-b-set-two`, 0);
+    setElementInnerHTML(`#team-a-set-three`, 0);
+    setElementInnerHTML(`#team-b-set-three`, 0);
+
 
     // --- Hide shuttles ---
     showHideShuttle("main", "left", "right");
@@ -58,6 +66,14 @@ function initializeGameCourt() {
     setElementValue(`#mini-team-a-player-2`, "ENTER PLAYER NAME HERE")
     setElementValue(`#mini-team-b-player-1`, "ENTER PLAYER NAME HERE")
     setElementValue(`#mini-team-b-player-2`, "ENTER PLAYER NAME HERE")
+
+    setElementValue(`#team-a-player-1`, "PLAYER NAME")
+    setElementValue(`#team-a-player-2`, "PLAYER NAME")
+    setElementValue(`#team-b-player-1`, "PLAYER NAME")
+    setElementValue(`#team-b-player-2`, "PLAYER NAME")
+
+    setElementInnerHTML(`#team-a-names`, 'PLAYER NAME' + "<br>" + 'PLAYER NAME')
+    setElementInnerHTML(`#team-b-names`, 'PLAYER NAME' + "<br>" + 'PLAYER NAME')
 
     playerA = new player("PLAYER NAME", "assets/images/blue-player.png", false); //Variable to hold the Player A object
     playerB = new player("PLAYER NAME", "assets/images/yellow-player.png", true); //Variable to hold the Player B object

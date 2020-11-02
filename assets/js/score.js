@@ -212,13 +212,11 @@ function incrementScore(scoreSide) {
 };
 
 function enableNewGame() {
-    //modalShowHide(`#end-game-set`, 'hide');
-    //modalShowHide(`#game-interval`, 'hide');
     hideElement(`#end-match`);
     showElement(`#new-match`);
     modalShowHide(`#end-game-result`, 'hide');
     initializeGameCourt();
-    //modalShowHide(`#end-game-set`, 'hide');
+    showAllPlayers();
 }
 
 function intervalCountdown(seconds) {

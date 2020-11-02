@@ -118,8 +118,8 @@
                             <div class="dropdown-menu dropdown-menu-right" id="menu-dropdown-list" aria-labelledby="navSetupMenuDropdownMenuLink">
                                 <a class="dropdown-item" id="new-match" onclick="startNewMatch()" >New Match</a>
                                 <a class="dropdown-item" id="end-match" onclick="endMatch()">End Current Match</a>
-                                <a class="dropdown-item" id="contact-developer" onclick="contactMe()">Contact the Developer</a>
-                                <a class="dropdown-item" id="about-app" onclick="aboutTheApp()">About the App</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#contact-me">Contact the Developer</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#how-to-guide">About the App</a>
                             </div>
                         </li>
                     </ul>
@@ -194,9 +194,6 @@
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title">Badminton Scorer Settings (Best of 3 Sets of 21 points)</h4>
-                        <!--button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button-->
                     </div>
                     <div class="container-fluid modal-body">
                     <div class="row">
@@ -384,9 +381,6 @@
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title" id="game-set">Match not yet finished!</h4>
-                        <!--button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-game-match" onclick="returnToCOurt()">
-                            <span aria-hidden="true">&times;</span>
-                        </button-->
                     </div>
                     <div class="container-fluid modal-body">
                         <div class="md-form">
@@ -408,9 +402,6 @@
                 <div class="container-fluid modal-content" id="end-game-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title">Game Match Results</h4>
-                        <!--button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="enableNewGame()">
-                            <span aria-hidden="true">&times;</span>
-                        </button-->
                     </div>
                     <div class="container-fluid modal-body">
                         <h6>Tally Score Board</h6>
@@ -511,7 +502,7 @@
                         </div>
 
                         <div class="md-form">
-                        <i class="fas fa-pencil prefix grey-text"></i>
+                        <i class="fas fa-edit prefix grey-text"></i>
                         <textarea type="text" id="message" class="md-textarea form-control" rows="4" required></textarea>
                         <label data-error="wrong" data-success="right" for="message">Your message</label>
                         </div>
@@ -536,19 +527,102 @@
                     </div>
                     <div class="modal-body mx-3">
                         <div class="md-form">
-                        <p> 
-                        This "Badminton Scoring System" mocks up the actual scoring of a badminton game. Just like any other sports scoring system 
-                        (i.e. basketball, volleyball, tennis etc) where two teams compete to score on their own side of court, this app will enable 
-                        the 'badminto umpire' to enter the score when one team score point, along with other feature such as issuing penalty cards.
-                        <br>
-                        (Note: This is not a game app nor the actual badminton game mock up application)
-                        <br>
-                        Game settings
-                        <br>
-
-
-                        
-                        </p>
+                            <p class="setting-p"> 
+                                This "Badminton Scoring System" mocks up the actual scoring of a badminton game. Just like any other sports scoring system 
+                                (i.e. basketball, volleyball, tennis etc) where two teams compete to score on their own side of court, this app will enable 
+                                the 'badminto umpire' to enter the score when one team score point, along with other feature such as issuing penalty cards.
+                            </p>
+                            <br>
+                            <p class="setting-p">(Note: Again, this is a scoring system for badminton game, this is not a game app! :) )</p>
+                            <br>
+                            <h4 class="settings-h4">Game settings</h4>
+                            <p class="setting-p">This is where the 'badminton umpire' will need to setup the 'digital' court to mock-up the actual court</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/settings.jpg" class="initial-game-settings" style="height: 25vw;"></div>
+                            <h5  class="settings-h5">Match Type (Singles/Doubles)</h5>
+                            <br>
+                            <h6 class="settings-h6">Singles</h6>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/single-match-type.jpg" class="initial-game-settings" style="height: 5vw;"></div>
+                            <p class="setting-p">if selected, there will only be one player on each side of the court to play</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/singles-match-court.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <br>
+                            <h6  class="settings-h6">Doubles</h6>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/doubles-match-type.jpg" class="initial-game-settings" style="height: 5vw;"></div>
+                            <p class="setting-p">if selected, there will be two player on each side of the court to play</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/doubles-match-court.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">Service Side (Left/Right)</h5>
+                            <p class="setting-p">
+                            The player of the half court on the right side usually serve first, the umpire will toss a coin to determine which player will serve first and/or which half court sidethe player/s wants. 
+                            If the toss coin winner wants to serve first then the other player will choose the half court side they want to play. Once decide, the umpire can setup the rest of the court settings 
+                            </p>
+                            <h6  class="settings-h6">Left Court Service</h6>
+                            <p class="setting-p">choose this if the player(s) on the left half court will serve first</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/left-court-service.jpg" class="initial-game-settings" style="height: 5vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/left-court-serviceshuttle.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <br>
+                            <h6  class="settings-h6">Right Court Service</h6>
+                            <p class="setting-p">choose this if the player(s) on the right half court will serve first</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/right-court-service.jpg" class="initial-game-settings" style="height: 5w;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/right-court-serviceshuttle.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">To enter Player Name</h5>
+                            <p class="setting-p">click the text input area to input player name</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/enter-player-name.jpg" class="initial-game-settings" style="height: 10vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">To change Player color</h5>
+                            <p class="setting-p">click the player icon and choose from drop-down list to change player image color</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/change-player-color.jpg" class="initial-game-settings" style="height: 15vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">Interval (Mid/Full)</h5>
+                            <p class="setting-p">Like most sports, badminton have game break time as well.</p>
+                            <h6  class="settings-h6">Mid-Interval</h6>
+                            <p class="setting-p">
+                                In a official badminton game, players have 60sec interval time, when a team/player reaches the mid-interval points of 11pts. 
+                                At the end of a game set, player(s) have 2 minutes full interval before the next set commence
+                            </p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/interval-settings.jpg" class="initial-game-settings" style="height: 5vw;"></div>
+                            <p class="setting-p">Interval timer activated</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/interval-activated.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">Voice-Over</h5>
+                            <p class="setting-p">If selected, a voice-over will speak the player/s score as the game move-on</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/voice-over-settings.jpg" class="initial-game-settings" style="height: 3vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">Game-Start</h5>
+                            <p class="setting-p">Once the 'badminton umpire is satisfied with the court arrangement, the scoring system can begin when the Start button is clicked</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/start-button.jpg" class="initial-game-settings" style="height: 3vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">Score-button</h5>
+                            <p class="setting-p">There are one score button located at each end of the court, when a player score, the corresponding button should be clicked to increment the player's score</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/score-point.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <br>
+                            <h6  class="settings-h6">Left Half Court Player scored</h6>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/left-team-scored.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <br>
+                            <h6  class="settings-h6">Right Half Court Player scored</h6>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/right-team-scored.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">Tally-Score-Board</h5>
+                            <p class="setting-p">Players score will be automatically reflected on the Tally Score Board</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/tally-score-board.jpg" class="initial-game-settings" style="height: 5vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">Penalty-Cards</h5>
+                            <p class="setting-p">Like most sports, badminton players can get penalty as well. Badminton umpire can click the appropriate drop down button to issue penalty to the player(s). Penalty will be reflected to the Tally-Score Board (as shown below)</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/penalty-cards.jpg" class="initial-game-settings" style="height: 10vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">End of Game Match</h5>
+                            <p class="setting-p">Player(s) who first win 2 sets out of 3 sets (Best of 3 set) ends the game. Badminton Umpire can input additional notes about the game sets</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/end-match.jpg" class="initial-game-settings" style="height: 15vw;"></div>
+                            <br>
+                            <h5  class="settings-h5">Game Match Results</h5>
+                            <p class="setting-p">And the game match tally score sheet will be available to view as well</p>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/game-match-results.jpg" class="initial-game-settings" style="height: 25vw;"></div>
+                            <br>
+                            <p class="setting-p">To learn more about badminton and the rules of the game, please visit <a href="http://www.worldbadminton.com/rules/" target="_blank">http://www.worldbadminton.com/rules/</a>.</p>
+                            <br>
+                            <h5  class="settings-h5">Thank you!</h5>
+                            <br>
+                            <br>
                         </div>
 
                     </div>

@@ -45,6 +45,17 @@ function showHidePlayers(courtType, option, matchType) {
     gameMatchType = matchType;
 };
 
+function showAllPlayers() {
+    showElement(`.team-a-player-1-img`);
+    showElement(`#team-a-player-1`);
+    showElement(`.team-b-player-1-img`);
+    showElement(`#team-b-player-1`);
+    showElement(`.team-a-player-2-img`);
+    showElement(`#team-a-player-2`);
+    showElement(`.team-b-player-2-img`);
+    showElement(`#team-b-player-2`);
+};
+
 // Create Player object 
 function player (name, src, isVisible) {
     this.name = name;

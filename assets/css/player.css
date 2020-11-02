@@ -40,7 +40,6 @@
 .team-player {
     background-color: #305930;
     position: absolute;
-    /*left: 12vh;*/
     width: 24vw;
 }
 
@@ -77,11 +76,6 @@ input#team-a-player-2, input#team-b-player-1 {
     min-width: auto;
 }
 
-/*
-ul.dropdown-menu.show {
-    left: -8vh!important;
-}
-*/
 .left-drop-down-menu {
     left: -3vw!important;
 }

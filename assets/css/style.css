@@ -56,13 +56,11 @@ header {
 }
 
 .team-a-players, .team-a-set-one, .team-a-set-two, .team-a-set-three, .team-a-warning {
-    /*border: 3px dodgerblue;*/
     background-color: dodgerblue;
     color: black;
 }
 
 .team-b-players, .team-b-set-one, .team-b-set-two, .team-b-set-three, .team-b-warning  {
-    /*border: 3px solid lightcoral;*/
     background: lightcoral;    
     color: black;
 }
@@ -128,7 +126,6 @@ body {
 
 .footer-navbar {
     justify-content: center;
-    /*margin-top: 15vh;*/
 }
 
 .master-container {
@@ -167,10 +164,20 @@ li a {
   color: black;
 }
 
+.initial-game-settings {
+    transform: translate(0%, 0%);
+    position: inherit;
+    opacity: 0.9;
+}
+
+.game-settings-div {
+    width: fit-content;
+    background: white;
+}
+
 /* ----- Setup Settings ----- */
 .modal-content {
     background-color: #305930;
-    /*height: 50vh;*/
     padding-right: 0px;
     padding-left: 0px;
     margin: 0;
@@ -210,7 +217,6 @@ li a {
 #interval-timer {
     font-size: 20vh;
 }
-
 
 /* ***** Start of Tally Score Board Result page ***** */
 #end-game-result-dialog {
