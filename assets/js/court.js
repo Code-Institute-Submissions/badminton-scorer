@@ -1,4 +1,4 @@
-$("document").ready(function () {
+$("document").ready(function() {
     // ----- Call Initialize function Mini-Court Area on Game Settings Modal and Menu settings -----
     initializeGameCourt();
 });

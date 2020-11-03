@@ -395,14 +395,14 @@
 
         <!-- **** Modal for End Game Match **** -->
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-set">
-            <div class="container-fluid modal-dialog modal-dialog-centered" ui-outer-click="showGameResult()" ui-outer-click-if="showGameResult()">
+            <div class="container-fluid modal-dialog modal-dialog-centered">
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title" id="game-set">Match not yet finished!</h4>
                     </div>
                     <div class="container-fluid modal-body">
                         <div class="md-form">
-                        <textarea type="text" id="additional-notes" class="md-textarea form-control" rows="4"></textarea>
+                        <textarea id="additional-notes" class="md-textarea form-control" rows="4"></textarea>
                         <label data-error="wrong" data-success="right" for="additional-notes">Additional Notes</label>
                         </div>
                     </div>
@@ -521,7 +521,7 @@
 
                         <div class="md-form">
                         <i class="fas fa-edit prefix grey-text"></i>
-                        <textarea type="text" id="message" class="md-textarea form-control" rows="4" required></textarea>
+                        <textarea id="message" class="md-textarea form-control" rows="4" required></textarea>
                         <label data-error="wrong" data-success="right" for="message">Your message</label>
                         </div>
 
@@ -555,18 +555,18 @@
                             <br>
                             <h4 class="settings-h4">Game settings</h4>
                             <p class="setting-p">This is where the 'badminton umpire' will need to setup the 'digital' court to mock-up the actual court</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/settings.jpg" class="initial-game-settings" style="height: 25vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/settings.jpg" alt="digital court" class="initial-game-settings" style="height: 25vw;"></div>
                             <h5  class="settings-h5">Match Type (Singles/Doubles)</h5>
                             <br>
                             <h6 class="settings-h6">Singles</h6>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/single-match-type.jpg" class="initial-game-settings" style="height: 5vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/single-match-type.jpg" alt="singles match option selected" class="initial-game-settings" style="height: 5vw;"></div>
                             <p class="setting-p">if selected, there will only be one player on each side of the court to play</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/singles-match-court.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/singles-match-court.jpg" alt="single match players on court" class="initial-game-settings" style="height: 20vw;"></div>
                             <br>
                             <h6  class="settings-h6">Doubles</h6>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/doubles-match-type.jpg" class="initial-game-settings" style="height: 5vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/doubles-match-type.jpg" alt="doubles match option selected" class="initial-game-settings" style="height: 5vw;"></div>
                             <p class="setting-p">if selected, there will be two player on each side of the court to play</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/doubles-match-court.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/doubles-match-court.jpg" alt="doubles match players on court" class="initial-game-settings" style="height: 20vw;"></div>
                             <br>
                             <h5  class="settings-h5">Service Side (Left/Right)</h5>
                             <p class="setting-p">
@@ -575,21 +575,21 @@
                             </p>
                             <h6  class="settings-h6">Left Court Service</h6>
                             <p class="setting-p">choose this if the player(s) on the left half court will serve first</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/left-court-service.jpg" class="initial-game-settings" style="height: 5vw;"></div>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/left-court-serviceshuttle.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/left-court-service.jpg" alt="left court player/s to serve selected" class="initial-game-settings" style="height: 5vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/left-court-serviceshuttle.jpg" alt="showing left player to serve" class="initial-game-settings" style="height: 20vw;"></div>
                             <br>
                             <h6  class="settings-h6">Right Court Service</h6>
                             <p class="setting-p">choose this if the player(s) on the right half court will serve first</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/right-court-service.jpg" class="initial-game-settings" style="height: 5w;"></div>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/right-court-serviceshuttle.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/right-court-service.jpg" alt="right court player/s to serve selected" class="initial-game-settings" style="height: 5vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/right-court-serviceshuttle.jpg" alt="showing right player to serve"  class="initial-game-settings" style="height: 20vw;"></div>
                             <br>
                             <h5  class="settings-h5">To enter Player Name</h5>
                             <p class="setting-p">click the text input area to input player name</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/enter-player-name.jpg" class="initial-game-settings" style="height: 10vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/enter-player-name.jpg" alt="enter player name" class="initial-game-settings" style="height: 10vw;"></div>
                             <br>
                             <h5  class="settings-h5">To change Player color</h5>
                             <p class="setting-p">click the player icon and choose from drop-down list to change player image color</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/change-player-color.jpg" class="initial-game-settings" style="height: 15vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/change-player-color.jpg" alt="select player color" class="initial-game-settings" style="height: 15vw;"></div>
                             <br>
                             <h5  class="settings-h5">Interval (Mid/Full)</h5>
                             <p class="setting-p">Like most sports, badminton have game break time as well.</p>
@@ -598,43 +598,43 @@
                                 In a official badminton game, players have 60sec interval time, when a team/player reaches the mid-interval points of 11pts. 
                                 At the end of a game set, player(s) have 2 minutes full interval before the next set commence
                             </p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/interval-settings.jpg" class="initial-game-settings" style="height: 5vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/interval-settings.jpg" alt="interval timer settings selection" class="initial-game-settings" style="height: 5vw;"></div>
                             <p class="setting-p">Interval timer activated</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/interval-activated.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/interval-activated.jpg" alt="interval timer activated" class="initial-game-settings" style="height: 20vw;"></div>
                             <br>
                             <h5  class="settings-h5">Voice-Over</h5>
                             <p class="setting-p">If selected, a voice-over will speak the player/s score as the game move-on</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/voice-over-settings.jpg" class="initial-game-settings" style="height: 3vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/voice-over-settings.jpg" alt="voice over selection" class="initial-game-settings" style="height: 3vw;"></div>
                             <br>
                             <h5  class="settings-h5">Game-Start</h5>
                             <p class="setting-p">Once the 'badminton umpire is satisfied with the court arrangement, the scoring system can begin when the Start button is clicked</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/start-button.jpg" class="initial-game-settings" style="height: 3vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/start-button.jpg" alt="start button" class="initial-game-settings" style="height: 3vw;"></div>
                             <br>
                             <h5  class="settings-h5">Score-button</h5>
                             <p class="setting-p">There are one score button located at each end of the court, when a player score, the corresponding button should be clicked to increment the player's score</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/score-point.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/score-point.jpg" alt="tally score board" class="initial-game-settings" style="height: 20vw;"></div>
                             <br>
                             <h6  class="settings-h6">Left Half Court Player scored</h6>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/left-team-scored.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/left-team-scored.jpg" alt="left players score a point" class="initial-game-settings" style="height: 20vw;"></div>
                             <br>
                             <h6  class="settings-h6">Right Half Court Player scored</h6>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/right-team-scored.jpg" class="initial-game-settings" style="height: 20vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/right-team-scored.jpg" alt="right players score a point" class="initial-game-settings" style="height: 20vw;"></div>
                             <br>
                             <h5  class="settings-h5">Tally-Score-Board</h5>
                             <p class="setting-p">Players score will be automatically reflected on the Tally Score Board</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/tally-score-board.jpg" class="initial-game-settings" style="height: 5vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/tally-score-board.jpg" alt="point scored reflected on tally board" class="initial-game-settings" style="height: 5vw;"></div>
                             <br>
                             <h5  class="settings-h5">Penalty-Cards</h5>
                             <p class="setting-p">Like most sports, badminton players can get penalty as well. Badminton umpire can click the appropriate drop down button to issue penalty to the player(s). Penalty will be reflected to the Tally-Score Board (as shown below)</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/penalty-cards.jpg" class="initial-game-settings" style="height: 10vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/penalty-cards.jpg" alt="penalty card issued" class="initial-game-settings" style="height: 10vw;"></div>
                             <br>
                             <h5  class="settings-h5">End of Game Match</h5>
                             <p class="setting-p">Player(s) who first win 2 sets out of 3 sets (Best of 3 set) ends the game. Badminton Umpire can input additional notes about the game sets</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/end-match.jpg" class="initial-game-settings" style="height: 15vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/end-match.jpg" alt="game match end popup message" class="initial-game-settings" style="height: 15vw;"></div>
                             <br>
                             <h5  class="settings-h5">Game Match Results</h5>
                             <p class="setting-p">And the game match tally score sheet will be available to view as well</p>
-                            <div class="game-settings-div"> <img src="assets/images/game_setting/game-match-results.jpg" class="initial-game-settings" style="height: 25vw;"></div>
+                            <div class="game-settings-div"> <img src="assets/images/game_setting/game-match-results.jpg" alt="game match tally score sheet pop-ups" class="initial-game-settings" style="height: 25vw;"></div>
                             <br>
                             <p class="setting-p">To learn more about badminton and the rules of the game, please visit <a href="http://www.worldbadminton.com/rules/" target="_blank">http://www.worldbadminton.com/rules/</a>.</p>
                             <br>
@@ -655,9 +655,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-        <script style="text/javascript" src="assets/js/court.js"></script>
-        <script style="text/javascript" src="assets/js/score.js"></script>
-        <script style="text/javascript" src="assets/js/shuttle.js"></script>
-        <script style="text/javascript" src="assets/js/player.js"></script>
+        <script src="assets/js/court.js"></script>
+        <script src="assets/js/score.js"></script>
+        <script src="assets/js/shuttle.js"></script>
+        <script src="assets/js/player.js"></script>
     </body>
 </html>

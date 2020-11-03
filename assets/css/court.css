@@ -275,7 +275,7 @@
 }
 
 .start-match-btn:hover {
-    background-color: solid blue;
+    background-color: blue;
     cursor: pointer;
 }
 
@@ -430,7 +430,7 @@ input#full-interval-seconds {
     .game-settings-dialog {
         width: 94vw;
         margin-left: auto;
-        margin-right: auto'
+        margin-right: auto;
     }
     .mini-court-settings {
         left: 4vh;

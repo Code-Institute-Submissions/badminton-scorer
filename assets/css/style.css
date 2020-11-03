@@ -269,7 +269,7 @@ table, th, td {
     height: 6vh;
     width: 100%;
     font-size: 3vh;
-};
+}
 
 .modal-body {
     overflow-y: auto;
