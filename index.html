@@ -194,6 +194,9 @@
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title">Badminton Scorer Settings (Best of 3 Sets of 21 points)</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-game-settings">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="container-fluid modal-body">
                     <div class="row">
@@ -361,7 +364,7 @@
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="game-interval">
             <div class="container-fluid modal-dialog modal-dialog-centered">
                 <div class="container-fluid modal-content">
-                    <div class="container-fluid modal-header">
+                    <div class="modal-header">
                         <h4 class="modal-title">Game Interval</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-interval">
                             <span aria-hidden="true">&times;</span>
@@ -379,14 +382,14 @@
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="change-orientation">
             <div class="container-fluid modal-dialog modal-dialog-centered">
                 <div class="container-fluid modal-content">
-                    <div class="container-fluid modal-header">
-                        <h4 class="modal-title">Change Orientation</h4>
+                    <div class="modal-header">
+                        <h6 class="modal-title">Change Orientation</h6>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-orientation">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="container-fluid modal-body">
-                        <h4>This App is designed for Landscape view only. Please kindly rotate your device 90 degrees clockwise (or counter-clockwise)</h4>
+                        <p>This App is designed for Landscape view only. Please kindly rotate your device 90 degrees clockwise (or counter-clockwise)</p>
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Got it!</button>
                     </div>
                 </div>
@@ -397,8 +400,11 @@
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-set">
             <div class="container-fluid modal-dialog modal-dialog-centered">
                 <div class="container-fluid modal-content">
-                    <div class="container-fluid modal-header">
+                    <div class="modal-header">
                         <h4 class="modal-title" id="game-set">Match not yet finished!</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-end-game-set">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="container-fluid modal-body">
                         <div class="md-form">
@@ -416,10 +422,13 @@
 
         <!-- **** Modal for End Game Result Match **** -->
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-result">
-            <div class="container-fluid modal-dialog modal-dialog-centered">
+            <div class="container-fluid modal-dialog modal-dialog-centered modal-lg">
                 <div class="container-fluid modal-content" id="end-game-content">
-                    <div class="container-fluid modal-header">
+                    <div class="modal-header">
                         <h4 class="modal-title">Game Match Results</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-end-game-result">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="container-fluid modal-body">
                         <h6>Tally Score Board</h6>

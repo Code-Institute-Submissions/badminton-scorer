@@ -12,7 +12,7 @@ var issuedRightCard = 0;
 
 // This will show the game match settings
 function startNewMatch() {
-    if(window.innerHeight > window.innerWidth) {
+    if (window.matchMedia("(orientation: portrait)").matches) {
         modalShowHide(`#change-orientation`, "show");
     } else {
         modalShowHide('#game-settings', 'show');
@@ -26,6 +26,15 @@ function startNewMatch() {
         setElementValue(`#full-interval-seconds`, "120")
     };
 }
+
+$(window).on("orientationchange",function() {
+    //if (window.matchMedia("(orientation: landscape)").matches) {
+    if(window.orientation == 0) {
+        modalShowHide(`#change-orientation`, "show");
+    } else {
+        modalShowHide(`#change-orientation`, "hide");
+    };
+});
 
 function initializeGameCourt() {
     hideElement(`#end-match`);
