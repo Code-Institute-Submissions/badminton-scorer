@@ -27,15 +27,46 @@ function startNewMatch() {
     };
 }
 
-$(window).on("orientationchange",function() {
-    //if (window.matchMedia("(orientation: landscape)").matches) {
-    if(window.orientation == 0) {
-        modalShowHide(`#change-orientation`, "show");
-    } else {
-        modalShowHide(`#change-orientation`, "hide");
-    };
-});
+//$(window).on("orientationchange",function() {
+//    //if (window.matchMedia("(orientation: landscape)").matches) {
+//    if(window.orientation == 0) {
+//        modalShowHide(`#change-orientation`, "show");
+//    } else {
+//        modalShowHide(`#change-orientation`, "hide");
+//    };
+//});
 
+// check what type of mobile device is used in running the app
+var isMobile = {Android: function() {
+        return /Android/i.test(navigator.userAgent);
+    }, iOS: function() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+};
+
+if(isMobile.Android()) {
+    console.log("im android");
+    var previousWidth=$(window).width();
+    $(window).on({resize: function(e) {
+        var screenHeight=$(window).height();
+        var screenWidth=$(window).width();
+        if(screenHeight > screenWidth) {
+            modalShowHide(`#change-orientation`, "show");
+        } else {
+            modalShowHide(`#change-orientation`, "hide");
+        };
+    }
+    });
+
+    } else {
+        console.log("im not android");
+            if(window.orientation === 90) {
+                modalShowHide(`#change-orientation`, "hide");
+            } else {
+                modalShowHide(`#change-orientation`, "show");
+            };
+    };
+    
 function initializeGameCourt() {
     hideElement(`#end-match`);
     addClass(`#team-a-yellow-card`, "not-active");
