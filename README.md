@@ -128,23 +128,24 @@ Below is/are the issues encountered during development and testing:
 - voice over can't keep up if users click the score button many times
 - Using the DevTools simulator, there is an issue on some mobile devices that I can't still figure out yet. When user visited the app on portrait mode the app is supposed to get a pop-up message to change the orientation to landscape. 
   The said pop-up function works on the following mobile devices:
-    1. Galaxy Fold
-    2. iPad Pro & iPad
-    3. Responsive mode (min height of 767)
+    * Galaxy Fold
+    * iPad Pro & iPad
+    * Responsive mode (min height of 767)
+
   The rest of the devices, doesn't show anything except the green background (not until the user rotate their device on landscape mode)
-    1. Surface Duo
-    2. iPhone Series
-    3. Pixel Series
-    4. Galaxy S5
-    5. Moto G4
-    6. Responsive mode (max height of 766)
+    * Surface Duo
+    * iPhone Series
+    * Pixel Series
+    * Galaxy S5
+    * Moto G4
+    * Responsive mode (max height of 766)
 
 ### <ins>SOLUTION ON ISSUES ENCOUNTERED</ins>
 
 Below is/are the solution provided on the issues encountered above:
 
 - user of the app will be prompted to change orientation.
-- introduced a delay until the voice over finished speaking before user can again click the button. (though in real game which the scorer is mocking, the umpire will not click the score button many times and will wait until the players are ready to play (usually between 5-10 seconds which is enough for the voice-over to finished annoumcing the current scores))
+- introduced a delay until the voice over finished speaking before user can again click the button. (though in real badminton game which the application is mocking, the umpire will not click the score button many times and will wait until the players are ready to play (usually between 5-10 seconds which is enough for the voice-over to finished annoumcing the current scores))
 
 [Back to Contents](#contents)
 
