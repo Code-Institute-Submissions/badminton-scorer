@@ -51,7 +51,7 @@ header {
 .player-score-board-container {
     justify-content: center;
     border: 2px solid white;
-    margin: 0px 0px 0px 0px;
+    margin: 0vw 0vw 0vw 0.5vw;
     padding: 0px 0px 0px 0px;
 }
 
@@ -296,6 +296,15 @@ table, th, td {
         width: 3vw;
     }
 }
+
+@media only screen {
+    #team-a-yellow-card, #team-a-red-card, 
+    #team-a-black-card, #team-b-yellow-card, 
+    #team-b-red-card, #team-b-black-card {
+        font-size: 0.8rem;
+    }
+}
+
 @media only screen and (max-height: 570px){
     .footer-copyright {
         font-size: 0.5rem;

@@ -1,5 +1,5 @@
 // This function will listen to event when user click the player image and select a color from the dropdown list. It will set each player's color
-$('a').click(function() {
+$('.player-color').click(function() {
     $(this).parent().parent().prev().children('img').attr("src", `assets/images/${$(this).text().toLowerCase()}-player.png`);
     var classNames = $(this).parent().parent().parent().parent().attr("class").split(" ");
     if ($(`.${classNames[1]}`).attr("class").indexOf("left-court-left-player-container") != -1 ) {

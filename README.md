@@ -125,7 +125,19 @@ The sites responsiveness was tested by the following methods:
 Below is/are the issues encountered during development and testing:
 
 - when the device is rotated to portrait, the whole web-app design was compromised.
-- voice over can't keep up if users click the score button many times 
+- voice over can't keep up if users click the score button many times
+- Using the DevTools simulator, there is an issue on some mobile devices that I can't still figure out yet. When user visited the app on portrait mode the app is supposed to get a pop-up message to change the orientation to landscape. 
+  The said pop-up function works on the following mobile devices:
+    1. Galaxy Fold
+    2. iPad Pro & iPad
+    3. Responsive mode (min height of 767)
+  The rest of the devices, doesn't show anything except the green background (not until the user rotate their device on landscape mode)
+    1. Surface Duo
+    2. iPhone Series
+    3. Pixel Series
+    4. Galaxy S5
+    5. Moto G4
+    6. Responsive mode (max height of 766)
 
 ### <ins>SOLUTION ON ISSUES ENCOUNTERED</ins>
 
@@ -140,7 +152,16 @@ Below is/are the solution provided on the issues encountered above:
 
 ## **LIVE DEPLOYMENT** ##
 
-The site is hosted on [GitHub Pages](https://jon2-vera-cruz.github.io/badminton-scorer/). "How To - Deploying to GitHub Pages" can be found [here](https://www.codecademy.com/articles/f1-u3-github-pages).
+The site is hosted on [GitHub Pages](https://jon2-vera-cruz.github.io/badminton-scorer/). 
+
+Deploying using gitPod is simple.
+
+1. Save all your changes.
+2. On the window terminal, type in the following and press Enter
+    a. git add .
+    b. git commit - m "Place your change description here."
+    c. git push
+3. Sometimes, it will take a few minutes before your changes will be reflected.
 
 [Back to Contents](#contents)
 
