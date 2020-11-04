@@ -189,14 +189,11 @@
         </footer>
         
         <!-- **** Modal for Game Scorer Menu Settings **** -->
-        <div class="container-fluid modal" tabindex="-1" role="dialog" id="game-settings">
+        <div class="container-fluid modal" tabindex="-1" role="dialog" id="game-settings" data-backdrop="static" data-keyboard="false">
             <div class="container-fluid modal-dialog modal-dialog-centered game-settings-dialog">
                 <div class="container-fluid modal-content">
                     <div class="container-fluid modal-header">
                         <h4 class="modal-title">Badminton Scorer Settings (Best of 3 Sets of 21 points)</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-game-settings">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                     </div>
                     <div class="container-fluid modal-body">
                     <div class="row">
@@ -232,7 +229,7 @@
                                             </div>
                                         </div>
                                         <img id="mini-left-court-left-side-shuttle" class="img-responsive mini-left-court-shuttles" alt="left-court-shuttles" src="assets/images/left-shuttle.png" >
-                                        <input type="text" class="form-control control-border mini-team-player mini-left-team-player" name="mini-team-a-player-1" data-form-field="mini-team-a-player-1" id="mini-team-a-player-1" placeholder="ENTER PLAYER A NAME HERE" />
+                                        <input type="text" class="form-control control-border mini-team-player mini-left-team-player" name="mini-team-a-player-1" data-form-field="mini-team-a-player-1" id="mini-team-a-player-1" placeholder="ENTER PLAYER NAME HERE" />
                                     </div>
                                     <div class="row mini-court-service-area">
                                         <div class="container-fluid mini-left-court-right-player-container">
@@ -251,7 +248,7 @@
                                             </div>
                                         </div>
                                         <img id="mini-left-court-right-side-shuttle" class="img-responsive mini-left-court-shuttles" alt="left-court-shuttles" src="assets/images/left-shuttle.png" >
-                                        <input type="text" class="form-control control-border mini-team-player mini-left-team-player" name="mini-team-a-player-2" data-form-field="mini-team-a-player-2" id="mini-team-a-player-2" placeholder="ENTER PLAYER B NAME HERE" />
+                                        <input type="text" class="form-control control-border mini-team-player mini-left-team-player" name="mini-team-a-player-2" data-form-field="mini-team-a-player-2" id="mini-team-a-player-2" placeholder="ENTER PLAYER NAME HERE" />
                                     </div>
                                     <div class="row mini-court-service-line">
                                     </div>
@@ -278,7 +275,7 @@
                                             </div>
                                         </div>
                                         <img id="mini-right-court-right-side-shuttle" class="img-responsive mini-right-court-shuttles" alt="right-court-shuttles" src="assets/images/right-shuttle.png" >
-                                        <input type="text" class="form-control control-border mini-team-player mini-right-team-player" name="mini-team-b-player-2" data-form-field="mini-team-b-player-2" id="mini-team-b-player-2" placeholder="ENTER PLAYER D NAME HERE" />
+                                        <input type="text" class="form-control control-border mini-team-player mini-right-team-player" name="mini-team-b-player-2" data-form-field="mini-team-b-player-2" id="mini-team-b-player-2" placeholder="ENTER PLAYER NAME HERE" />
                                     </div>
                                     <div class="row mini-court-service-area">
                                         <div class="container-fluid mini-right-court-left-player-container">
@@ -297,7 +294,7 @@
                                             </div>
                                         </div>
                                         <img id="mini-right-court-left-side-shuttle" class="img-responsive mini-right-court-shuttles" alt="right-court-shuttles" src="assets/images/right-shuttle.png" >
-                                        <input type="text" class="form-control control-border mini-team-player mini-right-team-player" name="mini-team-b-player-1" data-form-field="mini-team-b-player-1" id="mini-team-b-player-1" placeholder="ENTER PLAYER C NAME HERE" />
+                                        <input type="text" class="form-control control-border mini-team-player mini-right-team-player" name="mini-team-b-player-1" data-form-field="mini-team-b-player-1" id="mini-team-b-player-1" placeholder="ENTER PLAYER NAME HERE" />
                                     </div>
                                     <div class="row mini-court-service-line">
                                     </div>
@@ -361,14 +358,11 @@
         </div>
 
         <!-- **** Modal for Game Interval Timer **** -->
-        <div class="container-fluid modal" tabindex="-1" role="dialog" id="game-interval">
+        <div class="container-fluid modal" tabindex="-1" role="dialog" id="game-interval" data-backdrop="static" data-keyboard="false">
             <div class="container-fluid modal-dialog modal-dialog-centered">
                 <div class="container-fluid modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Game Interval</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-interval">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                     </div>
                     <div class="container-fluid modal-body" id="game-set-interval">
                         <h5 id="interval-timer">...</h5>
@@ -379,14 +373,11 @@
         </div>
 
         <!-- **** Modal for Orientation Change Alert **** -->
-        <div class="container-fluid modal" tabindex="-1" role="dialog" id="change-orientation">
+        <div class="container-fluid modal" tabindex="-1" role="dialog" id="change-orientation" data-backdrop="static" data-keyboard="false">
             <div class="container-fluid modal-dialog modal-dialog-centered">
                 <div class="container-fluid modal-content">
                     <div class="modal-header">
                         <h6 class="modal-title">Change Orientation</h6>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-orientation">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                     </div>
                     <div class="container-fluid modal-body">
                         <p>This App is designed for Landscape view only. Please kindly rotate your device 90 degrees clockwise (or counter-clockwise)</p>
@@ -397,14 +388,11 @@
         </div>
 
         <!-- **** Modal for End Game Match **** -->
-        <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-set">
+        <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-set" data-backdrop="static" data-keyboard="false">
             <div class="container-fluid modal-dialog modal-dialog-centered">
                 <div class="container-fluid modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title" id="game-set">Match not yet finished!</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="showGameResult()">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                     </div>
                     <div class="container-fluid modal-body">
                         <div class="md-form">
@@ -421,14 +409,11 @@
         </div>
 
         <!-- **** Modal for End Game Result Match **** -->
-        <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-result">
+        <div class="container-fluid modal" tabindex="-1" role="dialog" id="end-game-result" data-backdrop="static" data-keyboard="false">
             <div class="container-fluid modal-dialog modal-dialog-centered modal-lg">
                 <div class="container-fluid modal-content" id="end-game-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Game Match Results</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close-end-game-result">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                     </div>
                     <div class="container-fluid modal-body">
                         <h6>Tally Score Board</h6>
@@ -543,14 +528,11 @@
         </div>
 
         <!-- **** Modal for Contact the Developer **** -->
-        <div class="container-fluid modal" tabindex="-1" role="dialog" id="how-to-guide">
+        <div class="container-fluid modal" tabindex="-1" role="dialog" id="how-to-guide" data-backdrop="static" data-keyboard="false">
             <div class="container-fluid modal-dialog modal-dialog-centered modal-lg">
                 <div class="container-fluid modal-content">
                     <div class="modal-header text-center">
                         <h4 class="modal-title w-100 font-weight-bold" id="modal-title-guide">Badminton Scoring System Guide</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
                     </div>
                     <div class="modal-body mx-3">
                         <div class="md-form">

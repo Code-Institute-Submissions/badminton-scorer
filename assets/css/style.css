@@ -274,6 +274,7 @@ table, th, td {
 
 .modal-body {
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .mb-5, .my-5 {
@@ -293,6 +294,11 @@ table, th, td {
     .team-b-set-one, .team-b-set-two, .team-b-set-three {
         border: 2px solid black;
         width: 3vw;
+    }
+}
+@media only screen and (max-height: 570px){
+    .footer-copyright {
+        font-size: 0.5rem;
     }
 }
 
