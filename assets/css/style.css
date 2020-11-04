@@ -192,6 +192,7 @@ li a {
 .modal-body {
     font-size: 2vh;
     padding: 0.8rem;
+    padding-bottom: 0;
 }
 
 .modal-header {

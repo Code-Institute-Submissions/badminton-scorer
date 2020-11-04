@@ -75,6 +75,12 @@ function initializeGameCourt() {
     addClass(`#team-b-yellow-card`, "not-active");
     addClass(`#team-b-red-card`, "not-active");
     addClass(`#team-b-black-card`, "not-active");
+    addStyle(`#team-a-yellow-card`, "opacity", "0.5")
+    addStyle(`#team-a-red-card`, "opacity", "0.5")
+    addStyle(`#team-a-black-card`, "opacity", "0.5")
+    addStyle(`#team-b-yellow-card`, "opacity", "0.5")
+    addStyle(`#team-b-red-card`, "opacity", "0.5")
+    addStyle(`#team-b-black-card`, "opacity", "0.5")
     addStyle(`#team-a-yellow-card`, "text-shadow", "gray 1px 1px 1px")
     addStyle(`#team-a-red-card`, "text-shadow", "gray 1px 1px 1px")
     addStyle(`#team-a-black-card`, "text-shadow", "gray 1px 1px 1px")
@@ -106,10 +112,10 @@ function initializeGameCourt() {
     disableElement(`#team-b-player-2`);
 
     // Set Player Name Value to default
-    setElementValue(`#mini-team-a-player-1`, "ENTER PLAYER NAME HERE")
-    setElementValue(`#mini-team-a-player-2`, "ENTER PLAYER NAME HERE")
-    setElementValue(`#mini-team-b-player-1`, "ENTER PLAYER NAME HERE")
-    setElementValue(`#mini-team-b-player-2`, "ENTER PLAYER NAME HERE")
+    //setElementValue(`#mini-team-a-player-1`, "ENTER PLAYER NAME HERE")
+    //setElementValue(`#mini-team-a-player-2`, "ENTER PLAYER NAME HERE")
+    //setElementValue(`#mini-team-b-player-1`, "ENTER PLAYER NAME HERE")
+    //setElementValue(`#mini-team-b-player-2`, "ENTER PLAYER NAME HERE")
 
     setElementValue(`#team-a-player-1`, "PLAYER NAME")
     setElementValue(`#team-a-player-2`, "PLAYER NAME")
@@ -318,6 +324,7 @@ function issueProperYellowCard(side, noOfIssue) {
         setBackgroundColor(`#team-${(side == 'left'? 'a':'b')}-second-yellow-warning`, "yellow");
         setElementInnerHTML(`#team-${(side == 'left'? 'a':'b')}-second-warning`, noOfIssue)
         addClass(`#team-${(side == 'left'? 'a':'b')}-yellow-card`, "not-active");
+        addStyle(`#team-${(side == 'left'? 'a':'b')}-yellow-card`, "opacity", "0.5")
         addStyle(`#team-${(side == 'left'? 'a':'b')}-yellow-card`, "text-shadow", "gray 1px 1px 1px")
         removeClass(`#team-${(side == 'left'? 'a':'b')}-red-card`, "not-active");
         removeStyle(`#team-${(side == 'left'? 'a':'b')}-red-card`);
@@ -330,6 +337,7 @@ function issueProperYellowCard(side, noOfIssue) {
 function issueRedCard(side) {
     setBackgroundColor(`#team-${(side == 'left'? 'a':'b')}-red-warning`, "red");
     addClass(`#team-${(side == 'left'? 'a':'b')}-red-card`, "not-active");
+    addStyle(`#team-${(side == 'left'? 'a':'b')}-red-card`, "opacity", "0.5")
     addStyle(`#team-${(side == 'left'? 'a':'b')}-red-card`, "text-shadow", "gray 1px 1px 1px")
     removeClass(`#team-${(side == 'left'? 'a':'b')}-black-card`, "not-active");
     removeStyle(`#team-${(side == 'left'? 'a':'b')}-black-card`);
@@ -341,6 +349,7 @@ function issueRedCard(side) {
 function issueBlackCard(side) {
     setBackgroundColor(`#team-${(side == 'left'? 'a':'b')}-black-warning`, "black");
     addClass(`#team-${(side == 'left'? 'a':'b')}-black-card`, "not-active");
+    addStyle(`#team-${(side == 'left'? 'a':'b')}-black-card`, "opacity", "0.5")
     addStyle(`#team-${(side == 'left'? 'a':'b')}-black-card`, "text-shadow", "gray 1px 1px 1px")
     // For Match Results
     setBackgroundColor(`#team-${(side == 'left'? 'a':'b')}-black`, "black");
