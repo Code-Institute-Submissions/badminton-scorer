@@ -14,7 +14,11 @@ header {
 .header-navbar {
     padding: 0;
     padding-top: .2rem;
-    font-size: xx-large;
+    font-size: 2rem;
+}
+
+#navSetupMenuDropdownMenuLink {
+    background-image: url(../images/burger-menu-white.png);
 }
 
 .setup-menu-container {
@@ -287,6 +291,28 @@ table, th, td {
 
 #sender-name, #sender-email, #message, #subject {
     color: black!important;
+}
+
+@media only screen and (min-width: 1365) {
+    header-navbar {
+        top: 0;
+        right: 2vw;
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 1024) {
+    header-navbar {
+        right: 0vw;
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 737) {
+    header-navbar {
+        right: 0vw;
+        font-size: 1.5rem;
+    }
 }
 
 @media only screen and (min-height: 280px){

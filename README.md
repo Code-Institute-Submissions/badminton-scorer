@@ -147,10 +147,10 @@ The site is hosted on [GitHub Pages](https://jon2-vera-cruz.github.io/badminton-
 Deploying using gitPod is simple.
 
 1. Save all your changes.
-2. On the window terminal, type in the following and press Enter
-    a. git add .
-    b. git commit - m "Place your change description here."
-    c. git push
+2. On the window terminal, type in the following and press Enter after each line.
+    * git add .
+    * git commit - m "Place your change description here."
+    * git push
 3. Sometimes, it will take a few minutes before your changes will be reflected.
 
 [Back to Contents](#contents)
@@ -169,8 +169,8 @@ Code Institute Challenges and Projects throughout 2nd Milestone - This is my ver
 
 Thank you to the following people:
 
-- Akshat Garg, my mentor, for his time in providing guidance, and keeps pushing me to go beyond what was expected on this project...
+- Akshat Garg, my mentor, for his time in providing guidance, and who keeps pushing me to go beyond what was expected on this project...
 - Class of August-CI-2020 on Slack,
-- #peer-code-review / #interactive-frontend folks on slack (you know who you are :P )who gave some of their time reviewing and giving feedback and suggestions.
+- #peer-code-review / #interactive-frontend folks on slack (you know who you are :P ) who gave some of their time reviewing, specially finding what is causing the issue encountered, and giving feedback and suggestions.
 
 [Back to Contents](#contents)
