@@ -14,7 +14,7 @@ $('.player-color').click(function() {
     } else if ($(`.${classNames[1]}`).attr("class").indexOf("right-court-right-player-container") != -1 ) {
         //Player D set src attribute
         playerD.src = `assets/images/${$(this).text().toLowerCase()}-player.png`;
-    };
+    }
 });
 
 // This will show/hide players depending on matchtype etc.
@@ -29,7 +29,7 @@ function showHidePlayers(courtType, option, matchType) {
             hideElement(`#mini-team-a-player-1`);
             hideElement(`.mini-right-court-left-player-container`);
             hideElement(`#mini-team-b-player-1`);
-        };
+        }
     } else {
         showElement(`.team-a-player-1-img`);
         showElement(`#team-a-player-1`);
@@ -40,10 +40,10 @@ function showHidePlayers(courtType, option, matchType) {
             showElement(`#mini-team-a-player-1`);
             showElement(`.mini-right-court-left-player-container`);
             showElement(`#mini-team-b-player-1`);
-        };
+        }
     }
     gameMatchType = matchType;
-};
+}
 
 function showAllPlayers() {
     showElement(`.team-a-player-1-img`);
@@ -54,33 +54,33 @@ function showAllPlayers() {
     showElement(`#team-a-player-2`);
     showElement(`.team-b-player-2-img`);
     showElement(`#team-b-player-2`);
-};
+}
 
 // Create Player object 
 function player (name, src, isVisible) {
     this.name = name;
     this.src = src;
     this.isVisible = isVisible;
-};
+}
 
 $('#mini-team-a-player-1').on("change", function() { 
     playerA.name = getElementValue(`#mini-team-a-player-1`);
-    setElementValue(`#team-a-player-1`, playerA.name)
+    setElementValue(`#team-a-player-1`, playerA.name);
 });
 
 $('#mini-team-a-player-2').on("change", function() { 
     playerB.name = getElementValue(`#mini-team-a-player-2`);
-    setElementValue(`#team-a-player-2`, playerB.name)
+    setElementValue(`#team-a-player-2`, playerB.name);
 });
 
 $('#mini-team-b-player-1').on("change", function() { 
     playerC.name = getElementValue(`#mini-team-b-player-1`);
-    setElementValue(`#team-b-player-1`, playerC.name)
+    setElementValue(`#team-b-player-1`, playerC.name);
 });
 
 $('#mini-team-b-player-2').on("change", function() { 
     playerD.name = getElementValue(`#mini-team-b-player-2`);
-    setElementValue(`#team-b-player-2`, playerD.name)
+    setElementValue(`#team-b-player-2`, playerD.name);
 });
 
 function switchCourt(courtServe) {
@@ -109,10 +109,10 @@ function switchCourt(courtServe) {
             setElementValue(`#team-b-player-2`, playerA.name);
             setElementSrc(`.team-b-player-2-img`, playerA.src);
             if (teamAScore == 11 && teamBScore < 11) {
-                showHideShuttle("main", "right", "left")
+                showHideShuttle("main", "right", "left");
             } else if (teamBScore == 11 && teamAScore < 11) {
-                showHideShuttle("main", "left", "left")
-            };
+                showHideShuttle("main", "left", "left");
+            }
             var tempScore = teamAScore;
             teamAScore = teamBScore;
             teamBScore = tempScore;
@@ -130,8 +130,8 @@ function switchCourt(courtServe) {
                 switchPlayerSide("b");
             }
             showHideShuttle("main", courtServe, "right");
-        };
-    };
+        }
+    }
 }
 
 function switchPlayerSide(side) {
@@ -148,4 +148,4 @@ function switchPlayerSide(side) {
     hideElement(`#team-${side}-player-1`);
     showElement(`.team-${side}-player-2-img`);
     showElement(`#team-${side}-player-2`);
-};
+}

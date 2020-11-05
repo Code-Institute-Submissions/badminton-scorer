@@ -12,6 +12,6 @@ function showHideShuttle(courtType, courtSide, serviceSide) {
     // then show only the shuttle on the side of the player who will serve
     if(courtType == "mini") {
         showElement(`#${courtType}-${courtSide}-court-${serviceSide}-side-shuttle`);
-    };
+    }
     showElement(`#${courtSide}-court-${serviceSide}-side-shuttle`);
-};
+}

@@ -336,11 +336,11 @@
                         <div class="container-fluid game-interval-container">
                             <input type="checkbox" name="mid-interval-break" id="mid-interval-break" checked onchange="enableMidIntervalInput()">
                             <label for="mid-interval-seconds" class="checkbox-container">Mid-Interval (sec):
-                                <input type="number" min="30" max="60" onkeypress="validate(event)" name="mid-interval-seconds" id="mid-interval-seconds" value="60">
+                                <input type="number" min="30" max="60" onkeypress="validateKeyPress(event)" name="mid-interval-seconds" id="mid-interval-seconds" value="60">
                             </label><br>
                             <input type="checkbox" name="full-interval-break" id="full-interval-break" checked onchange="enableFullIntervalInput()">
                             <label for="full-interval-seconds" class="checkbox-container">Full-Interval (sec):
-                                <input type="number" min="60" max="120" onkeypress="validate(event)" name="full-interval-seconds" id="full-interval-seconds" value="120">
+                                <input type="number" min="60" max="120" onkeypress="validateKeyPress(event)" name="full-interval-seconds" id="full-interval-seconds" value="120">
                             </label>
                         </div>
                         <div class="container-fluid game-voice-over">
@@ -527,7 +527,7 @@
             </div>
         </div>
 
-        <!-- **** Modal for Contact the Developer **** -->
+        <!-- **** Modal for Badminton Scorer Guide **** -->
         <div class="container-fluid modal" tabindex="-1" role="dialog" id="how-to-guide" data-backdrop="static" data-keyboard="false">
             <div class="container-fluid modal-dialog modal-dialog-centered modal-lg">
                 <div class="container-fluid modal-content">
@@ -540,10 +540,12 @@
                                 This "Badminton Scoring System" mocks up the actual scoring of a badminton game. Just like any other sports scoring system 
                                 (i.e. basketball, volleyball, tennis etc) where two teams compete to score on their own side of court, this app will enable 
                                 the 'badminto umpire' to enter the score when one team score point, along with other feature such as issuing penalty cards.
+
                             </p>
-                            <br>
-                            <p class="setting-p">(Note: Again, this is a scoring system for badminton game, this is not a game app! :) )</p>
-                            <br>
+                            <p class="setting-p">
+                                (Note: Again, this is a scoring system for badminton game, this is not a game app! :) )
+                            
+                            </p>
                             <h4 class="settings-h4">Game settings</h4>
                             <p class="setting-p">This is where the 'badminton umpire' will need to setup the 'digital' court to mock-up the actual court</p>
                             <div class="game-settings-div"> <img src="assets/images/game_setting/settings.jpg" alt="digital court" class="initial-game-settings" style="height: 25vw;"></div>
@@ -627,7 +629,7 @@
                             <p class="setting-p">And the game match tally score sheet will be available to view as well</p>
                             <div class="game-settings-div"> <img src="assets/images/game_setting/game-match-results.jpg" alt="game match tally score sheet pop-ups" class="initial-game-settings" style="height: 25vw;"></div>
                             <br>
-                            <p class="setting-p">To learn more about badminton and the rules of the game, please visit <a href="http://www.worldbadminton.com/rules/" target="_blank">http://www.worldbadminton.com/rules/</a>.</p>
+                            <p class="setting-p">To learn more about badminton and the rules of the game, scoring, singles and doubles match, change of ends and service, please visit <a href="http://www.worldbadminton.com/rules/" target="_blank">http://www.worldbadminton.com/rules/</a>.</p>
                             <br>
                             <h5  class="settings-h5">Thank you!</h5>
                             <br>

@@ -87,6 +87,7 @@ The main objective of this 2nd Milestone project was to create a web application
 - [W3C Validator](https://validator.w3.org/) - used to test my HTML to ensure there were no errors
 - [W3C Validator CSS](https://jigsaw.w3.org/css-validator/) - used to test my CSS to ensure there were no errors
 - [HTML Formatter](https://www.webformatter.com/html) - html formatter to help keep things tidy!
+- [JShint](https://jshint.com/) - used to validate javascript codes, there were some line of codes validated (mostly on the "ternary operator" shortcut) but as far as the logic is concerned it is working accordingly!
 - [Am I Responsive](http://ami.responsivedesign.is/#) - used to create responsive image for readme.MD
 
 [Back to Contents](#contents)
