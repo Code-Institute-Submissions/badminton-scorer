@@ -260,7 +260,18 @@ function enableFullIntervalInput() {
 
 // This will hold the variable whether voice-over will be enabled/disable when checkbox changed
 function enableVoiceOver() {
-    $(`#voice-over`).is(':checked') ? blnVoiceOver = true: blnVoiceOver = false;
+    if($(`#voice-over`).is(':checked')) {
+        setPropertyValue(`#in-game-voice-over`, "checked", true);
+        blnVoiceOver = true;
+    } else {
+        setPropertyValue(`#in-game-voice-over`, "checked", false);
+        blnVoiceOver = false;
+    }
+}
+
+// This will hold the variable whether voice-over will be enabled/disable when checkbox changed on in-game settings
+function enableInGameVoiceOver() {
+    $(`#in-game-voice-over`).is(':checked') ? blnVoiceOver = true : blnVoiceOver = false;
 }
 
 // This will end the current match with input notes and will show the Match Result Tally Score Board after. 

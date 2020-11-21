@@ -48,14 +48,20 @@ The main objective of this 2nd Milestone project was to create a web application
 ### <ins>USER STORIES</ins> ###
 
 #### <ins>AS IS</ins> ####
-- As a **new user**, I want to start a new badminton match game scorer.
-- As a **new user**, I want to be able to select between singles/doubles match, select the side serving initially and input interval time for mid-game break and full-game break for players.
-- As a **new user**, I want to be able to hear the game status with a voice over.
-- As a **new user**, I want to be able to view the end game result tally score/sheet.
+- As a **user**, I want to start a new badminton match game scorer.
+- As a **user**, I want to be able to select between singles/doubles match.
+- As a **user**, I want to be able to select the court side who will serve initially.
+- AS a **user**, I want to be able to input interval time for mid-game break and full-game break for players.
+- As a **user**, I want to be able to hear the game status with a voice over.
+- As a **user**, I want the system to mock the player's positioning on the court after point is given.
+- As a **user**, I want to be able to view the end game result tally score/sheet.
 
 #### <ins>TO BE</ins> ####
-- As a **new user**, I want to be select/input the number of games to be played (Best of 1, Best of 3, Best of 5). (The official badminton game match is usually "Best of 3").
-- As a **new user**, I want to be able to select different voice over person (male, female, pitch, etc).
+- As a **user**, I want to be able to undo the last action if mistake has been made.
+- As a **user**, I want to be able to adjust the score manually.
+- As a **user**, I want to be able to change the player's position on the court.
+- As a **user**, I want to be select/input the number of games to be played (Best of 1, Best of 3, Best of 5). (The official badminton game match is usually "Best of 3").
+- As a **user**, I want to be able to select different voice over person (male, female, pitch, etc).
 
 [Back to Contents](#contents)
 
