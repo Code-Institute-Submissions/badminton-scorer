@@ -57,7 +57,7 @@ The main objective of this 2nd Milestone project was to create a web application
 - As a **user**, I want the system to mock the player's and serving positioning on the court whenever a point is given to a team/player.
 - As a **user**, I want to be able to mock penalty cards on the scoreboard if a penalty has been to a team/player.
 - As a **user**, I want to be able to end the end game if needed.
-- As a **user**, I want to be able to view the end game result tally score/sheet.
+- As a **user**, I want to be able to view the end game result tally score/sheet when the game ends.
 
 #### <ins>TO BE</ins> ####
 - As a **user**, I want to be able to undo the last action if mistake has been made.
@@ -129,6 +129,7 @@ The sites responsiveness was tested by the following methods:
 - Physical testing was conducted on desktop, tablet and mobile devices.
 - All buttons and clickable links and images were tested to ensure they are working as expected.
 - HTML, CSS, JavaScript and JQuery codes were formatted and validated through accessible online resources (see [Tools, Technology and Framework Used](#tools-technology-and-framework-used)) 
+- test cases where tested against the web app and can be found [here](assets/misc/testcases.xlsx)
 
 ### <ins>ENCOUNTERED ISSUES</ins>
 
@@ -154,14 +155,19 @@ Below is/are the solution provided on the issues encountered above:
 
 The site is hosted on [GitHub Pages](https://jon2-vera-cruz.github.io/badminton-scorer/). 
 
-Deploying using gitPod is simple.
+Deploying on github/gitPod is simple with fewer steps to follow.
 
-1. Save all your changes.
+1. On the github page, under the repository you are working with, go to the Settings menu.
+2. Under the GitHub pages section, select the branch where you want to publish your page.
+3. Under the same section, select the folder where you want to publish your page.
+4. Once done, click the Save button. The github page will refresh/reload and it will reflect the URL where your pages is published.
+
+1. On the gitpod page, once you're satisfied with all your changes, save your work.
 2. On the window terminal, type in the following and press Enter after each line.
     * git add .
     * git commit - m "Place your change description here."
     * git push
-3. Sometimes, it will take a few minutes before your changes will be reflected.
+3. Sometimes, it will take a few minutes before your changes will be reflected on the published URL provided on github.
 
 [Back to Contents](#contents)
 
