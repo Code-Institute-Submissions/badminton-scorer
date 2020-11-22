@@ -166,8 +166,7 @@ function incrementScore(scoreSide) {
                 hideElement(`#start-new-set`);
                 intervalCountdown(intFullIntervalBreak);
             } else {
-                setElementInnerHTML(`#interval-timer`, "0");
-                showElement(`#start-new-set`);
+                modalShowHide('#game-interval', 'hide');
             }
         }
         // Set Team Number of win here
