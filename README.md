@@ -51,9 +51,12 @@ The main objective of this 2nd Milestone project was to create a web application
 - As a **user**, I want to start a new badminton match game scorer.
 - As a **user**, I want to be able to select between singles/doubles match.
 - As a **user**, I want to be able to select the court side who will serve initially.
-- AS a **user**, I want to be able to input interval time for mid-game break and full-game break for players.
+- As a **user**, I want to be able to select/input interval time for mid-game break and full-game break.
 - As a **user**, I want to be able to hear the game status with a voice over.
-- As a **user**, I want the system to mock the player's positioning on the court after point is given.
+- As a **user**, I want to be able to input the names for each of the player playing on the court.
+- As a **user**, I want the system to mock the player's and serving positioning on the court whenever a point is given to a team/player.
+- As a **user**, I want to be able to mock penalty cards on the scoreboard if a penalty has been to a team/player.
+- As a **user**, I want to be able to end the end game if needed.
 - As a **user**, I want to be able to view the end game result tally score/sheet.
 
 #### <ins>TO BE</ins> ####
