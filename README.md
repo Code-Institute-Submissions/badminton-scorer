@@ -6,7 +6,7 @@
 
 Welcome to the Badminton-Scorer!
 
-This web application is designed to give the user (badminton umpire in particular) the ability to mock and automate badminton game play scoring system. The app is best experienced on mobile devices (usually tablets and portable/compact laptop used by badminton umpire during the badminton game). Technology programming language used are jquery, javascript, html and css. 
+This web application is designed to give the user (badminton umpire in particular) the ability to mock and automate badminton game play scoring system. The app is best experienced on mobile devices (usually tablets and portable/compact laptop used by badminton umpire during badminton game). Technology programming language used are jquery, javascript, html and css. 
 
 For guidance on how to use the app, please see the "About the App" on the menu drop down list.
 
@@ -79,7 +79,7 @@ The main objective of this 2nd Milestone project was to create a web application
 
 <img src="./assets/images/initial-web-app-design.png" style="margin: 0;">
 
-- [Balsamic Wireframes](https://balsamiq.com/wireframes) - is used to create the initial mockup of the badminton scoring system web-app. The full bmpr (balsamic) version of the web-app design can be found [here](assets/misc/ms-project-2.bmpr) while a pdf version of the wireframe can be found [here](assets/misc/ms-project-2.pdf). The web app initial design changed during the course of development process.
+- [Balsamic Wireframes](https://balsamiq.com/wireframes) - is used to create the initial mock-up of the badminton scoring system web-app. The full bmpr (balsamic) version of the web-app design can be found [here](assets/misc/ms-project-2.bmpr) while a pdf version of the wireframe can be found [here](assets/misc/ms-project-2.pdf). The web app initial design changed during development process.
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) 
@@ -112,7 +112,7 @@ The main objective of this 2nd Milestone project was to create a web application
 
 ### <ins>FUTURE ENHANCEMENTS</ins> ###
 - user will be able to select/input the number of games to play (Best of 1, Best of 3, Best of 5, etc).
-- user will be able to undo the last action made. In real time, badinton umpire rarely make mistakes on the badminton point system.
+- user will be able to undo the last action made. In real time, badminton umpire rarely make mistakes on the badminton point system.
 - user will be able to pause the game to correct the score or switch players and/or server (Though in official badminton game, only the last action/score can be corrected if the umpire made a mistake)
 - user will be able to select different type of voice over (male, female, pitch, etc)
 - user will be able to print report of the game, including scores, tally sheets and possibly some metrics.
@@ -125,7 +125,7 @@ The main objective of this 2nd Milestone project was to create a web application
 
 The sites responsiveness was tested by the following methods:
 
-- used different web browser (Google Chrome, Moxilla Firefox, Microsoft Edge) to check for compatibility issue.
+- used different web browser (Google Chrome, Mozilla Firefox, Microsoft Edge) to check for compatibility issue.
 - Physical testing was conducted on desktop, tablet and mobile devices.
 - All buttons and clickable links and images were tested to ensure they are working as expected.
 - HTML, CSS, JavaScript and JQuery codes were formatted and validated through accessible online resources (see [Tools, Technology and Framework Used](#tools-technology-and-framework-used)) 
@@ -136,16 +136,16 @@ The sites responsiveness was tested by the following methods:
 Below is/are the issues encountered during development and testing:
 
 - when the device is rotated to portrait, the whole web-app design was compromised.
-- voice over can't keep up if users click the score button many times
-- Using the DevTools simulator, there is an issue on some mobile devices that I can't still figure out yet. When user visited the app on portrait mode the app is supposed to get a pop-up message to change the orientation to landscape. 
+- voice over cannot keep up if users click the score button many times
+- Using the DevTools simulator, there is an issue on some mobile devices that I cannot still figure out yet. When user visited the app on portrait mode the app is supposed to get a pop-up message to change the orientation to landscape. 
 
 ### <ins>SOLUTION ON ISSUES ENCOUNTERED</ins>
 
 Below is/are the solution provided on the issues encountered above:
 
 - user of the app will be prompted to change orientation.
-- introduced a delay until the voice over finished speaking before user can again click the button. (though in real badminton game which the application is mocking, the umpire will not click the score button many times and will wait until the players are ready to play (usually between 5-10 seconds which is enough for the voice-over to finished annoumcing the current scores))
-- one @media in css that force the orientation to landscape was supposed to be removed when i created the pop-up, but missed to delete completely causing the issue. 
+- introduced a delay until the voice over finished speaking before user can again click the button. (though in real badminton game which the application is mocking, the umpire will not click the score button many times and will wait until the players are ready to play (usually between 5-10 seconds which is enough for the voice-over to finished announcing the current scores))
+- one @media in css that force the orientation to landscape was supposed to be removed when i created the pop-up but missed to delete completely causing the issue. 
 
 [Back to Contents](#contents)
 
@@ -160,7 +160,7 @@ Deploying on github/gitPod is simple with fewer steps to follow.
 1. On the github page, under the repository you are working with, go to the Settings menu.
 2. Under the GitHub pages section, select the branch where you want to publish your page.
 3. Under the same section, select the folder where you want to publish your page.
-4. Once done, click the Save button. The github page will refresh/reload and it will reflect the URL where your pages is published.
+4. Once done, click the Save button. The github page will refresh/reload and it will reflect the URL where your pages are published.
 
 1. On the gitpod page, once you're satisfied with all your changes, save your work.
 2. On the window terminal, type in the following and press Enter after each line.
@@ -175,7 +175,7 @@ Deploying on github/gitPod is simple with fewer steps to follow.
 
 ## **CREDITS** ##
 
-Code Institute Challenges and Projects throughout 2nd Milestone - This is my very first web application which I am really proud of accomplishing within a very short period of time. A few more enhancement and this will really be beneficial to one of my favourite sport that I play, badminton, and hope this will help the badminton umpires a lot.
+Code Institute Challenges and Projects throughout 2nd Milestone - This is my very first web application which I am proud of accomplishing within a very short period of time. A few more enhancements and this will really be beneficial to one of my favourite sport that I play, badminton, and hope this will help the badminton umpires a lot.
 
 [Back to Contents](#contents)
 
