@@ -144,7 +144,7 @@ function incrementScore(scoreSide) {
             if (intMidIntervalBreak > 0){
                 intervalCountdown(intMidIntervalBreak);
             } else {
-                $("#close-interval").click();
+                modalShowHide('#game-interval', 'hide');
             }
         }
     }
@@ -210,7 +210,7 @@ function enableNewGame() {
 
 function intervalCountdown(seconds) {
     if (seconds <= 0) {
-        $("#close-interval").click();
+        modalShowHide(`#game-interval`, 'hide');
         return;
     }
     let counter = seconds;
@@ -219,7 +219,7 @@ function intervalCountdown(seconds) {
         counter--;
         if (counter < 0 ) {
             clearInterval(interval);
-            $("#close-interval").click();
+            modalShowHide(`#game-interval`, 'hide');
         }
     }, 1000);
 }
