@@ -90,8 +90,8 @@ function incrementScore(scoreSide) {
             setElementInnerHTML(`#team-a-set-two`, teamBScore);
             setElementInnerHTML(`#team-b-set-two`, teamAScore);
             // For the Tally Result Report
-            setElementInnerHTML(`#tally-team-a-set-two`, teamAScore);
-            setElementInnerHTML(`#tally-team-b-set-two`, teamBScore);
+            setElementInnerHTML(`#tally-team-a-set-two`, teamBScore);
+            setElementInnerHTML(`#tally-team-b-set-two`, teamAScore);
 
             appendChild(`#main-tally-set-2-a`, `<td class="rally-points">${scoreSide == 'left' ? "0" : "X"}</td>`);
             appendChild(`#main-tally-set-2-b`, `<td class="rally-points">${scoreSide == 'left' ? "X" : "0"}</td>`);
